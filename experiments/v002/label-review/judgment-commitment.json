@@ -1,0 +1,8 @@
+{
+  "committed_utc": "2026-09-20T03:50:54.636826+00:00",
+  "individual_authored_labels_inspected": false,
+  "judgments_sha256": "73d2b0046a63a606c277ca38773d800b44522e85f34aafbb7988e119d46d4f25",
+  "method": "Write-once local hash commitment before comparison; not external preregistration or a git commit.",
+  "n_judgments": 144,
+  "status": "agent_review_provisional"
+}

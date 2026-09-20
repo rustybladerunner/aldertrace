@@ -1,0 +1,12 @@
+{
+  "captured": "2026-09-17",
+  "model": "llama3.2",
+  "ollama": "0.34.1",
+  "prompt_kind": "2+2=4 yes/no as A/B",
+  "generated": "A",
+  "top_logprobs": [
+    {"token": "A", "logprob": -0.05221666395664215},
+    {"token": "B", "logprob": -3.340428590774536}
+  ],
+  "note": "Subset of the first live /api/generate probe. Full-vocab log-softmax, not renormalized."
+}

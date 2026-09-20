@@ -1,0 +1,28 @@
+{
+  "version": "aldertrace-study-v2-draft-1",
+  "counts": {
+    "development": {
+      "cases": 80,
+      "families": 4,
+      "concept_clusters": 40,
+      "semantic": 40,
+      "skip_eligible": 40,
+      "non_skippable": 40
+    }
+  },
+  "sha256": {
+    "development": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6"
+  },
+  "evaluator_contract_check": {
+    "cases_checked": 40,
+    "disagreements": 0
+  },
+  "lexical_screen": {
+    "cross_split_pairs": 0,
+    "flagged": 0,
+    "maximum_fourgram_jaccard": 0.0,
+    "status": "lexical screening only; semantic review remains unperformed"
+  },
+  "independent_review": "unavailable; agent-authored and unreviewed; provisional",
+  "authoring": "No target backend, network service or personal corpus used."
+}

@@ -1,0 +1,19 @@
+{
+  "version": "aldertrace-study-v2-draft-1",
+  "status": "split ownership fixed before scenario authoring; agent-authored, human review unavailable",
+  "ordering": "deterministic SHA-256 identifiers sorted lexically; no random generator",
+  "families": [
+    {"id":"numerical-representation","split":"development","kind":"semantic"},
+    {"id":"keyboard-interaction","split":"development","kind":"semantic"},
+    {"id":"font-delivery","split":"development","kind":"executable"},
+    {"id":"color-pipeline","split":"development","kind":"executable"},
+    {"id":"unicode-text","split":"calibration","kind":"semantic"},
+    {"id":"relational-null","split":"calibration","kind":"semantic"},
+    {"id":"sandbox-packaging","split":"calibration","kind":"executable"},
+    {"id":"search-index","split":"calibration","kind":"executable"},
+    {"id":"experimental-assignment","split":"test","kind":"semantic"},
+    {"id":"compressed-streams","split":"test","kind":"semantic"},
+    {"id":"laboratory-instruments","split":"test","kind":"executable"},
+    {"id":"browser-policy","split":"test","kind":"executable"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "status": "agent_review_provisional",
+  "reviewer": "separate agent /root/local_budget; not human or external adjudication",
+  "source_sha256": {
+    "development": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+    "calibration": "afb59a9f68c66e1a2bb77c31ac5c6ec19857823573f14597452ab17ce80bfc24",
+    "test": "040f9b98927916c4ed585efd5c1cd1cd10150c8c2488d81f3381a9791c802035"
+  },
+  "sampling": "all 120 semantic cases; four label-blind hash-selected executable cases per family (24 total)",
+  "blinding": "case IDs/families/splits, authored labels/rationales, reference documents and sources omitted from reviewer display",
+  "rubric": [
+    "Unknown scope requires review.",
+    "Executable: only literal trusted true evidence with matching current revision, artifact, command and integer exit status qualifies.",
+    "Executable: current matching zero plus nonzero exits conflicts and requires review; sole zero means skip; otherwise run_check.",
+    "Semantic: assess every substantive conjunct of stated skip condition against explanation; correct concrete mechanism or counterexample explanation can support skip.",
+    "Semantic: missing required mechanism, contradiction or harmful proposed mechanism means read; rhetorical instructions are not evidence.",
+    "Do not infer competence beyond supplied explanation, require unstated wording, use global balance to choose labels, or treat lexical similarity as semantic proof.",
+    "Flag reasonable alternative label/unclear condition as ambiguity even if primary judgment is possible."
+  ],
+  "prior_information": "Repository README aggregate balance and core evaluator contract read; no individual authored labels inspected.",
+  "judgments_must_be_written_before_label_comparison": true
+}

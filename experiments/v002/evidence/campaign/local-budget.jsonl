@@ -1,0 +1,15 @@
+{"cap_seconds":"3600","event":"local_budget","schema":1}
+{"event":"reserve","key":"campaign/preflight-local-001/local-telemetry.jsonl:1","timeout_seconds":"60","used_seconds":"60"}
+{"elapsed_seconds":"19.781999999999243","event":"complete","halted":false,"key":"campaign/preflight-local-001/local-telemetry.jsonl:1","used_seconds":"19.781999999999243"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:1","timeout_seconds":"60","used_seconds":"79.781999999999243"}
+{"elapsed_seconds":"3.2030000000013388","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:1","used_seconds":"22.9850000000005818"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:2","timeout_seconds":"60","used_seconds":"82.9850000000005818"}
+{"elapsed_seconds":"2.8280000000013388","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:2","used_seconds":"25.8130000000019206"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:3","timeout_seconds":"60","used_seconds":"85.8130000000019206"}
+{"elapsed_seconds":"2.8430000000007567","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:3","used_seconds":"28.6560000000026773"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:4","timeout_seconds":"60","used_seconds":"88.6560000000026773"}
+{"elapsed_seconds":"3.811999999998079","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:4","used_seconds":"32.4680000000007563"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:5","timeout_seconds":"60","used_seconds":"92.4680000000007563"}
+{"elapsed_seconds":"4.1560000000026776","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:5","used_seconds":"36.6240000000034339"}
+{"event":"reserve","key":"campaign/v002-development-local-002/local-telemetry.jsonl:6","timeout_seconds":"60","used_seconds":"96.6240000000034339"}
+{"elapsed_seconds":"4.109000000004016","event":"complete","halted":false,"key":"campaign/v002-development-local-002/local-telemetry.jsonl:6","used_seconds":"40.7330000000074499"}

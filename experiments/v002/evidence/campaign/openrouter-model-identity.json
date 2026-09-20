@@ -1,0 +1,24 @@
+[
+  {
+    "id": "openai/gpt-4.1-mini",
+    "canonical_slug": "openai/gpt-4.1-mini-2025-04-14",
+    "created": 1744651381,
+    "pricing": {
+      "prompt": "0.0000004",
+      "completion": "0.0000016",
+      "web_search": "0.01",
+      "input_cache_read": "0.0000001"
+    },
+    "supported_parameters": [
+      "max_completion_tokens",
+      "max_tokens",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ]
+  }
+]

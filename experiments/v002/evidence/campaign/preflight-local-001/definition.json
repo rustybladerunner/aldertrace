@@ -1,0 +1,77 @@
+{
+  "case_ids": [
+    "c-c70a84698c42"
+  ],
+  "dataset_sha256": "4e17008b3ed6e9b57d383db3bd5708eab81ce45afd43f6a8514eac9549bfa5ad",
+  "evidence_kind": "development",
+  "label_status": "agent_authored_unreviewed",
+  "models": {
+    "local": "llama3.2:latest"
+  },
+  "policy": "all_cases",
+  "resource_before": {
+    "approval_reference": "user-authorized-2026-09-20-2usd-3600seconds",
+    "gpu": [
+      {
+        "index": 0,
+        "memory_free_mib": 6157.0,
+        "memory_total_mib": 8192.0,
+        "memory_used_mib": 2035.0,
+        "utilization_percent": 22.0,
+        "uuid": "GPU-REDACTED-01"
+      }
+    ],
+    "local_model_digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+    "system_memory_available_mb": 31845
+  },
+  "schema": 2,
+  "settings": {
+    "chat_max_tokens": 512,
+    "chat_seed": 20260919,
+    "chat_temperature": 0,
+    "local_num_predict": 1,
+    "local_seed": 1,
+    "local_temperature": 0
+  },
+  "source_commit": "c7f95426fbeada5a840dcc155a14649b798b3214",
+  "source_files": {
+    "adapters.py": "1320ef78325733dce446e6d035a5fb025c43ae3701da253be4f41dc254fb9809",
+    "analysis.py": "09a1222e7895cb4cb0add2c52108724850439873c7e737005f407b724c1a259e",
+    "budget.py": "29dd2015c59c84b4c07c7a8526d26ec00e94ad3db8c11f3ac2459108283465d5",
+    "development.py": "6f26c0dc7f50ea805d0b50ae85567287e0c431eca64607e7bdac60a020abd490",
+    "journal.py": "10b39fb1c4690015a8fac5afc2d82b527f22b403838e946faec1d9d923e31db6",
+    "live_development.py": "85dc05b48f16dc726c61fb1e15eaaf310dec86120337720e3db99f6fd777e7dc",
+    "local_capture.py": "64b3a35b38daaa6b07d0539c5089d1cca0cb6de86e52c1555d63dd57c45fedf9",
+    "local_resources.py": "49de7a45287b13b0502695fcaf669b0907a662a1ee3612424cc7593109c14d18",
+    "local_worker.py": "1a1921630c796adf78dad305f8ed20fda933aa6db43e2e8ec86f40662746e97a",
+    "locks.py": "78b477b6a32217090dabb0de9ba1dcae1473815caa41abed176f081d1a5e92b7",
+    "metrics_report.py": "9167f973c0f58acb0faf77dc0776055d93a159f5a287c906a1469704d64d2bb9",
+    "preflight.py": "3671642929507e28357db7d3413a769a027b35d9c0a80c73f827e1606bc4b781",
+    "replay_analysis.py": "f1296e3a5d92db9b6695405b2c67fe3e0dfde30ff34579bdcccae5b121b13c4c",
+    "review_pack.py": "16eec32c33a1e1fd8d1a80fc2db195bc971c86948824fe37263f0f8da128bd47",
+    "runner.py": "574b01494e54dd1e6593a49f9e100a3a9b3bf93b370e8756cc8ca01a40b8b57d",
+    "test_adapters.py": "1fd487a534041e3939ad7122355745a0158f6d935cd56172a54c53fe7d6f9e36",
+    "test_analysis.py": "38f28af2139d8a4a276fb04e845fb62cb4d24061a91cd306fdab5c2374625a15",
+    "test_budget.py": "890cda3b3b88f8232ee3c4a65f3bee5b9cdee93530e816d2e61dde65f0b6b8b0",
+    "test_development.py": "73fc4a5284434238094b09277e9dc3899e128ada25b53a667a8bbc4a5d10fad3",
+    "test_journal.py": "e64aa0503681e293e57c17d2cb97bcd772913d84a395a9e0a30e6e8e5c7c543d",
+    "test_live_development.py": "aa308308148d29a25f2ef76a237fa433cc457d023eb8e6901866bf00a4f878c0",
+    "test_local_capture.py": "1dc8659952517cef6ba15a9c92631bfcdddc87a159762d3b6351151eccf47ec2",
+    "test_local_resources.py": "23ea11fbf3dde88922529f5589f80fbb84002778cf25b7f32b503be77555d8dc",
+    "test_locks.py": "4fc883a30913212fd1005a468b65d9342506e571f43507eb7b4e3b233da8d1d4",
+    "test_preflight.py": "7f1e358fe24deba4315d1f437ea00a9910123995f83cde4385972cceb1d81836",
+    "test_replay_analysis.py": "b58c9f8a32902e08dc78de53ddf1256789846dace1d332de6e368bcc2971d3b7",
+    "test_review_pack.py": "b3aa4a13f3c26fff4ff18d4c3a9ec7aaaf9b1266ded27245676b7c7469cbb38c",
+    "test_runner.py": "404a5339a79d1c6493582b1ccbe059c98c8ef963186d2bb570ba2276a87ae2a6",
+    "test_token_accounting.py": "19f923c78c40d008c59185abd4c06c73e1b3abd2a13aee013e96bb09478754fd",
+    "test_transport.py": "948c893c9f2c9142e09850482b2c87ca51641680f20a3c765958d430ff329ca1",
+    "token_accounting.py": "b3388b22e09a493622d3c7f666a0f94e96582cf694acc27bd5d5489c6a15b40e",
+    "transport.py": "85fa348bcfbe83dd872d0177509b3738a29859b631f50621b166430a51ea63df"
+  },
+  "split": "development",
+  "started_utc": "2026-09-20T03:25:12.279300+00:00",
+  "synthetic_only": true,
+  "threshold": 0.0,
+  "threshold_status": "exploratory; not calibrated",
+  "trials": 1
+}

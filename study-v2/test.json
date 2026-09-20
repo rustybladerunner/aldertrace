@@ -1,0 +1,3014 @@
+[
+  {
+    "id": "v2-02836e99227ae4e2",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/dummy-cookie.headers",
+        "command": "python fixtures/cookie_attributes.py --dummy-session",
+        "skip_condition": "Inspect required attributes of the wholly synthetic session-cookie response. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-cookie-attributes-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/cookie_attributes.py --dummy-session",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/static-cookie.headers",
+          "command": "python fixtures/cookie_attributes.py --dummy-session",
+          "exit_code": 1
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/status_code.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The dummy-cookie attribute inspection passes for this response and the audit retains an unrelated static-asset result."
+    },
+    "document": "# Cookie Attributes\n\nInspect required attributes of the wholly synthetic session-cookie response.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The relevant response-cookie inspection succeeds independently of other response checks."
+    },
+    "authoring_variant": "cookie-attributes/supported",
+    "concept_cluster": "browser-policy/cookie-attributes",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-0291d8a6e4f1df83",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/outcome-selection.md",
+        "command": null,
+        "skip_condition": "Explain why choosing the most favorable outcome after measuring many outcomes weakens an ordinary single-outcome inference."
+      },
+      "current_revision": "experimental-assignment-outcome-selection-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Selection favors chance extremes among the measured outcomes, so the reported result needs the prespecified primary outcome or a method that accounts for the selection."
+    },
+    "document": "# Outcome Selection\n\nBefore collection, distinguish primary outcomes from secondary or exploratory outcomes. Selecting the strongest-looking result from a large set is itself part of the analysis and changes the interpretation of an ordinary isolated threshold. Report what was measured and how selections were made. Exploratory findings can motivate a new experiment with a prospectively chosen outcome rather than being relabeled as the original test.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies selective reporting as a change to the inference procedure."
+    },
+    "authoring_variant": "outcome-selection/supported",
+    "concept_cluster": "experimental-assignment/outcome-selection",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-02cacb5cfd47a862",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/frame-sandbox.html",
+        "command": "python fixtures/frame_capabilities.py --toy-frame",
+        "skip_condition": "Check the capabilities available to the disposable embedded frame under its declared sandbox attributes. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-iframe-sandbox-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-iframe-sandbox-r1",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/html_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-iframe-sandbox-r1",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/frame_capabilities.py --toy-frame",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "frame-prototype",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/frame_capabilities.py --toy-frame",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The packaged frame fixture passes its capability assertions; a source-format check is included as supporting bookkeeping."
+    },
+    "document": "# Iframe Sandbox\n\nCheck the capabilities available to the disposable embedded frame under its declared sandbox attributes.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Functional capability evidence exists for the exact current frame artifact."
+    },
+    "authoring_variant": "iframe-sandbox/supported",
+    "concept_cluster": "browser-policy/iframe-sandbox",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-0d3f205557743a97",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/deterministic-archive.md",
+        "command": null,
+        "skip_condition": "Explain why identical source contents need not produce byte-identical compressed archives when metadata or compressor settings differ."
+      },
+      "current_revision": "compressed-streams-deterministic-archive-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Timestamps, member ordering and compression settings can alter the encoded archive, so reproducible builds must fix those inputs as well as file contents."
+    },
+    "document": "# Deterministic Archive\n\nReproducible compressed archives require a defined serialization process. Member order, timestamps, path metadata, compression settings and tool behavior can all affect output bytes even when source file contents match. Fix the relevant inputs and record tool versions. Validate reproducibility by building from clean inputs more than once, and distinguish equal extracted content from byte-identical archive artifacts.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies additional serialization inputs that affect reproducibility."
+    },
+    "authoring_variant": "deterministic-archive/supported",
+    "concept_cluster": "compressed-streams/deterministic-archive",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-108c76ab0b3be283",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/expanded-size.md",
+        "command": null,
+        "skip_condition": "Explain why limiting compressed input bytes alone does not bound decompressed output memory."
+      },
+      "current_revision": "compressed-streams-expanded-size-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Highly compressible input can expand far beyond its encoded size, so enforce an output-byte or resource limit while decoding as well as an input limit."
+    },
+    "document": "# Expanded Size\n\nCompression ratios vary with content. A compact encoded stream can describe a much larger output, so an input-size check does not by itself bound allocation or disk use. Apply output and work limits during decoding, before materializing an unlimited result. If the limit is reached, retain a distinct failure status rather than presenting the truncated output as a successfully decoded complete object.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Names expansion and the necessary limit at the decoded boundary."
+    },
+    "authoring_variant": "expanded-size/supported",
+    "concept_cluster": "compressed-streams/expanded-size",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-1117f9111eabb763",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/probe-lag.json",
+        "command": "python bench/thermal_ramp.py --simulation",
+        "skip_condition": "Evaluate the simulated temperature probe's lag response against the required ramp fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-thermal-lag-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-thermal-lag-r1",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/thermal_ramp.py --simulation",
+          "exit_code": null
+        },
+        {
+          "trusted": true,
+          "revision": "thermal-draft",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/thermal_ramp.py --simulation",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-thermal-lag-r1",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/checksum_file.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The current ramp execution was interrupted and has no exit value; the earlier coefficients had passed."
+    },
+    "document": "# Thermal Lag\n\nEvaluate the simulated temperature probe's lag response against the required ramp fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A missing current outcome cannot be supplied by an older simulation or a file checksum."
+    },
+    "authoring_variant": "thermal-lag/unsupported",
+    "concept_cluster": "laboratory-instruments/thermal-lag",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-12ce8c0516a433fa",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/resource-policy.html",
+        "command": "python fixtures/mixed_content.py --local-origins",
+        "skip_condition": "Validate mixed-content behavior in the local synthetic page fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-mixed-content-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "page-initial",
+          "artifact": "web/resource-policy.html",
+          "command": "python fixtures/mixed_content.py --local-origins",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-mixed-content-r1",
+          "artifact": "web/resource-policy.html",
+          "command": "python fixtures/mixed_content.py --local-origins",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-mixed-content-r1",
+          "artifact": "web/fixture-origins.json",
+          "command": "python fixtures/origin_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The local page's relevant fixture passes while an obsolete page revision retains its previous failure."
+    },
+    "document": "# Mixed Content\n\nValidate mixed-content behavior in the local synthetic page fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current page has a successful applicable check in addition to fixture setup validation."
+    },
+    "authoring_variant": "mixed-content/supported",
+    "concept_cluster": "browser-policy/mixed-content",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-18af4f8df793a16a",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/interference.md",
+        "command": null,
+        "skip_condition": "Explain why one unit's intervention affecting another unit can invalidate a simple no-interference treatment contrast."
+      },
+      "current_revision": "experimental-assignment-interference-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Random labels make spillovers impossible; a treated unit changing a control unit's environment cannot affect the comparison."
+    },
+    "document": "# Interference\n\nTreatment can change shared environments, communication or resources, causing effects across assigned units. A simple comparison that assumes each outcome depends only on its own assignment may then answer a different question from the intended isolated effect. Anticipate plausible spillovers and choose grouping or exposure definitions accordingly. Keep the effect of the assignment policy distinct from an assumed effect on an isolated unit.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Claims assignment randomization prevents physical or behavioral spillovers."
+    },
+    "authoring_variant": "interference/unsupported",
+    "concept_cluster": "experimental-assignment/interference",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-1985ad4e5fcf7c93",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/random-access-state.md",
+        "command": null,
+        "skip_condition": "Explain why seeking to an arbitrary compressed byte offset may not permit decoding from that point."
+      },
+      "current_revision": "compressed-streams-random-access-state-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Decoding can depend on earlier dictionary or framing state, so random access needs independently decodable blocks or an index carrying the necessary restart information."
+    },
+    "document": "# Random Access State\n\nMany compression schemes refer to earlier decoded data or maintain state across the stream. An arbitrary byte offset may therefore be neither a frame boundary nor a valid decoding restart point. If random access matters, select a format with suitable blocks or build an index that captures required restart information. Test seeks into several regions and verify exact output against a full sequential decode.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies state dependencies and a suitable access structure."
+    },
+    "authoring_variant": "random-access-state/supported",
+    "concept_cluster": "compressed-streams/random-access-state",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-1993fe54f7cfff2b",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/mime-policy.headers",
+        "command": "python fixtures/mime_enforcement.py --toy-responses",
+        "skip_condition": "Exercise response MIME enforcement using the declared synthetic response set. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-mime-handling-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-mime-handling-r1",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/mime_enforcement.py --toy-responses",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-mime-handling-r1",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/content_length.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "mime-old",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/mime_enforcement.py --toy-responses",
+          "exit_code": 3
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-mime-handling-r1",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/mime_enforcement.py --toy-responses",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The expected MIME behavior passed under the exact fixture command and argument set."
+    },
+    "document": "# Mime Handling\n\nExercise response MIME enforcement using the declared synthetic response set.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The correct functional command has a current trusted pass."
+    },
+    "authoring_variant": "mime-handling/supported",
+    "concept_cluster": "browser-policy/mime-handling",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-1e2013ebad32e7c9",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/mime-policy.headers",
+        "command": "python fixtures/mime_enforcement.py --toy-responses",
+        "skip_condition": "Exercise response MIME enforcement using the declared synthetic response set. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-mime-handling-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-mime-handling-r1",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/mime_inventory.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-mime-handling-r1",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/content_length.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "mime-old",
+          "artifact": "web/mime-policy.headers",
+          "command": "python fixtures/mime_enforcement.py --toy-responses",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A MIME inventory command succeeded, but the enforcement command itself is absent from the records."
+    },
+    "document": "# Mime Handling\n\nExercise response MIME enforcement using the declared synthetic response set.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Listing response types and measuring length do not demonstrate the enforcement prerequisite."
+    },
+    "authoring_variant": "mime-handling/unsupported",
+    "concept_cluster": "browser-policy/mime-handling",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-20ef8f2ff51446e7",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/inertial-matrix.json",
+        "command": "python bench/orientation_matrix.py --poses",
+        "skip_condition": "Verify the synthetic inertial sensor's orientation matrix on the declared pose fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-inertial-orientation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-inertial-orientation-r1",
+          "artifact": "instruments/inertial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": false
+        },
+        {
+          "trusted": true,
+          "revision": "matrix-trial",
+          "artifact": "instruments/inertial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-inertial-orientation-r1",
+          "artifact": "instruments/trial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The fixture returned false as a boolean status and trial matrices supplied the remaining successful records."
+    },
+    "document": "# Inertial Orientation\n\nVerify the synthetic inertial sensor's orientation matrix on the declared pose fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Boolean false does not satisfy integer exit zero, and neither trial result is bound to the final matrix."
+    },
+    "authoring_variant": "inertial-orientation/unsupported",
+    "concept_cluster": "laboratory-instruments/inertial-orientation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-304c320ffb4a2373",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/humidity-compensation.json",
+        "command": "python bench/humidity_grid.py --synthetic",
+        "skip_condition": "Test the synthetic humidity compensation grid against the declared cross-variable fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-humidity-compensation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-humidity-compensation-r1",
+          "artifact": "instruments/humidity-compensation.json",
+          "command": "python bench/humidity_grid.py --synthetic",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-humidity-compensation-r1",
+          "artifact": "instruments/raw-humidity.json",
+          "command": "python bench/raw_sensor.py",
+          "exit_code": 4
+        },
+        {
+          "trusted": true,
+          "revision": "humidity-old",
+          "artifact": "instruments/humidity-compensation.json",
+          "command": "python bench/humidity_grid.py --synthetic",
+          "exit_code": 4
+        }
+      ],
+      "explanation": "The compensation grid passed its cross-variable test; a separate raw-sensor model produced a warning."
+    },
+    "document": "# Humidity Compensation\n\nTest the synthetic humidity compensation grid against the declared cross-variable fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The bound compensation-grid pass is relevant, while the warning and old failure concern other evidence identities."
+    },
+    "authoring_variant": "humidity-compensation/supported",
+    "concept_cluster": "laboratory-instruments/humidity-compensation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-315e9d72ffaec537",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/baseline-balance.md",
+        "command": null,
+        "skip_condition": "Explain why a chance baseline difference between randomized arms is possible without proving allocation manipulation."
+      },
+      "current_revision": "experimental-assignment-baseline-balance-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Randomization guarantees identical baseline averages in every sample, so any observed difference proves the randomization failed."
+    },
+    "document": "# Baseline Balance\n\nA finite randomized sample can show baseline differences by chance. Such differences may affect precision, but their existence alone does not establish a broken assignment procedure. Audit the actual allocation mechanism and report important baseline characteristics. Plan justified adjustment or stratification prospectively where possible. Do not repeatedly rerandomize until an attractive result appears without defining and accounting for that design.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats a probabilistic design property as exact matching."
+    },
+    "authoring_variant": "baseline-balance/unsupported",
+    "concept_cluster": "experimental-assignment/baseline-balance",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-3355e7f8d7ad1722",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/crossover-carryover.md",
+        "command": null,
+        "skip_condition": "Explain why a crossover experiment can need a washout or a model of carryover between conditions."
+      },
+      "current_revision": "experimental-assignment-crossover-carryover-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Giving each unit both conditions automatically cancels every lasting effect, regardless of order or time between periods."
+    },
+    "document": "# Crossover Carryover\n\nCrossover designs compare conditions within the same unit, but earlier exposure may influence later outcomes. Counterbalancing order helps with some order effects and does not by itself remove every carryover mechanism. Decide whether a justified washout is possible and whether the intended estimand remains meaningful. Record period and sequence, and test the design on tasks where the unit can genuinely return to the relevant starting condition.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes within-unit comparison erases temporal dependence."
+    },
+    "authoring_variant": "crossover-carryover/unsupported",
+    "concept_cluster": "experimental-assignment/crossover-carryover",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-34177e22f25dd005",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/attrition-comparison.md",
+        "command": null,
+        "skip_condition": "Explain why removing participants who disappear after assignment can bias an arm comparison."
+      },
+      "current_revision": "experimental-assignment-attrition-comparison-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Once randomization happens, any later removal is harmless because the original random process permanently guarantees comparable survivors."
+    },
+    "document": "# Attrition Comparison\n\nFollow-up loss can differ between experiment arms or depend on results that would have been observed. Dropping missing units without examining this mechanism can undermine the original comparison. Track every assigned unit, report losses and their reasons, and specify missing-data handling prospectively. Sensitivity analyses can show dependence on assumptions; they do not recover unobserved outcomes with certainty.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes the initial assignment protects an arbitrarily selected later subset."
+    },
+    "authoring_variant": "attrition-comparison/unsupported",
+    "concept_cluster": "experimental-assignment/attrition-comparison",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-398ae312e59a579e",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/assignment-unit.md",
+        "command": null,
+        "skip_condition": "Explain why the randomization unit determines which observations can be treated as independently assigned."
+      },
+      "current_revision": "experimental-assignment-assignment-unit-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Ten measurements from each assigned group create ten independent random assignments, even though every member received the same treatment together."
+    },
+    "document": "# Assignment Unit\n\nAn experiment assigns treatment to a defined unit, which may be a person, task, machine or entire group. Multiple observations inside that unit do not create additional independent assignments. Preserve assignment identifiers in collected data and plan an analysis that respects their grouping. Reporting many measurements without their dependence structure can make uncertainty appear smaller than the design supports.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Mistakes repeated observations within one assignment for independent assignments."
+    },
+    "authoring_variant": "assignment-unit/unsupported",
+    "concept_cluster": "experimental-assignment/assignment-unit",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-39cff9929360c363",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/assignment-unit.md",
+        "command": null,
+        "skip_condition": "Explain why the randomization unit determines which observations can be treated as independently assigned."
+      },
+      "current_revision": "experimental-assignment-assignment-unit-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If a whole group receives one assignment, its members share that assignment; analysis must account for group dependence instead of counting each member as separately randomized."
+    },
+    "document": "# Assignment Unit\n\nAn experiment assigns treatment to a defined unit, which may be a person, task, machine or entire group. Multiple observations inside that unit do not create additional independent assignments. Preserve assignment identifiers in collected data and plan an analysis that respects their grouping. Reporting many measurements without their dependence structure can make uncertainty appear smaller than the design supports.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects assignment structure to dependence and the analysis unit."
+    },
+    "authoring_variant": "assignment-unit/supported",
+    "concept_cluster": "experimental-assignment/assignment-unit",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-4054bec15e589b77",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/random-access-state.md",
+        "command": null,
+        "skip_condition": "Explain why seeking to an arbitrary compressed byte offset may not permit decoding from that point."
+      },
+      "current_revision": "compressed-streams-random-access-state-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Every compressed byte corresponds to one output position, so a file seek is sufficient to resume decoding anywhere."
+    },
+    "document": "# Random Access State\n\nMany compression schemes refer to earlier decoded data or maintain state across the stream. An arbitrary byte offset may therefore be neither a frame boundary nor a valid decoding restart point. If random access matters, select a format with suitable blocks or build an index that captures required restart information. Test seeks into several regions and verify exact output against a full sequential decode.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes a direct byte mapping that compression does not generally preserve."
+    },
+    "authoring_variant": "random-access-state/unsupported",
+    "concept_cluster": "compressed-streams/random-access-state",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-40db3e8eb790da7b",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/spectral-axis.csv",
+        "command": "python bench/wavelength_peaks.py --fixture",
+        "skip_condition": "Compare the simulated spectrometer axis with the fixture's reference peak positions. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-spectral-peaks-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/spectral-axis.csv",
+          "command": "python bench/wavelength_peaks.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/spectral-axis.csv",
+          "command": "python bench/intensity_range.py",
+          "exit_code": 1
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/reference-peaks.csv",
+          "command": "python bench/reference_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The spectral-axis comparison passes on this table and identifies the dedicated peak-position command."
+    },
+    "document": "# Spectral Peaks\n\nCompare the simulated spectrometer axis with the fixture's reference peak positions.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The axis prerequisite passes even though an independent intensity check fails."
+    },
+    "authoring_variant": "spectral-peaks/supported",
+    "concept_cluster": "laboratory-instruments/spectral-peaks",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-41125b8ce227b63e",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/isolation-policy.headers",
+        "command": "python fixtures/isolation_flags.py --two-origins",
+        "skip_condition": "Evaluate the synthetic two-origin fixture under the intended isolation headers. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-cross-origin-isolation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "isolation-prototype",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/header_parse.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 0
+        },
+        {
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The only functional success predates the final header change, while the final headers merely parse successfully."
+    },
+    "document": "# Cross Origin Isolation\n\nEvaluate the synthetic two-origin fixture under the intended isolation headers.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "There is no trusted current functional result after the isolation-header edit."
+    },
+    "authoring_variant": "cross-origin-isolation/unsupported",
+    "concept_cluster": "browser-policy/cross-origin-isolation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-4144bf3d6119899f",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/balance-response.csv",
+        "command": "python bench/balance_steps.py --synthetic",
+        "skip_condition": "Compare the synthetic balance response with the declared step-mass fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-balance-linearity-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-response.csv",
+          "command": "python bench/balance_steps.py --synthetic",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-zero.csv",
+          "command": "python bench/zero_offset.py",
+          "exit_code": 3
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-response.csv",
+          "command": "python bench/balance_steps.py --synthetic",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The step-response table was checked against the specified simulated masses and the applicable result passes."
+    },
+    "document": "# Balance Linearity\n\nCompare the synthetic balance response with the declared step-mass fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The step-mass prerequisite has its own trusted success; zero-offset diagnostics and untrusted notes do not replace it."
+    },
+    "authoring_variant": "balance-linearity/supported",
+    "concept_cluster": "laboratory-instruments/balance-linearity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-441f724bc43b882c",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/spectral-axis.csv",
+        "command": "python bench/wavelength_peaks.py --fixture",
+        "skip_condition": "Compare the simulated spectrometer axis with the fixture's reference peak positions. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-spectral-peaks-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/spectral-axis.csv",
+          "command": "python bench/wavelength_peaks.py --alternative",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/spectral-axis.csv",
+          "command": "python bench/intensity_range.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-spectral-peaks-r1",
+          "artifact": "instruments/reference-peaks.csv",
+          "command": "python bench/reference_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The success identifies a peak-position command for another operating mode; the required fixture mode was not executed."
+    },
+    "document": "# Spectral Peaks\n\nCompare the simulated spectrometer axis with the fixture's reference peak positions.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A similar command with different arguments is not the exact required execution identity."
+    },
+    "authoring_variant": "spectral-peaks/unsupported",
+    "concept_cluster": "laboratory-instruments/spectral-peaks",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-46d13457b2307bcc",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/image-policy.headers",
+        "command": "python fixtures/csp_images.py --isolated",
+        "skip_condition": "Exercise the synthetic page's allowed and blocked image sources under its response policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-image-source-policy-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-image-source-policy-r1",
+          "artifact": "web/image-policy.headers",
+          "command": "python fixtures/csp_images.py --isolated",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-image-source-policy-r1",
+          "artifact": "web/style-policy.headers",
+          "command": "python fixtures/csp_styles.py",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "image-policy-draft",
+          "artifact": "web/image-policy.headers",
+          "command": "python fixtures/csp_images.py --isolated",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The actual response-header bundle passes the isolated image-source fixture; a separate stylesheet fixture has a warning."
+    },
+    "document": "# Image Source Policy\n\nExercise the synthetic page's allowed and blocked image sources under its response policy.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The image policy's bound functional test succeeds regardless of the separate stylesheet result."
+    },
+    "authoring_variant": "image-source-policy/supported",
+    "concept_cluster": "browser-policy/image-source-policy",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-46dac8d7d0d9d8f9",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/optional-stopping.md",
+        "command": null,
+        "skip_condition": "Explain why repeatedly checking a conventional fixed-sample significance threshold and stopping at the first crossing changes its error behavior."
+      },
+      "current_revision": "experimental-assignment-optional-stopping-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Each extra look creates another opportunity to cross by chance, so the planned fixed-sample error interpretation no longer applies unless the sequential procedure accounts for those looks."
+    },
+    "document": "# Optional Stopping\n\nA fixed-sample statistical procedure assumes its specified collection and analysis plan. Repeatedly looking and stopping on a favorable result changes that procedure. If sequential decisions are needed, choose an appropriate sequential design before collecting outcomes and report the looks that occurred. A predeclared stopping rule also makes time and cost decisions auditable instead of letting favorable fluctuations determine the sample.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Explains repeated opportunities and the need for a sequentially valid procedure."
+    },
+    "authoring_variant": "optional-stopping/supported",
+    "concept_cluster": "experimental-assignment/optional-stopping",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-4b41edaab18fab11",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/balance-response.csv",
+        "command": "python bench/balance_steps.py --synthetic",
+        "skip_condition": "Compare the synthetic balance response with the declared step-mass fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-balance-linearity-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-response.csv",
+          "command": "python bench/balance_steps.py --synthetic",
+          "exit_code": 7
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-zero.csv",
+          "command": "python bench/zero_offset.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-balance-linearity-r1",
+          "artifact": "instruments/balance-response.csv",
+          "command": "python bench/balance_steps.py --synthetic",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The step-response result reports a nonzero deviation failure, although a different zero-offset table passes."
+    },
+    "document": "# Balance Linearity\n\nCompare the synthetic balance response with the declared step-mass fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Success on zero offset cannot establish linearity, and untrusted optimism cannot override the failed required check."
+    },
+    "authoring_variant": "balance-linearity/unsupported",
+    "concept_cluster": "laboratory-instruments/balance-linearity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-539cef2d815fda75",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/encoded-length.md",
+        "command": null,
+        "skip_condition": "Explain why an HTTP body length for compressed representation bytes does not directly specify the decompressed content length."
+      },
+      "current_revision": "compressed-streams-encoded-length-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The encoded body and decoded content are different representations, so byte counts must be recorded at the boundary they measure rather than substituted for one another."
+    },
+    "document": "# Encoded Length\n\nA compressed transfer has at least two relevant lengths: encoded bytes received and decoded bytes produced. Keep these measurements separate in limits, progress reporting and diagnostics. The representation metadata must be interpreted under the protocol and content-encoding rules in use. Never reserve an unlimited output buffer solely from a compressed transfer length or label that number as measured decompressed size.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes representation boundaries in byte accounting."
+    },
+    "authoring_variant": "encoded-length/supported",
+    "concept_cluster": "compressed-streams/encoded-length",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-55a4845369fc1109",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/encoded-length.md",
+        "command": null,
+        "skip_condition": "Explain why an HTTP body length for compressed representation bytes does not directly specify the decompressed content length."
+      },
+      "current_revision": "compressed-streams-encoded-length-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Content length always gives the final uncompressed byte count even when the transferred representation is compressed."
+    },
+    "document": "# Encoded Length\n\nA compressed transfer has at least two relevant lengths: encoded bytes received and decoded bytes produced. Keep these measurements separate in limits, progress reporting and diagnostics. The representation metadata must be interpreted under the protocol and content-encoding rules in use. Never reserve an unlimited output buffer solely from a compressed transfer length or label that number as measured decompressed size.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes transfer metadata refers to a different representation than the encoded body."
+    },
+    "authoring_variant": "encoded-length/unsupported",
+    "concept_cluster": "compressed-streams/encoded-length",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-575df304c4d8fe02",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/attrition-comparison.md",
+        "command": null,
+        "skip_condition": "Explain why removing participants who disappear after assignment can bias an arm comparison."
+      },
+      "current_revision": "experimental-assignment-attrition-comparison-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Loss after assignment may depend on the treatment or outcome, so comparing only remaining participants can compare selected groups rather than the original randomized groups."
+    },
+    "document": "# Attrition Comparison\n\nFollow-up loss can differ between experiment arms or depend on results that would have been observed. Dropping missing units without examining this mechanism can undermine the original comparison. Track every assigned unit, report losses and their reasons, and specify missing-data handling prospectively. Sensitivity analyses can show dependence on assumptions; they do not recover unobserved outcomes with certainty.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies outcome-related selection after assignment."
+    },
+    "authoring_variant": "attrition-comparison/supported",
+    "concept_cluster": "experimental-assignment/attrition-comparison",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-5c767564c8412554",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/deterministic-archive.md",
+        "command": null,
+        "skip_condition": "Explain why identical source contents need not produce byte-identical compressed archives when metadata or compressor settings differ."
+      },
+      "current_revision": "compressed-streams-deterministic-archive-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Compression is a pure function of the visible file contents; metadata and tool settings can never change archive bytes."
+    },
+    "document": "# Deterministic Archive\n\nReproducible compressed archives require a defined serialization process. Member order, timestamps, path metadata, compression settings and tool behavior can all affect output bytes even when source file contents match. Fix the relevant inputs and record tool versions. Validate reproducibility by building from clean inputs more than once, and distinguish equal extracted content from byte-identical archive artifacts.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Ignores metadata and encoding choices outside the source payloads."
+    },
+    "authoring_variant": "deterministic-archive/unsupported",
+    "concept_cluster": "compressed-streams/deterministic-archive",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-5e3f418ec99749e5",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/oscillator-model.json",
+        "command": "python bench/timebase_drift.py --sim-clock",
+        "skip_condition": "Check the synthetic oscillator model against the timebase-drift fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-oscillator-timebase-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-oscillator-timebase-r1",
+          "artifact": "instruments/oscillator-model.json",
+          "command": "python bench/timebase_drift.py --sim-clock",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-oscillator-timebase-r1",
+          "artifact": "instruments/reference-clock.json",
+          "command": "python bench/reference_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The declared oscillator model passes and the artifact identity was preserved throughout the runner export."
+    },
+    "document": "# Oscillator Timebase\n\nCheck the synthetic oscillator model against the timebase-drift fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "There is a complete relevant timebase result for this model."
+    },
+    "authoring_variant": "oscillator-timebase/supported",
+    "concept_cluster": "laboratory-instruments/oscillator-timebase",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-5ec4bbc4feea213c",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/backpressure.md",
+        "command": null,
+        "skip_condition": "Explain why a streaming decompressor should respect downstream backpressure instead of expanding all available input immediately."
+      },
+      "current_revision": "compressed-streams-backpressure-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Streaming APIs automatically use constant memory even if the producer expands every chunk before the consumer reads anything."
+    },
+    "document": "# Backpressure\n\nStreaming describes incremental processing, not an automatic bound on every queue. A fast decompressor can create expanded output faster than a downstream writer or parser consumes it. Use bounded buffers and propagate backpressure through the pipeline. Measure queued decoded bytes under a deliberately slow consumer, and make interruption or limit failures visible instead of silently dropping output.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes a streaming interface alone guarantees bounded memory."
+    },
+    "authoring_variant": "backpressure/unsupported",
+    "concept_cluster": "compressed-streams/backpressure",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-5fbaca94e893ee06",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/member-framing.md",
+        "command": null,
+        "skip_condition": "Explain why concatenated compressed members require an explicit decoder policy."
+      },
+      "current_revision": "compressed-streams-member-framing-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Concatenating streams always creates one ordinary stream that every decoder reads fully without any framing decision."
+    },
+    "document": "# Member Framing\n\nSome compressed formats allow multiple members, while decoder APIs differ in how they expose member boundaries and remaining input. Define whether the application accepts one member, several members or trailing data. Verify how much input was consumed and whether every accepted member completed. A successful first-member decode is not automatically evidence that the whole uploaded object followed the intended framing contract.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes universal concatenation behavior across formats and decoders."
+    },
+    "authoring_variant": "member-framing/unsupported",
+    "concept_cluster": "compressed-streams/member-framing",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-6118e73a35e390be",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/filter-transmission.csv",
+        "command": "python bench/filter_transmission.py --sweep",
+        "skip_condition": "Verify the simulated optical filter's transmission sweep against its fixture bounds. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-optical-throughput-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/filter-transmission.csv",
+          "command": "python bench/filter_transmission.py --sweep",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/bypass-transmission.csv",
+          "command": "python bench/filter_transmission.py --sweep",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/filter-transmission.csv",
+          "command": "python bench/csv_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The optical path has not been chosen between filtered and bypass configurations; both candidate tables have passing records."
+    },
+    "document": "# Optical Throughput\n\nVerify the simulated optical filter's transmission sweep against its fixture bounds.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Passing candidate-specific sweeps do not settle which unresolved path must be certified."
+    },
+    "authoring_variant": "optical-throughput/unsupported",
+    "concept_cluster": "laboratory-instruments/optical-throughput",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-65a14e2cc48b2b70",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/intention-to-treat.md",
+        "command": null,
+        "skip_condition": "Explain what an intention-to-treat comparison preserves when some units do not follow their assigned intervention."
+      },
+      "current_revision": "experimental-assignment-intention-to-treat-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Move every non-adherent unit to the arm it actually followed; that preserves randomization because the final behavior is what matters."
+    },
+    "document": "# Intention To Treat\n\nIntention-to-treat analysis retains units in their assigned groups even when adherence differs. This preserves the assigned-policy comparison under the design's assumptions, but does not automatically estimate the effect of everyone following the intervention perfectly. Describe adherence separately and state the estimand. Analyses based on received treatment may answer other questions while requiring additional assumptions about selection into adherence.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Reassigns units based on post-assignment behavior and calls that randomized."
+    },
+    "authoring_variant": "intention-to-treat/unsupported",
+    "concept_cluster": "experimental-assignment/intention-to-treat",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-66c9fc673f31bb9b",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/angle-decoder.json",
+        "command": "python bench/encoder_wrap.py --angles",
+        "skip_condition": "Validate angular wrap behavior in the simulated encoder decoder. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-encoder-wrap-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "encoder-v0",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 10
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-encoder-wrap-r1",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 10
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-encoder-wrap-r1",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The angle decoder passes wrap-around cases under its current mapping, despite a failed test of an obsolete decoder."
+    },
+    "document": "# Encoder Wrap\n\nValidate angular wrap behavior in the simulated encoder decoder.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current trusted wrap result is successful; obsolete and untrusted failures are not applicable counterevidence."
+    },
+    "authoring_variant": "encoder-wrap/supported",
+    "concept_cluster": "laboratory-instruments/encoder-wrap",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-684acbab12211a2e",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/filter-transmission.csv",
+        "command": "python bench/filter_transmission.py --sweep",
+        "skip_condition": "Verify the simulated optical filter's transmission sweep against its fixture bounds. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-optical-throughput-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/filter-transmission.csv",
+          "command": "python bench/filter_transmission.py --sweep",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/bypass-transmission.csv",
+          "command": "python bench/filter_transmission.py --sweep",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-optical-throughput-r1",
+          "artifact": "instruments/filter-transmission.csv",
+          "command": "python bench/filter_transmission.py --sweep",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The chosen optical path is known and the filter transmission table passed that path's fixture."
+    },
+    "document": "# Optical Throughput\n\nVerify the simulated optical filter's transmission sweep against its fixture bounds.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "With scope fixed, the required filter has its own applicable pass."
+    },
+    "authoring_variant": "optical-throughput/supported",
+    "concept_cluster": "laboratory-instruments/optical-throughput",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-69f9a3c934aa9c91",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/truncated-output.md",
+        "command": null,
+        "skip_condition": "Explain why receiving some decoded bytes does not prove a truncated compressed stream was valid."
+      },
+      "current_revision": "compressed-streams-truncated-output-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If the decoder returned useful text before end of input, the whole stream is valid and any final error is only a cleanup warning."
+    },
+    "document": "# Truncated Output\n\nStreaming decoders can produce valid prefixes before they discover an incomplete or damaged suffix. Applications must inspect the final decoding status and required integrity checks before treating the entire object as valid. Decide explicitly whether partial output has a separate use, and label it accordingly. Tests should truncate the stream at several positions, including after most of the useful payload has already been emitted.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Promotes partial output to complete validation despite a later failure."
+    },
+    "authoring_variant": "truncated-output/unsupported",
+    "concept_cluster": "compressed-streams/truncated-output",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-6a43fed90f58fca0",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/clipboard-policy.headers",
+        "command": "python fixtures/clipboard_permission.py --stub",
+        "skip_condition": "Test the stubbed clipboard capability under the declared synthetic permission policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-clipboard-capability-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/clipboard-policy.headers",
+          "command": "python fixtures/clipboard_permission.py --stub",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/clipboard-policy.headers",
+          "command": "python fixtures/clipboard_permission.py --stub",
+          "exit_code": "failed"
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/stub-manifest.json",
+          "command": "python fixtures/stub_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The stub capability test completed and its integer exit status confirms the expected permitted and denied paths."
+    },
+    "document": "# Clipboard Capability\n\nTest the stubbed clipboard capability under the declared synthetic permission policy.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The typed functional success is complete; an untrusted textual annotation does not contradict it."
+    },
+    "authoring_variant": "clipboard-capability/supported",
+    "concept_cluster": "browser-policy/clipboard-capability",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-6bec0c8e6e8ed1bc",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/meter-weighting.csv",
+        "command": "python bench/weighting_curve.py --tones",
+        "skip_condition": "Validate the synthetic acoustic meter weighting curve on the declared tone set. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-acoustic-weighting-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/meter-weighting.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/meter-weighting.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/unweighted.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The tone-set curve comparison succeeded twice on the declared current table."
+    },
+    "document": "# Acoustic Weighting\n\nValidate the synthetic acoustic meter weighting curve on the declared tone set.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Matching successful repeats agree; another curve's failure is outside this prerequisite."
+    },
+    "authoring_variant": "acoustic-weighting/supported",
+    "concept_cluster": "laboratory-instruments/acoustic-weighting",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-6d848583bbf59175",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/resource-policy.html",
+        "command": "python fixtures/mixed_content.py --local-origins",
+        "skip_condition": "Validate mixed-content behavior in the local synthetic page fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-mixed-content-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-mixed-content-r1",
+          "artifact": "web/resource-policy.html",
+          "command": "python fixtures/mixed_content.py --local-origins",
+          "exit_code": 124
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-mixed-content-r1",
+          "artifact": "web/fixture-origins.json",
+          "command": "python fixtures/origin_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-mixed-content-r1",
+          "artifact": "web/resource-policy.html",
+          "command": "python fixtures/mixed_content.py --local-origins",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The current result reports a timeout and only the origin-configuration file has a successful check."
+    },
+    "document": "# Mixed Content\n\nValidate mixed-content behavior in the local synthetic page fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The page's timed-out test has not established the required mixed-content behavior."
+    },
+    "authoring_variant": "mixed-content/unsupported",
+    "concept_cluster": "browser-policy/mixed-content",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-706fbe8ff50ed8ca",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/meter-weighting.csv",
+        "command": "python bench/weighting_curve.py --tones",
+        "skip_condition": "Validate the synthetic acoustic meter weighting curve on the declared tone set. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-acoustic-weighting-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/meter-weighting.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/meter-weighting.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 13
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-acoustic-weighting-r1",
+          "artifact": "instruments/meter-weighting.csv",
+          "command": "python bench/weighting_curve.py --tones",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A matching successful comparison conflicts with another matching failure, while a third record merely repeats success."
+    },
+    "document": "# Acoustic Weighting\n\nValidate the synthetic acoustic meter weighting curve on the declared tone set.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Majority voting over unordered trusted runs is not an authority rule for resolving contradictory evidence."
+    },
+    "authoring_variant": "acoustic-weighting/unsupported",
+    "concept_cluster": "laboratory-instruments/acoustic-weighting",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-778899851accacbb",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/camera-permissions.headers",
+        "command": "python fixtures/camera_policy.py --stub-device",
+        "skip_condition": "Validate camera permission behavior with the synthetic stub device and declared embedding scope. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-camera-permission-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/camera-permissions.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/embedded-camera.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/camera-permissions.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The embedding scope is resolved and the stub-device fixture passes for the applicable permission header."
+    },
+    "document": "# Camera Permission\n\nValidate camera permission behavior with the synthetic stub device and declared embedding scope.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The intended scope is known and its exact header has a passing relevant record."
+    },
+    "authoring_variant": "camera-permission/supported",
+    "concept_cluster": "browser-policy/camera-permission",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-782c10a5985b6c48",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/probe-lag.json",
+        "command": "python bench/thermal_ramp.py --simulation",
+        "skip_condition": "Evaluate the simulated temperature probe's lag response against the required ramp fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-thermal-lag-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-thermal-lag-r1",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/thermal_ramp.py --simulation",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-thermal-lag-r1",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/checksum_file.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "thermal-draft",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/thermal_ramp.py --simulation",
+          "exit_code": 5
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-thermal-lag-r1",
+          "artifact": "instruments/probe-lag.json",
+          "command": "python bench/thermal_ramp.py --simulation",
+          "exit_code": 5
+        }
+      ],
+      "explanation": "The finalized lag coefficients pass the ramp fixture with a bound result; a checksum utility also completed."
+    },
+    "document": "# Thermal Lag\n\nEvaluate the simulated temperature probe's lag response against the required ramp fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The relevant current simulation pass is available independently of draft and nonfunctional checks."
+    },
+    "authoring_variant": "thermal-lag/supported",
+    "concept_cluster": "laboratory-instruments/thermal-lag",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-7b4da7652f3ad97d",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/optional-stopping.md",
+        "command": null,
+        "skip_condition": "Explain why repeatedly checking a conventional fixed-sample significance threshold and stopping at the first crossing changes its error behavior."
+      },
+      "current_revision": "experimental-assignment-optional-stopping-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A five-percent threshold has the same overall false-positive rate regardless of how often results are checked or when collection stops."
+    },
+    "document": "# Optional Stopping\n\nA fixed-sample statistical procedure assumes its specified collection and analysis plan. Repeatedly looking and stopping on a favorable result changes that procedure. If sequential decisions are needed, choose an appropriate sequential design before collecting outcomes and report the looks that occurred. A predeclared stopping rule also makes time and cost decisions auditable instead of letting favorable fluctuations determine the sample.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats a per-design threshold as invariant to an unplanned stopping rule."
+    },
+    "authoring_variant": "optional-stopping/unsupported",
+    "concept_cluster": "experimental-assignment/optional-stopping",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-7b7c6723e24c87e9",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/dictionary-identity.md",
+        "command": null,
+        "skip_condition": "Explain why a stream encoded with a preset dictionary needs the corresponding dictionary during decoding."
+      },
+      "current_revision": "compressed-streams-dictionary-identity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Backreferences or symbols can depend on that dictionary's bytes, so a different dictionary may fail or produce invalid decoding; bind the required dictionary identity to the stream."
+    },
+    "document": "# Dictionary Identity\n\nPreset dictionaries can improve compression by supplying shared byte patterns before input is processed. The encoded stream may depend on the exact dictionary used, not merely one with a similar purpose. Record and verify the dictionary identity according to the format's contract. Keep dictionary availability part of archival and transport planning, and test the failure path for missing or wrong dictionaries.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects encoded references to exact dictionary contents."
+    },
+    "authoring_variant": "dictionary-identity/supported",
+    "concept_cluster": "compressed-streams/dictionary-identity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-7de56b01c5bec135",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/allocation-concealment.md",
+        "command": null,
+        "skip_condition": "Explain why concealing upcoming assignments can protect an experiment before enrollment is complete."
+      },
+      "current_revision": "experimental-assignment-allocation-concealment-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Announcing the entire upcoming assignment sequence improves randomization because recruiters can place participants into whichever arm seems most suitable."
+    },
+    "document": "# Allocation Concealment\n\nGenerating a random assignment sequence and concealing it are different design tasks. Knowledge of upcoming assignments can influence enrollment or task inclusion, even when the sequence itself was random. Keep future assignments unavailable to anyone who can select incoming units until eligibility is settled. Record exceptions and distinguish this protection from blinding outcomes after assignment.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Endorses assignment-aware selection that defeats the randomized enrollment process."
+    },
+    "authoring_variant": "allocation-concealment/unsupported",
+    "concept_cluster": "experimental-assignment/allocation-concealment",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-7fdc20ed1c40e8f5",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/inertial-matrix.json",
+        "command": "python bench/orientation_matrix.py --poses",
+        "skip_condition": "Verify the synthetic inertial sensor's orientation matrix on the declared pose fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-inertial-orientation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "matrix-trial",
+          "artifact": "instruments/inertial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": 6
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-inertial-orientation-r1",
+          "artifact": "instruments/trial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": 6
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-inertial-orientation-r1",
+          "artifact": "instruments/inertial-matrix.json",
+          "command": "python bench/orientation_matrix.py --poses",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The pose fixture validates the final matrix while earlier trial matrices remain in the evidence bundle."
+    },
+    "document": "# Inertial Orientation\n\nVerify the synthetic inertial sensor's orientation matrix on the declared pose fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A complete current-matrix pass exists independently of the unsuccessful trials."
+    },
+    "authoring_variant": "inertial-orientation/supported",
+    "concept_cluster": "laboratory-instruments/inertial-orientation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-815dfe907744af5c",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/angle-decoder.json",
+        "command": "python bench/encoder_wrap.py --angles",
+        "skip_condition": "Validate angular wrap behavior in the simulated encoder decoder. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-encoder-wrap-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": "true",
+          "revision": "laboratory-instruments-encoder-wrap-r1",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-encoder-wrap-r1",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "encoder-v0",
+          "artifact": "instruments/angle-decoder.json",
+          "command": "python bench/encoder_wrap.py --angles",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The apparently successful wrap record uses a string trust marker rather than a verified boolean provenance field."
+    },
+    "document": "# Encoder Wrap\n\nValidate angular wrap behavior in the simulated encoder decoder.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Text saying true does not meet the trusted-record type contract, and the only trusted success is obsolete."
+    },
+    "authoring_variant": "encoder-wrap/unsupported",
+    "concept_cluster": "laboratory-instruments/encoder-wrap",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-85d21da5ade82d21",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/frame-sandbox.html",
+        "command": "python fixtures/frame_capabilities.py --toy-frame",
+        "skip_condition": "Check the capabilities available to the disposable embedded frame under its declared sandbox attributes. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-iframe-sandbox-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-iframe-sandbox-r1",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/html_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-iframe-sandbox-r1",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/frame_capabilities.py --toy-frame",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-iframe-sandbox-r1",
+          "artifact": "web/frame-sandbox.html",
+          "command": "python fixtures/frame_capabilities.py --toy-frame",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Only source formatting was verified; two copied screenshots were transcribed as untrusted capability passes."
+    },
+    "document": "# Iframe Sandbox\n\nCheck the capabilities available to the disposable embedded frame under its declared sandbox attributes.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "HTML shape and untrusted observations cannot replace the required runner execution."
+    },
+    "authoring_variant": "iframe-sandbox/unsupported",
+    "concept_cluster": "browser-policy/iframe-sandbox",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-880b93ab03a4083f",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/isolation-policy.headers",
+        "command": "python fixtures/isolation_flags.py --two-origins",
+        "skip_condition": "Evaluate the synthetic two-origin fixture under the intended isolation headers. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-cross-origin-isolation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "isolation-prototype",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 5
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/header_parse.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-cross-origin-isolation-r1",
+          "artifact": "web/isolation-policy.headers",
+          "command": "python fixtures/isolation_flags.py --two-origins",
+          "exit_code": 5
+        }
+      ],
+      "explanation": "The two-origin fixture confirms the expected isolation flags on the final header bundle despite a failed prototype."
+    },
+    "document": "# Cross Origin Isolation\n\nEvaluate the synthetic two-origin fixture under the intended isolation headers.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Current functional success is present and distinct from merely parsing the header text."
+    },
+    "authoring_variant": "cross-origin-isolation/supported",
+    "concept_cluster": "browser-policy/cross-origin-isolation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-885914ea0be1d4a8",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/dictionary-identity.md",
+        "command": null,
+        "skip_condition": "Explain why a stream encoded with a preset dictionary needs the corresponding dictionary during decoding."
+      },
+      "current_revision": "compressed-streams-dictionary-identity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Any dictionary trained on the same subject is interchangeable because only its topic, not its exact contents, affects decoding."
+    },
+    "document": "# Dictionary Identity\n\nPreset dictionaries can improve compression by supplying shared byte patterns before input is processed. The encoded stream may depend on the exact dictionary used, not merely one with a similar purpose. Record and verify the dictionary identity according to the format's contract. Keep dictionary availability part of archival and transport planning, and test the failure path for missing or wrong dictionaries.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats a concrete decoding dependency as an approximate semantic aid."
+    },
+    "authoring_variant": "dictionary-identity/unsupported",
+    "concept_cluster": "compressed-streams/dictionary-identity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-88c134dd114aa9e6",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/image-policy.headers",
+        "command": "python fixtures/csp_images.py --isolated",
+        "skip_condition": "Exercise the synthetic page's allowed and blocked image sources under its response policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-image-source-policy-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-image-source-policy-r1",
+          "artifact": "web/image-policy.headers",
+          "command": "python fixtures/csp_images.py --isolated",
+          "exit_code": 8
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-image-source-policy-r1",
+          "artifact": "web/image-policy.headers",
+          "command": "python fixtures/header_syntax.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-image-source-policy-r1",
+          "artifact": "web/style-policy.headers",
+          "command": "python fixtures/csp_styles.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The image fixture reports an unexpectedly permitted source, while a syntax validator and stylesheet fixture both succeed."
+    },
+    "document": "# Image Source Policy\n\nExercise the synthetic page's allowed and blocked image sources under its response policy.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Valid syntax and unrelated policy successes do not establish the required image-source behavior."
+    },
+    "authoring_variant": "image-source-policy/unsupported",
+    "concept_cluster": "browser-policy/image-source-policy",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-8b6240b43277cebe",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/humidity-compensation.json",
+        "command": "python bench/humidity_grid.py --synthetic",
+        "skip_condition": "Test the synthetic humidity compensation grid against the declared cross-variable fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-humidity-compensation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-humidity-compensation-r1",
+          "artifact": "instruments/humidity-compensation.json",
+          "command": "python bench/humidity_grid.py --synthetic",
+          "exit_code": 4
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-humidity-compensation-r1",
+          "artifact": "instruments/humidity-compensation.json",
+          "command": "python bench/humidity_grid.py --synthetic",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "humidity-old",
+          "artifact": "instruments/humidity-compensation.json",
+          "command": "python bench/humidity_grid.py --synthetic",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The grid's test failed, and the untrusted display panel nevertheless prints PASS from a previous cached message."
+    },
+    "document": "# Humidity Compensation\n\nTest the synthetic humidity compensation grid against the declared cross-variable fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The explicit current trusted failure controls; cached prose and an older pass cannot validate the grid."
+    },
+    "authoring_variant": "humidity-compensation/unsupported",
+    "concept_cluster": "laboratory-instruments/humidity-compensation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-9290b7a9e154f6b4",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/baseline-balance.md",
+        "command": null,
+        "skip_condition": "Explain why a chance baseline difference between randomized arms is possible without proving allocation manipulation."
+      },
+      "current_revision": "experimental-assignment-baseline-balance-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Random assignment balances characteristics in expectation, not exactly in every finite sample; inspect the allocation process and use a prespecified adjustment rather than infer manipulation from imbalance alone."
+    },
+    "document": "# Baseline Balance\n\nA finite randomized sample can show baseline differences by chance. Such differences may affect precision, but their existence alone does not establish a broken assignment procedure. Audit the actual allocation mechanism and report important baseline characteristics. Plan justified adjustment or stratification prospectively where possible. Do not repeatedly rerandomize until an attractive result appears without defining and accounting for that design.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes expected balance from a deterministic finite-sample guarantee."
+    },
+    "authoring_variant": "baseline-balance/supported",
+    "concept_cluster": "experimental-assignment/baseline-balance",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-97a703e4ce298ba1",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/interference.md",
+        "command": null,
+        "skip_condition": "Explain why one unit's intervention affecting another unit can invalidate a simple no-interference treatment contrast."
+      },
+      "current_revision": "experimental-assignment-interference-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Outcomes may depend on other units' assignments as well as their own, so the design must account for spillovers or define a policy effect that includes them."
+    },
+    "document": "# Interference\n\nTreatment can change shared environments, communication or resources, causing effects across assigned units. A simple comparison that assumes each outcome depends only on its own assignment may then answer a different question from the intended isolated effect. Anticipate plausible spillovers and choose grouping or exposure definitions accordingly. Keep the effect of the assignment policy distinct from an assumed effect on an isolated unit.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies the violated dependence assumption and a design-level response."
+    },
+    "authoring_variant": "interference/supported",
+    "concept_cluster": "experimental-assignment/interference",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-985160a13eaa1057",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/pressure-loop.csv",
+        "command": "python bench/hysteresis_loop.py --sim-pressure",
+        "skip_condition": "Evaluate the synthetic pressure sensor's increasing and decreasing response loop. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-pressure-hysteresis-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-pressure-hysteresis-r1",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/csv_parse.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "pressure-draft",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/hysteresis_loop.py --sim-pressure",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-pressure-hysteresis-r1",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/hysteresis_loop.py --sim-pressure",
+          "exit_code": "0"
+        }
+      ],
+      "explanation": "The table parses, but the only hysteresis pass was for a different release candidate."
+    },
+    "document": "# Pressure Hysteresis\n\nEvaluate the synthetic pressure sensor's increasing and decreasing response loop.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Parsing and a stale pass cannot repair an incorrectly typed current outcome."
+    },
+    "authoring_variant": "pressure-hysteresis/unsupported",
+    "concept_cluster": "laboratory-instruments/pressure-hysteresis",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-99916b9cf3960a24",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/measurement-blinding.md",
+        "command": null,
+        "skip_condition": "Explain how knowing the assigned arm can influence subjective outcome assessment even with valid randomization."
+      },
+      "current_revision": "experimental-assignment-measurement-blinding-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Assessors may interpret ambiguous outcomes differently by arm, so blind assessment or a sufficiently objective prospective rubric reduces that measurement pathway."
+    },
+    "document": "# Measurement Blinding\n\nRandomization controls assignment, not every later measurement decision. When an assessor knows the arm, borderline outcomes can be interpreted differently. Blind assessors where feasible, provide prospective acceptance criteria and record adjudication. When blinding is impossible, disclose that limitation and use objective measurements where they answer the question. Agreement with an expected result is not evidence that an unblinded judgment was unbiased.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates allocation validity from bias in measuring the outcome."
+    },
+    "authoring_variant": "measurement-blinding/supported",
+    "concept_cluster": "experimental-assignment/measurement-blinding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-9be15f997cf4bc00",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/external-link.html",
+        "command": "python fixtures/opener_reference.py --two-windows",
+        "skip_condition": "Check opener-reference behavior in the disposable two-window navigation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-opener-isolation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/internal-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 1
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 1
+        },
+        {
+          "trusted": true,
+          "revision": "link-draft",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The fixture confirms the expected opener isolation for the exact external-link artifact."
+    },
+    "document": "# Opener Isolation\n\nCheck opener-reference behavior in the disposable two-window navigation fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A current pass specifically covers the external link; other records are unrelated, old or untrusted."
+    },
+    "authoring_variant": "opener-isolation/supported",
+    "concept_cluster": "browser-policy/opener-isolation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-9ea5f378c78f6b68",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/flush-versus-finish.md",
+        "command": null,
+        "skip_condition": "Explain why flushing a compressor does not always mean the compressed stream is complete."
+      },
+      "current_revision": "compressed-streams-flush-versus-finish-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A flush can emit buffered data while keeping the stream open; finalization may still need to write end markers or trailers that a complete decoder expects."
+    },
+    "document": "# Flush Versus Finish\n\nCompression APIs often distinguish flushing buffered output from finishing a stream. Flush modes can make current data available without writing the final framing information. Use the documented finalization operation and propagate its errors before reporting success. Test empty and very short payloads as well as ordinary files, since omitted trailers can be easy to miss when a decoder returns partial output early.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes output availability from format completion."
+    },
+    "authoring_variant": "flush-versus-finish/supported",
+    "concept_cluster": "compressed-streams/flush-versus-finish",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-af7099e5a03e953e",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/backpressure.md",
+        "command": null,
+        "skip_condition": "Explain why a streaming decompressor should respect downstream backpressure instead of expanding all available input immediately."
+      },
+      "current_revision": "compressed-streams-backpressure-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Decoded output can accumulate faster than its consumer processes it, so bounded buffering and paused input keep expansion from creating unbounded queued output."
+    },
+    "document": "# Backpressure\n\nStreaming describes incremental processing, not an automatic bound on every queue. A fast decompressor can create expanded output faster than a downstream writer or parser consumes it. Use bounded buffers and propagate backpressure through the pipeline. Measure queued decoded bytes under a deliberately slow consumer, and make interruption or limit failures visible instead of silently dropping output.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects rate imbalance to buffering and a concrete flow-control response."
+    },
+    "authoring_variant": "backpressure/supported",
+    "concept_cluster": "compressed-streams/backpressure",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-b029ea0197437bd0",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/expanded-size.md",
+        "command": null,
+        "skip_condition": "Explain why limiting compressed input bytes alone does not bound decompressed output memory."
+      },
+      "current_revision": "compressed-streams-expanded-size-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A small compressed file always needs less memory than a large one, so checking its file size is a sufficient decompression limit."
+    },
+    "document": "# Expanded Size\n\nCompression ratios vary with content. A compact encoded stream can describe a much larger output, so an input-size check does not by itself bound allocation or disk use. Apply output and work limits during decoding, before materializing an unlimited result. If the limit is reached, retain a distinct failure status rather than presenting the truncated output as a successfully decoded complete object.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes compressed size directly bounds expanded size."
+    },
+    "authoring_variant": "expanded-size/unsupported",
+    "concept_cluster": "compressed-streams/expanded-size",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-b16d11fc266b4c98",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/measurement-blinding.md",
+        "command": null,
+        "skip_condition": "Explain how knowing the assigned arm can influence subjective outcome assessment even with valid randomization."
+      },
+      "current_revision": "experimental-assignment-measurement-blinding-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Randomization prevents assessors from favoring an arm, so revealing treatment labels cannot affect subjective scoring."
+    },
+    "document": "# Measurement Blinding\n\nRandomization controls assignment, not every later measurement decision. When an assessor knows the arm, borderline outcomes can be interpreted differently. Blind assessors where feasible, provide prospective acceptance criteria and record adjudication. When blinding is impossible, disclose that limitation and use objective measurements where they answer the question. Agreement with an expected result is not evidence that an unblinded judgment was unbiased.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes random allocation controls the assessor's later judgment."
+    },
+    "authoring_variant": "measurement-blinding/unsupported",
+    "concept_cluster": "experimental-assignment/measurement-blinding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-b5f6c7313ff12fd0",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/camera-permissions.headers",
+        "command": "python fixtures/camera_policy.py --stub-device",
+        "skip_condition": "Validate camera permission behavior with the synthetic stub device and declared embedding scope. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-camera-permission-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/camera-permissions.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/embedded-camera.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-camera-permission-r1",
+          "artifact": "web/camera-permissions.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "camera-draft",
+          "artifact": "web/camera-permissions.headers",
+          "command": "python fixtures/camera_policy.py --stub-device",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "It remains unresolved whether the page runs top-level or embedded, despite passing checks for candidate configurations."
+    },
+    "document": "# Camera Permission\n\nValidate camera permission behavior with the synthetic stub device and declared embedding scope.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Candidate passes cannot resolve the missing execution-scope decision."
+    },
+    "authoring_variant": "camera-permission/unsupported",
+    "concept_cluster": "browser-policy/camera-permission",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-bb41aa18a629121d",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/clipboard-policy.headers",
+        "command": "python fixtures/clipboard_permission.py --stub",
+        "skip_condition": "Test the stubbed clipboard capability under the declared synthetic permission policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-clipboard-capability-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/clipboard-policy.headers",
+          "command": "python fixtures/clipboard_permission.py --stub",
+          "exit_code": "0"
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/stub-manifest.json",
+          "command": "python fixtures/stub_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-clipboard-capability-r1",
+          "artifact": "web/clipboard-policy.headers",
+          "command": "python fixtures/clipboard_permission.py --stub",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "clipboard-old",
+          "artifact": "web/clipboard-policy.headers",
+          "command": "python fixtures/clipboard_permission.py --stub",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The capability test yielded textual zero and the stub manifest itself passed its shape check."
+    },
+    "document": "# Clipboard Capability\n\nTest the stubbed clipboard capability under the declared synthetic permission policy.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Incorrectly typed current status, setup validation and old success do not satisfy the required proof."
+    },
+    "authoring_variant": "clipboard-capability/unsupported",
+    "concept_cluster": "browser-policy/clipboard-capability",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-c8e470cb6da42d5a",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/member-framing.md",
+        "command": null,
+        "skip_condition": "Explain why concatenated compressed members require an explicit decoder policy."
+      },
+      "current_revision": "compressed-streams-member-framing-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A format or library may stop after one member or support multiple members, so the application must decide whether extra members are valid and verify consumption accordingly."
+    },
+    "document": "# Member Framing\n\nSome compressed formats allow multiple members, while decoder APIs differ in how they expose member boundaries and remaining input. Define whether the application accepts one member, several members or trailing data. Verify how much input was consumed and whether every accepted member completed. A successful first-member decode is not automatically evidence that the whole uploaded object followed the intended framing contract.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Recognizes both member handling and complete-input validation."
+    },
+    "authoring_variant": "member-framing/supported",
+    "concept_cluster": "compressed-streams/member-framing",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-cfd8c22b285e63dd",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/oscillator-model.json",
+        "command": "python bench/timebase_drift.py --sim-clock",
+        "skip_condition": "Check the synthetic oscillator model against the timebase-drift fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-oscillator-timebase-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-oscillator-timebase-r1",
+          "command": "python bench/timebase_drift.py --sim-clock",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-oscillator-timebase-r1",
+          "artifact": "instruments/reference-clock.json",
+          "command": "python bench/reference_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "laboratory-instruments-oscillator-timebase-r1",
+          "artifact": "instruments/oscillator-model.json",
+          "command": "python bench/timebase_drift.py --sim-clock",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The drift result omitted the tested file and a second success belongs to a reference-clock shape check."
+    },
+    "document": "# Oscillator Timebase\n\nCheck the synthetic oscillator model against the timebase-drift fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "No trusted complete record binds the drift success to the required oscillator artifact."
+    },
+    "authoring_variant": "oscillator-timebase/unsupported",
+    "concept_cluster": "laboratory-instruments/oscillator-timebase",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-d1830bec440b508b",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/intention-to-treat.md",
+        "command": null,
+        "skip_condition": "Explain what an intention-to-treat comparison preserves when some units do not follow their assigned intervention."
+      },
+      "current_revision": "experimental-assignment-intention-to-treat-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "It compares groups according to assignment, preserving the randomized assignment contrast; it estimates the effect of offering that assignment rather than automatically the effect of perfect adherence."
+    },
+    "document": "# Intention To Treat\n\nIntention-to-treat analysis retains units in their assigned groups even when adherence differs. This preserves the assigned-policy comparison under the design's assumptions, but does not automatically estimate the effect of everyone following the intervention perfectly. Describe adherence separately and state the estimand. Analyses based on received treatment may answer other questions while requiring additional assumptions about selection into adherence.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Defines the assignment-based comparison and limits its interpretation."
+    },
+    "authoring_variant": "intention-to-treat/supported",
+    "concept_cluster": "experimental-assignment/intention-to-treat",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-d274c479e799ceb1",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/flush-versus-finish.md",
+        "command": null,
+        "skip_condition": "Explain why flushing a compressor does not always mean the compressed stream is complete."
+      },
+      "current_revision": "compressed-streams-flush-versus-finish-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Once buffered bytes are flushed, the format is complete and closing without a finish step cannot change decodability."
+    },
+    "document": "# Flush Versus Finish\n\nCompression APIs often distinguish flushing buffered output from finishing a stream. Flush modes can make current data available without writing the final framing information. Use the documented finalization operation and propagate its errors before reporting success. Test empty and very short payloads as well as ordinary files, since omitted trailers can be easy to miss when a decoder returns partial output early.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Equates buffering behavior with a completed stream contract."
+    },
+    "authoring_variant": "flush-versus-finish/unsupported",
+    "concept_cluster": "compressed-streams/flush-versus-finish",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-d6ff3a01ed96818a",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/dummy-cookie.headers",
+        "command": "python fixtures/cookie_attributes.py --dummy-session",
+        "skip_condition": "Inspect required attributes of the wholly synthetic session-cookie response. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-cookie-attributes-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/cookie_attributes.py --dummy-session",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/cookie_attributes.py --dummy-session",
+          "exit_code": 3
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/status_code.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-cookie-attributes-r1",
+          "artifact": "web/dummy-cookie.headers",
+          "command": "python fixtures/cookie_attributes.py --dummy-session",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Two complete current records disagree about the required cookie attributes and a generic status-code check succeeds."
+    },
+    "document": "# Cookie Attributes\n\nInspect required attributes of the wholly synthetic session-cookie response.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Generic response health and untrusted claims do not resolve contradictory cookie-inspection evidence."
+    },
+    "authoring_variant": "cookie-attributes/unsupported",
+    "concept_cluster": "browser-policy/cookie-attributes",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-d8932edf4b42750b",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/allocation-concealment.md",
+        "command": null,
+        "skip_condition": "Explain why concealing upcoming assignments can protect an experiment before enrollment is complete."
+      },
+      "current_revision": "experimental-assignment-allocation-concealment-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If recruiters know the next assignment, they may influence who enters that arm; concealing it reduces selection based on anticipated treatment."
+    },
+    "document": "# Allocation Concealment\n\nGenerating a random assignment sequence and concealing it are different design tasks. Knowledge of upcoming assignments can influence enrollment or task inclusion, even when the sequence itself was random. Keep future assignments unavailable to anyone who can select incoming units until eligibility is settled. Record exceptions and distinguish this protection from blinding outcomes after assignment.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies selection before allocation as the relevant bias mechanism."
+    },
+    "authoring_variant": "allocation-concealment/supported",
+    "concept_cluster": "experimental-assignment/allocation-concealment",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-d93d082babfac82e",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/crossover-carryover.md",
+        "command": null,
+        "skip_condition": "Explain why a crossover experiment can need a washout or a model of carryover between conditions."
+      },
+      "current_revision": "experimental-assignment-crossover-carryover-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Exposure in the first period may affect outcomes in the second, so changing the label alone does not reset the unit; allow justified washout or account for persistent effects."
+    },
+    "document": "# Crossover Carryover\n\nCrossover designs compare conditions within the same unit, but earlier exposure may influence later outcomes. Counterbalancing order helps with some order effects and does not by itself remove every carryover mechanism. Decide whether a justified washout is possible and whether the intended estimand remains meaningful. Record period and sequence, and test the design on tasks where the unit can genuinely return to the relevant starting condition.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Describes persistent exposure and its consequence for the later comparison."
+    },
+    "authoring_variant": "crossover-carryover/supported",
+    "concept_cluster": "experimental-assignment/crossover-carryover",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  },
+  {
+    "id": "v2-d9780e57641ba935",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/checksum-authenticity.md",
+        "command": null,
+        "skip_condition": "Explain why a compression checksum does not establish who produced a stream."
+      },
+      "current_revision": "compressed-streams-checksum-authenticity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "An accidental-corruption checksum can be recomputed by anyone changing the contents, so it checks consistency rather than authenticated origin."
+    },
+    "document": "# Checksum Authenticity\n\nChecksums embedded in compressed formats help detect accidental damage and some decoding mistakes. They do not generally authenticate a producer or prevent deliberate replacement of both content and checksum. Use the application's authenticated integrity mechanism when provenance matters. Verify checksum handling for corruption detection while keeping the result separate from any signature or authenticated-channel verification.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes integrity against accidents from authentication against deliberate modification."
+    },
+    "authoring_variant": "checksum-authenticity/supported",
+    "concept_cluster": "compressed-streams/checksum-authenticity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-dbf2d2e39ff96476",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/external-link.html",
+        "command": "python fixtures/opener_reference.py --two-windows",
+        "skip_condition": "Check opener-reference behavior in the disposable two-window navigation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-opener-isolation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/internal-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 0
+        },
+        {
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-opener-isolation-r1",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "link-draft",
+          "artifact": "web/external-link.html",
+          "command": "python fixtures/opener_reference.py --two-windows",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A successful result belongs to the internal-link artifact, while the external-link result has no verified trust field."
+    },
+    "document": "# Opener Isolation\n\nCheck opener-reference behavior in the disposable two-window navigation fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The external artifact lacks a complete trusted current pass; internal and draft results cannot substitute."
+    },
+    "authoring_variant": "opener-isolation/unsupported",
+    "concept_cluster": "browser-policy/opener-isolation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-de34ee578c5b798c",
+    "family": "laboratory-instruments",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "instruments/pressure-loop.csv",
+        "command": "python bench/hysteresis_loop.py --sim-pressure",
+        "skip_condition": "Evaluate the synthetic pressure sensor's increasing and decreasing response loop. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "laboratory-instruments-pressure-hysteresis-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-pressure-hysteresis-r1",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/csv_parse.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "laboratory-instruments-pressure-hysteresis-r1",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/hysteresis_loop.py --sim-pressure",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "pressure-draft",
+          "artifact": "instruments/pressure-loop.csv",
+          "command": "python bench/hysteresis_loop.py --sim-pressure",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The complete loop table passes the hysteresis fixture and the current table also passes a separate parsing check."
+    },
+    "document": "# Pressure Hysteresis\n\nEvaluate the synthetic pressure sensor's increasing and decreasing response loop.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The required loop check itself succeeds, rather than only a file-format check."
+    },
+    "authoring_variant": "pressure-hysteresis/supported",
+    "concept_cluster": "laboratory-instruments/pressure-hysteresis",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/laboratory-instruments.txt"
+  },
+  {
+    "id": "v2-e0786b9d0e9d6841",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/referrer-policy.headers",
+        "command": "python fixtures/referrer_projection.py --synthetic-url",
+        "skip_condition": "Verify the referrer information emitted by the synthetic navigation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-referrer-trimming-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "artifact": "web/referrer-policy.headers",
+          "command": "python fixtures/referrer_projection.py --synthetic-url",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-referrer-trimming-r1",
+          "artifact": "web/navigation-plan.json",
+          "command": "python fixtures/route_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-referrer-trimming-r1",
+          "artifact": "web/referrer-policy.headers",
+          "command": "python fixtures/referrer_projection.py --synthetic-url",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The functional fixture's result omits its revision and a route-shape check supplies the only complete trusted pass."
+    },
+    "document": "# Referrer Trimming\n\nVerify the referrer information emitted by the synthetic navigation fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The policy's current revision is not covered by the incomplete fixture result."
+    },
+    "authoring_variant": "referrer-trimming/unsupported",
+    "concept_cluster": "browser-policy/referrer-trimming",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-e408257e438c1e5f",
+    "family": "browser-policy",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "web/referrer-policy.headers",
+        "command": "python fixtures/referrer_projection.py --synthetic-url",
+        "skip_condition": "Verify the referrer information emitted by the synthetic navigation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "browser-policy-referrer-trimming-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "browser-policy-referrer-trimming-r1",
+          "artifact": "web/referrer-policy.headers",
+          "command": "python fixtures/referrer_projection.py --synthetic-url",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "browser-policy-referrer-trimming-r1",
+          "artifact": "web/navigation-plan.json",
+          "command": "python fixtures/route_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "browser-policy-referrer-trimming-r1",
+          "artifact": "web/referrer-policy.headers",
+          "command": "python fixtures/referrer_projection.py --synthetic-url",
+          "exit_code": 6
+        }
+      ],
+      "explanation": "The navigation fixture passed with the declared policy and a separate route-shape check also completed."
+    },
+    "document": "# Referrer Trimming\n\nVerify the referrer information emitted by the synthetic navigation fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A bound functional result confirms this policy's projected referrer behavior."
+    },
+    "authoring_variant": "referrer-trimming/supported",
+    "concept_cluster": "browser-policy/referrer-trimming",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/browser-policy.txt"
+  },
+  {
+    "id": "v2-e61c1ac69e6c4766",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/checksum-authenticity.md",
+        "command": null,
+        "skip_condition": "Explain why a compression checksum does not establish who produced a stream."
+      },
+      "current_revision": "compressed-streams-checksum-authenticity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A valid stream checksum proves the bytes came from the authorized producer because modifying any byte necessarily makes the checksum permanently invalid."
+    },
+    "document": "# Checksum Authenticity\n\nChecksums embedded in compressed formats help detect accidental damage and some decoding mistakes. They do not generally authenticate a producer or prevent deliberate replacement of both content and checksum. Use the application's authenticated integrity mechanism when provenance matters. Verify checksum handling for corruption detection while keeping the result separate from any signature or authenticated-channel verification.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes an attacker cannot recompute a non-secret checksum."
+    },
+    "authoring_variant": "checksum-authenticity/unsupported",
+    "concept_cluster": "compressed-streams/checksum-authenticity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-ee325e987829a3b9",
+    "family": "compressed-streams",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/compressed-streams/truncated-output.md",
+        "command": null,
+        "skip_condition": "Explain why receiving some decoded bytes does not prove a truncated compressed stream was valid."
+      },
+      "current_revision": "compressed-streams-truncated-output-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A decoder may emit earlier output before discovering a missing footer or later corruption, so success requires its final completion and integrity status."
+    },
+    "document": "# Truncated Output\n\nStreaming decoders can produce valid prefixes before they discover an incomplete or damaged suffix. Applications must inspect the final decoding status and required integrity checks before treating the entire object as valid. Decide explicitly whether partial output has a separate use, and label it accordingly. Tests should truncate the stream at several positions, including after most of the useful payload has already been emitted.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies delayed detection and the requirement for a final status."
+    },
+    "authoring_variant": "truncated-output/supported",
+    "concept_cluster": "compressed-streams/truncated-output",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/compressed-streams.txt"
+  },
+  {
+    "id": "v2-f2daab8e7e2d5777",
+    "family": "experimental-assignment",
+    "split": "test",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/experimental-assignment/outcome-selection.md",
+        "command": null,
+        "skip_condition": "Explain why choosing the most favorable outcome after measuring many outcomes weakens an ordinary single-outcome inference."
+      },
+      "current_revision": "experimental-assignment-outcome-selection-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Measuring more outcomes can only add evidence; reporting whichever looks strongest retains the same single-outcome interpretation."
+    },
+    "document": "# Outcome Selection\n\nBefore collection, distinguish primary outcomes from secondary or exploratory outcomes. Selecting the strongest-looking result from a large set is itself part of the analysis and changes the interpretation of an ordinary isolated threshold. Report what was measured and how selections were made. Exploratory findings can motivate a new experiment with a prospectively chosen outcome rather than being relabeled as the original test.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Ignores that selecting an extreme result affects its chance behavior."
+    },
+    "authoring_variant": "outcome-selection/unsupported",
+    "concept_cluster": "experimental-assignment/outcome-selection",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/test/experimental-assignment.txt"
+  }
+]

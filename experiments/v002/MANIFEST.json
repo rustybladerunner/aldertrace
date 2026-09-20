@@ -1,0 +1,28 @@
+{
+  "claim_status": "provisional; no actual net-token or task-success result",
+  "heldout_included": true,
+  "input_sha256": {
+    "agent-review-provisional-v2-20260920/aggregate-summary.json": "cebcb085f720fd38212ceb05486687f0b99dfeb663ac058007099f3d8999c217",
+    "aldertrace-memory-v1-results/summary.json": "396f0f39b34d3184505c4c83c224d46d8a588179bd8fe1df8249dc6718e14810",
+    "campaign/budget-receipt-final.json": "baeaef2f2d18f99d797ecb5741ed0eb2b31fb859272361fbc164c59554f57e32",
+    "campaign/cloud-budget.jsonl": "3b62c31f93213dbfa3f61d6572e3f72c6df69647b96a83a71004cefe5e7cc82d",
+    "campaign/local-budget.jsonl": "7a6c23462e82554550d86b9c9ab2606ed706ef16a6b124fea4ef3abd961e4241",
+    "campaign/v002-calibration-report/report.json": "bffcb0e39e6ef51b35d825ffe6df652006da7219b1fd93d1e755eaabeeb14b3b",
+    "campaign/v002-development-cloud-001-report-final/report.json": "7d23ea0c66fdb67247606265d6a4a61729aab5b49e6ea6ca7a03f6f675140f71",
+    "campaign/v002-development-cloud-002-report/report.json": "ac1a79882884913590b0ddbe02423672c100e444dd2e8cd5c4dc08e40a44062d",
+    "campaign/v002-development-cloud-003-report/report.json": "e40d5d8e31206f732d8d434a8c0d383c77e823cdaf3539466544c341270a0975",
+    "campaign/v002-development-local-002-report/report.json": "6ab4d70d507074ea842100ee3bbf37606691ad53b17e44536dbcda961705d4d5",
+    "campaign/v002-frozen/freeze.json": "4749d5d28736b43d36e1a6a11448429c547060924f2a74c122ea8695b800786c",
+    "campaign/v002-frozen/thresholds.json": "0fbd609397568cd553c2e2cb88d309760d9eefe641e10fef021be24ee03fbf65",
+    "campaign/v002-test-report/report.json": "4888a54ed94c343f796a4dd24ef0426e57adb83275b80afc748caff7a3acbac4"
+  },
+  "output_sha256": {
+    "EXPERIMENT-LOG.md": "691360bf87ff30a90f99ea9fd6bc00198defbeb5c74cf75c1f113d2a3abbd7c4",
+    "EXPERIMENT_LOG.csv": "b29091946ebce6d0f3d9596d20d486c5c2c237875f527a4f939b818fb1fcafaf",
+    "REPORT.md": "e3efad650f344e23854776ee99d105e440f5effbdb24a4c43581c9417f31c0ec",
+    "build_evidence_demo.py": "2e3a4226271db7398345fc9791d0ec74ffafe621d8b114d3f4815ad28bacf356",
+    "evidence.json": "ebadd55a3ed9fa2057d83b8e39e76d22604fe3f7d9446aff1cbf969cc3bdcdfd",
+    "index.html": "b01a1e8f3b7bf7be410c1c2eee9082220bf53db64b8b8c918e5f27b3d4b6e22d"
+  },
+  "schema": 1
+}

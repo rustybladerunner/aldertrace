@@ -1,0 +1,19 @@
+{
+  "version": "draft-1",
+  "seed": 20260919,
+  "status": "Authored before case generation; human review pending",
+  "families": [
+    {"id":"log-redaction","split":"development","kind":"semantic"},
+    {"id":"transaction-boundaries","split":"development","kind":"semantic"},
+    {"id":"migration-lock","split":"development","kind":"executable"},
+    {"id":"generated-client","split":"development","kind":"executable"},
+    {"id":"retry-effects","split":"calibration","kind":"semantic"},
+    {"id":"lease-ownership","split":"calibration","kind":"semantic"},
+    {"id":"dependency-audit","split":"calibration","kind":"executable"},
+    {"id":"artifact-signature","split":"calibration","kind":"executable"},
+    {"id":"message-order","split":"test","kind":"semantic"},
+    {"id":"shutdown-drain","split":"test","kind":"semantic"},
+    {"id":"schema-compatibility","split":"test","kind":"executable"},
+    {"id":"distribution-assets","split":"test","kind":"executable"}
+  ]
+}

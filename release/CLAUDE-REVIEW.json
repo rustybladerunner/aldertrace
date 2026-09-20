@@ -1,0 +1,39 @@
+{
+  "evidence_class": "external editorial/code review, not experiment",
+  "requested_model": "anthropic/claude-sonnet-4.6",
+  "resolved_model": "anthropic/claude-sonnet-4.6",
+  "file_sha256": {
+    "skills/README.md": "65b733d52c8a461a79946cf07a9573152510d793835721cc3893d8bf2ee6f236",
+    "skills/jev-integrate/SKILL.md": "90b4a1df76f17d341bc1e82f9465835214a9ac84368ab7f2aeea2d9969b4ba84",
+    "skills/jev-hypothesize/SKILL.md": "0092468ea089b2b7a2d772edb06d63eb20fdee9cc039feabfc68984df596da2c",
+    "skills/jev-integrate/references/context.md": "100a9c0bd90e7192f9cfddc601187d0cf7675188e73a16c3b81957a30e84df76",
+    "skills/examples/demo.py": "a579c7b2f922585c26095e91e42894b2e636645336ad73cda33de47ef5975e2f",
+    "skills/examples/check_fixture.py": "860c99563e51b7850cbce9a55d0d5a3794fed2997d7a6be08e50c9781b7c0572"
+  },
+  "prompt_sha256": "1ef39991020aabee783eadf8a29c102734a5cbca81cd7417a435e24bac9ab71a",
+  "usage": {
+    "prompt_tokens": 5413,
+    "completion_tokens": 1584,
+    "total_tokens": 6997,
+    "cost": 0.039999,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.039999,
+      "upstream_inference_prompt_cost": 0.016239,
+      "upstream_inference_completions_cost": 0.02376
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "review_sha256": "7098dcfe022f2854361ca14e85fe61e04ff8f2e4e44e52ac5d7f50840dd1f42f"
+}

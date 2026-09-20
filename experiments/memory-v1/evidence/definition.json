@@ -1,0 +1,37 @@
+{
+  "calyx_defaults": {
+    "active_k": 102,
+    "dense_dim": 64,
+    "kenyon_cells": 2048,
+    "ngram_max": 4,
+    "ngram_min": 2,
+    "seed": 42
+  },
+  "cloud_spending_usd": 0,
+  "code_sha256": "271632cead9b1c8fc3e0abb98657a497d1f5b8ae22c4aaa01753942b74164cf8",
+  "dataset_sha256": "22e734986bd3b352b457028ac4bc9dfe42de533fca2bf11b0e113515347240e0",
+  "evaluator_sha256": "26c5b17a378dccba6ea35da10fd9958d84d8b0776368470f17b1845cd9a2a3cd",
+  "history_size": 8,
+  "index_policy": "immutable, built once per arm; no query feedback",
+  "latency_repetitions": 31,
+  "measurement": "actual local lookup only; includes query encoding and search over eight histories",
+  "model_calls": 0,
+  "phase": "frozen-before-mechanism-outcomes",
+  "protocol_sha256": "0d52e8afb240b25f4f7b53f9f33ecc93405b7b26b39f6f8276b5a0e8143cd427",
+  "queries": 24,
+  "simulated_avoidance": "Each hit is one hypothetical fallback call avoided; no model is invoked or measured. machine_gate alone already resolves every query.",
+  "source": {
+    "commit_verification": "Inherited from prior local release review; archive has no .git. Module bytes are independently hash-checked here.",
+    "license": "MIT; copyright 2026 Calyx Research Team; no implementation vendored",
+    "reported_commit": "05d5dddf2c66b82e40fcbc40502a01e6336314be",
+    "sha256": {
+      "LICENSE": "16d1ce2cf935d55314a6e975bf71e22937520b921517e44839efc29b9d196a7d",
+      "src/calyx_mcp/config.py": "28ca4a47cf4953b08e78b0c912fa48dc9796d0d63cf85b30b2f01dc2044099d9",
+      "src/calyx_mcp/hasher.py": "bbd91d602e055907c177dd3ef393eb6510979cda96c8e23e39fa28feea5ea52c"
+    }
+  },
+  "threshold": 0.8,
+  "tie_break": "original history order",
+  "version": "memory-v1-mechanism-1",
+  "warmup": "one lookup of the first query per arm"
+}

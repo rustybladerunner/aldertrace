@@ -1,0 +1,46 @@
+{
+  "_comment": "# SYNTHETIC_FIXTURE — fake tool trace, not a real session",
+  "goal": "fix f-string SQL in auth reset",
+  "items": [
+    {
+      "id": "u1",
+      "kind": "user",
+      "excerpt": "fix the reset endpoint"
+    },
+    {
+      "id": "r1",
+      "kind": "read",
+      "path": "app/auth.py",
+      "ok": true,
+      "excerpt": "first read of auth.py, now stale"
+    },
+    {
+      "id": "r2",
+      "kind": "read",
+      "path": "app/auth.py",
+      "ok": true,
+      "excerpt": "second read after the edit"
+    },
+    {
+      "id": "s1",
+      "kind": "shell",
+      "cmd": "cargo test",
+      "ok": false,
+      "excerpt": "FAILED tests/test_auth.py"
+    },
+    {
+      "id": "s2",
+      "kind": "shell",
+      "cmd": "cargo test",
+      "ok": true,
+      "excerpt": "ok"
+    },
+    {
+      "id": "g1",
+      "kind": "grep",
+      "cmd": "query(f",
+      "ok": true,
+      "excerpt": "2 hits in app/auth.py"
+    }
+  ]
+}

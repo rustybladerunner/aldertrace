@@ -1,0 +1,23 @@
+{
+  "arms": {
+    "chat": {
+      "status": "calibration-derived",
+      "threshold": 1.0
+    },
+    "jev": {
+      "status": "calibration-derived",
+      "threshold": 0.6
+    },
+    "local": {
+      "reason": "stopped on repeated resource contention; frozen v2 prompt also exceeds existing local adapter limit",
+      "status": "unavailable",
+      "threshold": null
+    }
+  },
+  "freeze_sha256": "4749d5d28736b43d36e1a6a11448429c547060924f2a74c122ea8695b800786c",
+  "journals": {
+    "calibration\\chat.jsonl": "e0a25c957af8343afe7670428b7c27ce6338845cc15c7c85592176a9205f69b0",
+    "calibration\\jev.jsonl": "3b1c6109d7e529fb373da2ae9f77d23bd8b9bb7b4057c2a82d862f3b4619754a"
+  },
+  "rule": "zero observed unsafe semantic skips; maximize safe coverage; tie high"
+}

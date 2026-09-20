@@ -1,0 +1,4320 @@
+{
+  "files": {
+    ".gitattributes": {
+      "export_sha256": "875eb802c00079eae7bd767b5277fc94873b9d76372e49e34dbd456fd185a1f5",
+      "source_sha256": "875eb802c00079eae7bd767b5277fc94873b9d76372e49e34dbd456fd185a1f5",
+      "transformations": []
+    },
+    ".gitignore": {
+      "export_sha256": "3d757274ccdbb057a96f5feea589ca8ff67b0b3016a74a7962a13d86d8461978",
+      "source_sha256": "3d757274ccdbb057a96f5feea589ca8ff67b0b3016a74a7962a13d86d8461978",
+      "transformations": []
+    },
+    "AGENTS.md": {
+      "export_sha256": "e43587b599613a2ceb8f7f21af2f2ef8c8215cbd818711710e67f35d61daa72b",
+      "source_sha256": "4b01a7749f222a2c92cd17da53a653eab1d1f34ef5580172e9d2a2365154d412",
+      "transformations": [
+        {
+          "change": "public entry-point documentation; original retained privately"
+        }
+      ]
+    },
+    "COLLABORATING.md": {
+      "export_sha256": "2da1f7f604b7445c87ec9a2df831a60dfe418451c7b5046f9c4591e492627d32",
+      "source_sha256": "d06c4b20e8ce3ffa87c93533d622589d90df7792118f614369a7d7503bfa9ad7",
+      "transformations": [
+        {
+          "change": "public entry-point documentation; original retained privately"
+        }
+      ]
+    },
+    "CONTRIBUTING.md": {
+      "export_sha256": "f26740ef7b38172694ce7f69bd37ff2e1d54e7c4038e2dc1c2428d649b29b556",
+      "source_sha256": null,
+      "transformations": [
+        {
+          "change": "new public contribution guide"
+        }
+      ]
+    },
+    "EVALUATION_PROTOCOL.md": {
+      "export_sha256": "af4b5bbcc164a357f103be0f0bf4f479c265d6c17e5e6d72ef57996bcacaab3d",
+      "source_sha256": "af4b5bbcc164a357f103be0f0bf4f479c265d6c17e5e6d72ef57996bcacaab3d",
+      "transformations": []
+    },
+    "LICENSE": {
+      "export_sha256": "50abfe712dbf00dd40a69e20841cd3abc3e42c3d8eac277f9ee11ff3b7677af4",
+      "source_sha256": "50abfe712dbf00dd40a69e20841cd3abc3e42c3d8eac277f9ee11ff3b7677af4",
+      "transformations": []
+    },
+    "PUBLISH.md": {
+      "export_sha256": "881b52c438fc7dab18061308cd131e7341f55babb398699f4e562aa9c2be336d",
+      "source_sha256": "e7f5b12897690fe6151b3134164bafb32387420c44e5c6283cdb48b3b5b55fc8",
+      "transformations": [
+        {
+          "change": "public entry-point documentation; original retained privately"
+        }
+      ]
+    },
+    "README.md": {
+      "export_sha256": "3c356ac409bc8d4db378d74916c8b59319879f27a084b9fc26e7869630b63fd3",
+      "source_sha256": "6f33fd4959838cd165e240a34d1cb5a2777a469e9dfc7c04e869fabb97981a57",
+      "transformations": [
+        {
+          "change": "public entry-point documentation; original retained privately"
+        }
+      ]
+    },
+    "experiments/memory-v1/PROTOCOL.md": {
+      "export_sha256": "0d52e8afb240b25f4f7b53f9f33ecc93405b7b26b39f6f8276b5a0e8143cd427",
+      "source_sha256": "0d52e8afb240b25f4f7b53f9f33ecc93405b7b26b39f6f8276b5a0e8143cd427",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/COMPLETE.json": {
+      "export_sha256": "d7715312b8f5dff96c4ce2b4d90cb3b1fea2184e87c13feb6d51724cc1a53e95",
+      "source_sha256": "d7715312b8f5dff96c4ce2b4d90cb3b1fea2184e87c13feb6d51724cc1a53e95",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/STARTED.json": {
+      "export_sha256": "779864d50c3b349f2b6521a716d1cf6b4fcf52934647ff6fa8e9c4a56c2fbceb",
+      "source_sha256": "779864d50c3b349f2b6521a716d1cf6b4fcf52934647ff6fa8e9c4a56c2fbceb",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/dataset.json": {
+      "export_sha256": "22e734986bd3b352b457028ac4bc9dfe42de533fca2bf11b0e113515347240e0",
+      "source_sha256": "22e734986bd3b352b457028ac4bc9dfe42de533fca2bf11b0e113515347240e0",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/definition.json": {
+      "export_sha256": "cb2308bf9eade5244537f47c3660bc0cfdc8dd96b75d29d70b52ad6416bba91b",
+      "source_sha256": "cb2308bf9eade5244537f47c3660bc0cfdc8dd96b75d29d70b52ad6416bba91b",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/failures.json": {
+      "export_sha256": "53842e36e70bb1eeea0f82e23dd010d8e64e64854d909ebcc622bc49e97bfbec",
+      "source_sha256": "53842e36e70bb1eeea0f82e23dd010d8e64e64854d909ebcc622bc49e97bfbec",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/raw.jsonl": {
+      "export_sha256": "a3824a6e6adb93f4f214823494ec9400333f9053268cba256c374a9f1a4ea798",
+      "source_sha256": "a3824a6e6adb93f4f214823494ec9400333f9053268cba256c374a9f1a4ea798",
+      "transformations": []
+    },
+    "experiments/memory-v1/evidence/summary.json": {
+      "export_sha256": "396f0f39b34d3184505c4c83c224d46d8a588179bd8fe1df8249dc6718e14810",
+      "source_sha256": "396f0f39b34d3184505c4c83c224d46d8a588179bd8fe1df8249dc6718e14810",
+      "transformations": []
+    },
+    "experiments/v002/EXPERIMENT-LOG.md": {
+      "export_sha256": "691360bf87ff30a90f99ea9fd6bc00198defbeb5c74cf75c1f113d2a3abbd7c4",
+      "source_sha256": "691360bf87ff30a90f99ea9fd6bc00198defbeb5c74cf75c1f113d2a3abbd7c4",
+      "transformations": []
+    },
+    "experiments/v002/EXPERIMENT_LOG.csv": {
+      "export_sha256": "b29091946ebce6d0f3d9596d20d486c5c2c237875f527a4f939b818fb1fcafaf",
+      "source_sha256": "b29091946ebce6d0f3d9596d20d486c5c2c237875f527a4f939b818fb1fcafaf",
+      "transformations": []
+    },
+    "experiments/v002/EXPORT-MANIFEST.json": {
+      "export_sha256": "001e16fe8f05fb1332c2ec6a88a8503656212c193d5eae6964390f9e242bca51",
+      "source_sha256": "1b8682bdb9d91ac85bae782e006c87f18e10639c1ae43b7cafdaa4733dc8d870",
+      "transformations": [
+        {
+          "change": "describe derivative scope accurately"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1budget-receipt-final.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1cloud-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1local-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1preflight-local-001~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1preflight-local-001~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-001~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-cloud-001~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-cloud-002~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-cloud-003~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-local-002~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-development-local-002~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-frozen~1calibration~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-frozen~1freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-frozen~1test~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1evidence~1campaign~1v002-frozen~1thresholds.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-calibration-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-development-cloud-001-report-final~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-development-cloud-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-development-cloud-003-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-development-local-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/files/experiments~1v002~1reports~1v002-test-report~1report.json"
+        }
+      ]
+    },
+    "experiments/v002/MANIFEST.json": {
+      "export_sha256": "12a9303bebbd7b94ac4f9fe92f54a3787f179d6575eebc076a9e0e36bf5606a0",
+      "source_sha256": "82e4b37f144321ec0db8cadc9281d748ee705dd23266102edbd040cebe6b3c2f",
+      "transformations": [
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-development-cloud-001-report-final~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-development-cloud-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-development-cloud-003-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-development-local-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-frozen~1freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-frozen~1thresholds.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-calibration-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1budget-receipt-final.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1v002-test-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1cloud-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/input_sha256/campaign~1local-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/output_sha256/evidence.json"
+        }
+      ]
+    },
+    "experiments/v002/PROTOCOL-AMENDMENT.md": {
+      "export_sha256": "acee5929456d4d892d92a38b6b63066a490bbd4a32a0e3ae21294be5846ecc3f",
+      "source_sha256": "acee5929456d4d892d92a38b6b63066a490bbd4a32a0e3ae21294be5846ecc3f",
+      "transformations": []
+    },
+    "experiments/v002/PUBLIC-DERIVATIVE.md": {
+      "export_sha256": "3b0665b1cf90c7b56bbc80fe53e50db86b42b05bb7748a98e5c103324603ed64",
+      "source_sha256": null,
+      "transformations": [
+        {
+          "change": "new derivative-scope note"
+        }
+      ]
+    },
+    "experiments/v002/REPORT.md": {
+      "export_sha256": "e3efad650f344e23854776ee99d105e440f5effbdb24a4c43581c9417f31c0ec",
+      "source_sha256": "e3efad650f344e23854776ee99d105e440f5effbdb24a4c43581c9417f31c0ec",
+      "transformations": []
+    },
+    "experiments/v002/REPRODUCE.md": {
+      "export_sha256": "a8ce3b870ed845febf32a41a836251d07931c2c7e23a96895ed119d8fd89ddea",
+      "source_sha256": "a8ce3b870ed845febf32a41a836251d07931c2c7e23a96895ed119d8fd89ddea",
+      "transformations": []
+    },
+    "experiments/v002/build_evidence_demo.py": {
+      "export_sha256": "2e3a4226271db7398345fc9791d0ec74ffafe621d8b114d3f4815ad28bacf356",
+      "source_sha256": "2e3a4226271db7398345fc9791d0ec74ffafe621d8b114d3f4815ad28bacf356",
+      "transformations": []
+    },
+    "experiments/v002/evidence.json": {
+      "export_sha256": "ebadd55a3ed9fa2057d83b8e39e76d22604fe3f7d9446aff1cbf969cc3bdcdfd",
+      "source_sha256": "93b49ee1b3c44e16542f533b65a52323e1608799461b0541728e401950c6aa5d",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/development/0/report/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/development/1/report/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/development/2/report/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/local/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/calibration/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/heldout/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/budget_receipt/source_sha256/cloud-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/budget_receipt/source_sha256/local-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/budget_receipt/source_sha256/preflight-local-001~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/budget_receipt/source_sha256/v002-development-local-002~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/calibration/phase_locks/freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/calibration/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/development/0/report/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/development/1/report/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/development/2/report/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/frozen_settings/preflight_sha256/preflight-local-001~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/frozen_settings/preflight_sha256/preflight-local-001~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/heldout/phase_locks/freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/heldout/phase_locks/thresholds.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/heldout/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/local/source_artifacts/definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1budget-receipt-final.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1cloud-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1local-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-calibration-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-development-cloud-001-report-final~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-development-cloud-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-development-cloud-003-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-development-local-002-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-frozen~1freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-frozen~1thresholds.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/sources_sha256/campaign~1v002-test-report~1report.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/threshold_selection/freeze_sha256"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/budget-receipt-final.json": {
+      "export_sha256": "baeaef2f2d18f99d797ecb5741ed0eb2b31fb859272361fbc164c59554f57e32",
+      "source_sha256": "63d3a7ea13b69185318394bbda4bb7e11f2b3ae4716da01aa0c79c4afa9814d9",
+      "transformations": [
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_sha256/cloud-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_sha256/local-budget.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_sha256/preflight-local-001~1local-telemetry.jsonl"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_sha256/v002-development-local-002~1local-telemetry.jsonl"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/cloud-budget.jsonl": {
+      "export_sha256": "3b62c31f93213dbfa3f61d6572e3f72c6df69647b96a83a71004cefe5e7cc82d",
+      "source_sha256": "0d25328ac948f4a3e98b932a0157bc3cf79294bb844810cf9394619a4bd02337",
+      "transformations": [
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/2/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/3/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/4/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/5/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/6/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/7/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/8/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/9/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/10/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/11/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/12/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/13/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/14/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/15/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/16/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/17/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/18/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/19/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/20/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/21/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/22/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/23/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/24/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/25/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/26/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/27/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/28/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/29/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/30/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/31/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/32/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/33/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/34/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/35/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/36/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/37/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/38/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/39/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/40/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/41/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/42/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/43/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/44/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/45/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/46/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/47/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/48/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/49/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/50/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/51/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/52/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/53/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/54/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/55/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/56/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/57/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/58/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/59/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/60/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/61/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/62/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/63/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/64/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/65/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/66/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/67/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/68/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/69/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/70/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/71/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/72/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/73/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/74/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/75/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/76/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/77/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/78/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/79/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/80/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/81/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/82/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/83/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/84/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/85/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/86/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/87/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/88/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/89/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/90/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/91/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/92/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/93/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/94/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/95/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/96/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/97/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/98/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/99/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/100/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/101/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/102/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/103/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/104/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/105/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/106/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/107/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/108/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/109/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/110/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/111/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/112/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/113/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/114/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/115/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/116/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/117/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/118/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/119/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/120/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/121/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/122/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/123/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/124/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/125/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/126/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/127/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/128/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/129/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/130/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/131/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/132/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/133/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/134/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/135/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/136/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/137/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/138/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/139/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/140/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/141/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/142/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/143/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/144/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/145/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/146/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/147/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/148/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/149/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/150/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/151/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/152/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/153/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/154/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/155/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/156/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/157/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/158/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/159/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/160/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/161/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/162/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/163/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/164/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/165/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/166/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/167/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/168/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/169/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/170/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/171/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/172/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/173/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/174/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/175/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/176/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/177/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/178/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/179/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/180/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/181/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/182/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/183/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/184/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/185/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/186/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/187/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/188/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/189/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/190/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/191/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/192/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/193/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/194/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/195/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/196/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/197/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/198/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/199/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/200/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/201/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/202/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/203/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/204/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/205/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/206/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/207/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/208/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/209/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/210/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/211/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/212/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/213/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/214/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/215/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/216/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/217/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/218/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/219/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/220/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/221/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/222/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/223/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/224/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/225/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/226/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/227/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/228/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/229/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/230/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/231/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/232/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/233/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/234/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/235/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/236/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/237/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/238/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/239/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/240/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/241/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/242/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/243/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/244/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/245/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/246/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/247/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/248/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/249/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/250/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/251/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/252/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/253/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/254/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/255/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/256/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/257/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/258/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/259/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/260/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/261/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/262/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/263/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/264/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/265/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/266/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/267/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/268/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/269/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/270/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/271/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/272/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/273/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/274/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/275/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/276/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/277/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/278/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/279/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/280/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/281/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/282/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/283/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/284/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/285/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/286/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/287/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/288/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/289/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/290/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/291/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/292/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/293/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/294/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/295/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/296/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/297/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/298/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/299/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/300/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/301/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/302/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/303/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/304/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/305/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/306/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/307/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/308/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/309/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/310/key"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/local-budget.jsonl": {
+      "export_sha256": "7a6c23462e82554550d86b9c9ab2606ed706ef16a6b124fea4ef3abd961e4241",
+      "source_sha256": "5e4ee13e39c48df50c56cab9bd6ef79544cf3353bb1de4b070db9b8d8af27a07",
+      "transformations": [
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/1/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/2/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/3/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/4/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/5/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/6/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/7/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/8/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/9/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/10/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/11/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/12/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/13/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/14/key"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/openrouter-model-identity.json": {
+      "export_sha256": "acae7edb91abf072d176e0a23a12957241ed19d763c93f4c48b7fc539d35d994",
+      "source_sha256": "acae7edb91abf072d176e0a23a12957241ed19d763c93f4c48b7fc539d35d994",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-cloud-001/chat.jsonl": {
+      "export_sha256": "40d9295638b5c7e9ec7c947f84200aa601c2ee4ee7ebda844fe505a80bd8d54d",
+      "source_sha256": "40d9295638b5c7e9ec7c947f84200aa601c2ee4ee7ebda844fe505a80bd8d54d",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-cloud-001/definition.json": {
+      "export_sha256": "ee8912d7314d60b0aa4d91edc3b233e89f10e0d0cf7a163a5ff8157c509c0710",
+      "source_sha256": "ee8912d7314d60b0aa4d91edc3b233e89f10e0d0cf7a163a5ff8157c509c0710",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-cloud-001/jev.jsonl": {
+      "export_sha256": "5548c589127494c0c36dfb945251320f233d1de12b74b035c268a35c1af5c048",
+      "source_sha256": "5548c589127494c0c36dfb945251320f233d1de12b74b035c268a35c1af5c048",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-cloud-001/summary.json": {
+      "export_sha256": "38b3ec55a1608145722b21ab239be764b16ac6428f9385a66988a33f5b39ad4b",
+      "source_sha256": "38b3ec55a1608145722b21ab239be764b16ac6428f9385a66988a33f5b39ad4b",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/definition.json": {
+      "export_sha256": "969a65dd77cfe8157f7eb9e5b3a9466553f11b68baac25cb91799dffc245e057",
+      "source_sha256": "520b704944f5916e16c1436050c531e66c5474633f1c4ffce06ca17db3ed7dc0",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local-telemetry.jsonl": {
+      "export_sha256": "cd9e4f64405263215b28a5575e69adfc1c8a2a0dbe3bd8f38dc01ca516e15fa8",
+      "source_sha256": "ff081f6056992d26247ee8d667121b95e1d3438f9b5edd64bcd1d3d4c5d1499d",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/0/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/0/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/1/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/1/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/2/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/2/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/3/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/3/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/4/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/4/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/5/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/5/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/6/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/6/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/7/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/7/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/8/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/8/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/9/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/9/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/10/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/10/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/11/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/11/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/12/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/12/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/13/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/13/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/14/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/14/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/15/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/15/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/16/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/16/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/17/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/17/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/18/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/18/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/19/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/19/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/20/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/20/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/21/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/21/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/22/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/22/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/23/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/23/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/24/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/24/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/25/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/25/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/26/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/26/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/27/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/27/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/28/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/28/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/29/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/29/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/30/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/30/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/31/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/31/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/32/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/32/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/33/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/33/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/34/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/34/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/35/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/35/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/36/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/36/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/37/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/37/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/38/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/38/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/39/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/39/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/40/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/40/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/41/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/41/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/42/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/42/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/43/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/43/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/44/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/44/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/45/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/45/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/46/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/46/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/47/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/47/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/48/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/48/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/49/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/49/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/50/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/50/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/51/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/51/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/52/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/52/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/53/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/53/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/54/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/54/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/55/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/55/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/56/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/56/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/57/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/57/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/58/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/58/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/59/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/59/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/60/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/60/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/61/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/61/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/62/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/62/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/63/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/63/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/64/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/64/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/65/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/65/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/66/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/66/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/67/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/67/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/68/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/68/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/69/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/70/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/71/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/72/key"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local-worker-1.events.jsonl": {
+      "export_sha256": "c4a78b106302db8dbb22c4d70a40b2638fff059b6bfd0c752ceb24012e189ea7",
+      "source_sha256": "c4a78b106302db8dbb22c4d70a40b2638fff059b6bfd0c752ceb24012e189ea7",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local-worker-1.json": {
+      "export_sha256": "82d08e0f8a8b9bb059ee9a3cd1cbc968958703393c5de8c55fb660efe2561bcb",
+      "source_sha256": "82d08e0f8a8b9bb059ee9a3cd1cbc968958703393c5de8c55fb660efe2561bcb",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local-worker-1.request.json": {
+      "export_sha256": "b8e44958cdb804394463880629c809462572d55b369d0a06b3970cac03c566a3",
+      "source_sha256": "b8e44958cdb804394463880629c809462572d55b369d0a06b3970cac03c566a3",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local-worker-1.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/local.jsonl": {
+      "export_sha256": "ff14ece6e065dc4957e88e4273766eae25ec79f2d04f1c3ad0b8678a4c0ff1ce",
+      "source_sha256": "ff14ece6e065dc4957e88e4273766eae25ec79f2d04f1c3ad0b8678a4c0ff1ce",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/preflight-local-001/summary.json": {
+      "export_sha256": "1c08290835fd125f0f9830fab24bbe3bf5a917743fd1c34b9e4af3bd047162fd",
+      "source_sha256": "1c08290835fd125f0f9830fab24bbe3bf5a917743fd1c34b9e4af3bd047162fd",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/chat.jsonl": {
+      "export_sha256": "20d1a2ad7aafcf5d00ad58df59e2a743c5b8d1a51e375ad08d6e6c0f2d238611",
+      "source_sha256": "20d1a2ad7aafcf5d00ad58df59e2a743c5b8d1a51e375ad08d6e6c0f2d238611",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/definition.json": {
+      "export_sha256": "c84d68b5697d4fe2569207dea0e3d06e76be87b2bfdc2b268da19979d2bc1e6f",
+      "source_sha256": "71a0763ec1705aa852029fb0f611a7fe22095e3a48e7e5de0287be8406718d48",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/jev.jsonl": {
+      "export_sha256": "20d1a2ad7aafcf5d00ad58df59e2a743c5b8d1a51e375ad08d6e6c0f2d238611",
+      "source_sha256": "20d1a2ad7aafcf5d00ad58df59e2a743c5b8d1a51e375ad08d6e6c0f2d238611",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/local-telemetry.jsonl": {
+      "export_sha256": "b0d8ef0f644ff8db0f5555c92132ef22ed2732da3c4e5a4bb8d32fbff25bb67c",
+      "source_sha256": "b0d8ef0f644ff8db0f5555c92132ef22ed2732da3c4e5a4bb8d32fbff25bb67c",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/local.jsonl": {
+      "export_sha256": "9ac030917efadb973cd574c31bc8366d7b48573a533d18e675e8125f4282b3c3",
+      "source_sha256": "9ac030917efadb973cd574c31bc8366d7b48573a533d18e675e8125f4282b3c3",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-001/summary.json": {
+      "export_sha256": "9ad76281a6a94791d99366175106213a45e59161ce20985103ab1d058eccc68a",
+      "source_sha256": "9ad76281a6a94791d99366175106213a45e59161ce20985103ab1d058eccc68a",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-001/chat.jsonl": {
+      "export_sha256": "02dc2ec802d6bfc6e1e35d03d673d6e9a4e44cd205a47e3b25486a7aa34429ae",
+      "source_sha256": "02dc2ec802d6bfc6e1e35d03d673d6e9a4e44cd205a47e3b25486a7aa34429ae",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-001/definition.json": {
+      "export_sha256": "2b90f24fa661cf175dd850a411822c9068bebc835400a3e8acc15ea41bc103b9",
+      "source_sha256": "345c99c5a2fdde7a2dd459c2f3cb0928a4bbc49d4c763743d7d04fe312d29f46",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-001/jev.jsonl": {
+      "export_sha256": "28be96d5290d491fd146d7254175b1e2847797ff31ad22b6d6cdafc347f729c4",
+      "source_sha256": "28be96d5290d491fd146d7254175b1e2847797ff31ad22b6d6cdafc347f729c4",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-001/summary.json": {
+      "export_sha256": "21130fa838d1cb6046bf4ea3cb954582f26e6d30bc32f7bae487c6ddd5c0ced7",
+      "source_sha256": "21130fa838d1cb6046bf4ea3cb954582f26e6d30bc32f7bae487c6ddd5c0ced7",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-002/chat.jsonl": {
+      "export_sha256": "81306f6b86da68453b29fdf0acb544d9fefb36df7d9fc132f29b7a44958d06fb",
+      "source_sha256": "81306f6b86da68453b29fdf0acb544d9fefb36df7d9fc132f29b7a44958d06fb",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-002/definition.json": {
+      "export_sha256": "7cbf7ee59929e26bb8c425cc2aa991d806789b4f367856702618d7046c4c907a",
+      "source_sha256": "db34665fdda67bc0fcb9c92a45c84de697cbc471758d909a79b165f1b32727f7",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-002/jev.jsonl": {
+      "export_sha256": "88220ce9462e0a197184858038101676f09012394140e858c22b89fd4de0bff8",
+      "source_sha256": "88220ce9462e0a197184858038101676f09012394140e858c22b89fd4de0bff8",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-002/summary.json": {
+      "export_sha256": "a3e9994b030e5429e9e9cee1baff4a2ee7b6bb0724305f0bdec586330a192267",
+      "source_sha256": "a3e9994b030e5429e9e9cee1baff4a2ee7b6bb0724305f0bdec586330a192267",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-003/chat.jsonl": {
+      "export_sha256": "0ca36afe43ae29392d122063a733aeca865719aa38bc4d4225a65239dfe00854",
+      "source_sha256": "0ca36afe43ae29392d122063a733aeca865719aa38bc4d4225a65239dfe00854",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-003/definition.json": {
+      "export_sha256": "ce75254a215117eab48dea776f4d54d4ee5a5733191ce8bedcc0f19ff883d0bd",
+      "source_sha256": "834a1f01810446da85776e0b3a4fef83cf55a71692067bd5cc91cbb527a5482b",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-003/jev.jsonl": {
+      "export_sha256": "1422dd609f8d92460c0a464aee10b51519d3c0af80ec8e195083e46e46ec0790",
+      "source_sha256": "1422dd609f8d92460c0a464aee10b51519d3c0af80ec8e195083e46e46ec0790",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-cloud-003/summary.json": {
+      "export_sha256": "73318dcf2dfaa61ca05bad1c173e06f5551dd9c8fedae6ed2de5a53eb786876b",
+      "source_sha256": "73318dcf2dfaa61ca05bad1c173e06f5551dd9c8fedae6ed2de5a53eb786876b",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/definition.json": {
+      "export_sha256": "7d51e8be2a67b8879f90c910d51545796e4255018f29e2f3c9d173c0711d82de",
+      "source_sha256": "b61c1490ef23ec33b3bf8a6633208ef8929cf60899c461346712c0c5c52cc3ff",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-telemetry.jsonl": {
+      "export_sha256": "eae55b3b588ccd72fb8a2963f999cda4e259a3bb5ccd3d73a16cab5f1ad466ea",
+      "source_sha256": "6b3e48af23f6c10b8c4ea9c7517f91be21c996249abe6cfe1755572244266eed",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/0/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/0/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/1/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/1/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/2/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/2/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/3/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/3/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/4/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/4/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/5/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/5/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/6/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/6/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/7/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/7/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/8/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/8/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/9/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/9/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/10/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/10/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/11/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/11/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/12/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/13/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/14/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/15/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/16/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/16/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/17/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/17/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/18/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/18/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/19/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/19/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/20/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/20/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/21/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/21/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/22/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/22/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/23/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/23/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/24/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/24/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/25/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/25/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/26/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/26/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/27/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/28/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/29/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/30/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/31/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/31/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/32/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/32/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/33/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/33/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/34/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/34/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/35/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/35/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/36/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/36/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/37/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/37/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/38/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/38/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/39/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/39/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/40/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/40/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/41/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/41/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/42/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/43/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/44/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/45/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/46/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/46/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/47/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/47/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/48/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/48/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/49/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/49/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/50/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/50/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/51/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/51/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/52/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/52/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/53/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/53/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/54/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/54/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/55/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/55/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/56/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/56/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/57/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/57/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/58/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/58/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/59/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/60/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/61/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/62/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/63/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/63/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/64/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/64/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/65/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/65/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/66/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/66/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/67/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/67/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/68/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/68/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/69/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/69/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/70/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/70/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/71/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/71/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/72/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/72/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/73/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/73/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/74/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/74/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/75/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/75/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/76/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/76/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/77/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/78/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/79/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/80/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/81/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/81/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/82/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/82/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/83/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/83/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/84/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/84/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/85/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/85/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/86/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/86/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/87/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/87/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/88/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/88/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/89/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/89/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/90/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/90/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/91/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/91/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/92/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/92/key"
+        },
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/93/gpu/0/uuid"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/93/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/94/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/95/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/96/key"
+        },
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/97/key"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-1.events.jsonl": {
+      "export_sha256": "a45c20479154839d2d1468e1d8082a512c648b132dc05eed7b3bbbf327d78418",
+      "source_sha256": "a45c20479154839d2d1468e1d8082a512c648b132dc05eed7b3bbbf327d78418",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-1.json": {
+      "export_sha256": "329b886d9f1901a43e2dee91052fce84c2e5d4f98fb1f03963465bfcb4cf6fce",
+      "source_sha256": "329b886d9f1901a43e2dee91052fce84c2e5d4f98fb1f03963465bfcb4cf6fce",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-1.request.json": {
+      "export_sha256": "642dfed66774e6a6b66dde57b6df442b2fdc99f53b7b673b278224f02a849344",
+      "source_sha256": "642dfed66774e6a6b66dde57b6df442b2fdc99f53b7b673b278224f02a849344",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-1.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-2.events.jsonl": {
+      "export_sha256": "5290ffc3edcb6e573035baeaa6b90142bc41cea398322fc5df5d2bea627ec908",
+      "source_sha256": "5290ffc3edcb6e573035baeaa6b90142bc41cea398322fc5df5d2bea627ec908",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-2.json": {
+      "export_sha256": "6322cc47d9be07673fce3a15685ff90f708a9ee94ff8a328e5b4169e00e4ba9b",
+      "source_sha256": "6322cc47d9be07673fce3a15685ff90f708a9ee94ff8a328e5b4169e00e4ba9b",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-2.request.json": {
+      "export_sha256": "0e0d3813774cc2150ccf88a0443d5e1ec107c008d019c3c23496641549661d9c",
+      "source_sha256": "0e0d3813774cc2150ccf88a0443d5e1ec107c008d019c3c23496641549661d9c",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-2.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-3.events.jsonl": {
+      "export_sha256": "962e2f0642f92a7971a1206ad2304e3327ef7eb2381faa36b22885ea5aee3f5d",
+      "source_sha256": "962e2f0642f92a7971a1206ad2304e3327ef7eb2381faa36b22885ea5aee3f5d",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-3.json": {
+      "export_sha256": "29bec1b64cea9015573f1999375238e5e4d8bddb84ef29c4f4621cadd09752f2",
+      "source_sha256": "29bec1b64cea9015573f1999375238e5e4d8bddb84ef29c4f4621cadd09752f2",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-3.request.json": {
+      "export_sha256": "80af6f46f7e93dfac8f64715af46d46ef1a8523c4d66529370b0384d52e968b1",
+      "source_sha256": "80af6f46f7e93dfac8f64715af46d46ef1a8523c4d66529370b0384d52e968b1",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-3.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-4.events.jsonl": {
+      "export_sha256": "089944509db205fbffad9fdbf887823154ecf7d516000e3869762f1e88a2f8a5",
+      "source_sha256": "089944509db205fbffad9fdbf887823154ecf7d516000e3869762f1e88a2f8a5",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-4.json": {
+      "export_sha256": "12be9dc741ea38984d973c2bace3b13edadf96aeae57e6640596af993ddea3e3",
+      "source_sha256": "12be9dc741ea38984d973c2bace3b13edadf96aeae57e6640596af993ddea3e3",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-4.request.json": {
+      "export_sha256": "4e44d759c89648c4b18a0c1cc969bd77241f34f07bb589a8f06a06823fd061f5",
+      "source_sha256": "4e44d759c89648c4b18a0c1cc969bd77241f34f07bb589a8f06a06823fd061f5",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-4.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-5.events.jsonl": {
+      "export_sha256": "fa2e38f2e8dd338943d3516dfe6302354b3d13248160edc141c21677f9cf9ed2",
+      "source_sha256": "fa2e38f2e8dd338943d3516dfe6302354b3d13248160edc141c21677f9cf9ed2",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-5.json": {
+      "export_sha256": "0bda6e2ebd2b2e82760280740819507a55cb0dd1f3dd990300a8ca5e8329910f",
+      "source_sha256": "0bda6e2ebd2b2e82760280740819507a55cb0dd1f3dd990300a8ca5e8329910f",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-5.request.json": {
+      "export_sha256": "8582b50e23ea9fab4ce0f95ed3b4472bcb068adc6e1f3b88139f6792e026a121",
+      "source_sha256": "8582b50e23ea9fab4ce0f95ed3b4472bcb068adc6e1f3b88139f6792e026a121",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-5.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-6.events.jsonl": {
+      "export_sha256": "4f8f2254fe3123cc8cb6abee230d66a2ada0b2b66a19b1ada3a3e6a9b1d40bb0",
+      "source_sha256": "4f8f2254fe3123cc8cb6abee230d66a2ada0b2b66a19b1ada3a3e6a9b1d40bb0",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-6.json": {
+      "export_sha256": "054a183a25c9d0a791c6afafba168d17be53919d937695640a20687885927bd8",
+      "source_sha256": "054a183a25c9d0a791c6afafba168d17be53919d937695640a20687885927bd8",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-6.request.json": {
+      "export_sha256": "f8cf7b6b3bff7e9184bbaa6998825b61007ea695cc7572f43047f8f2f13a9cca",
+      "source_sha256": "f8cf7b6b3bff7e9184bbaa6998825b61007ea695cc7572f43047f8f2f13a9cca",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local-worker-6.stderr": {
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/local.jsonl": {
+      "export_sha256": "cb50bd168e03ce372f1d4ddeb42193ef1317294b12f453ef6fbf3f32dbc23098",
+      "source_sha256": "cb50bd168e03ce372f1d4ddeb42193ef1317294b12f453ef6fbf3f32dbc23098",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-development-local-002/summary.json": {
+      "export_sha256": "49d15f3d82b83c2eab017a300398083856845761f82cd970eb39abc67fb4bf63",
+      "source_sha256": "49d15f3d82b83c2eab017a300398083856845761f82cd970eb39abc67fb4bf63",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/calibration/chat.jsonl": {
+      "export_sha256": "e0a25c957af8343afe7670428b7c27ce6338845cc15c7c85592176a9205f69b0",
+      "source_sha256": "e0a25c957af8343afe7670428b7c27ce6338845cc15c7c85592176a9205f69b0",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/calibration/definition.json": {
+      "export_sha256": "11ceec2d60e4f12c3b1cb274520188146f77fba153d113863722e844e39b35b3",
+      "source_sha256": "46829cf0cbbef2d00da6488549bf90619663de05e4ff4142d437dbd545324efc",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/calibration/jev.jsonl": {
+      "export_sha256": "3b1c6109d7e529fb373da2ae9f77d23bd8b9bb7b4057c2a82d862f3b4619754a",
+      "source_sha256": "3b1c6109d7e529fb373da2ae9f77d23bd8b9bb7b4057c2a82d862f3b4619754a",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/calibration/summary.json": {
+      "export_sha256": "1666fe1e9c11346a5ddd965caba32e9e9fc19270c1b0ea6602d3a0b7567a1a6f",
+      "source_sha256": "1666fe1e9c11346a5ddd965caba32e9e9fc19270c1b0ea6602d3a0b7567a1a6f",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/freeze.json": {
+      "export_sha256": "4749d5d28736b43d36e1a6a11448429c547060924f2a74c122ea8695b800786c",
+      "source_sha256": "8299db1dab85373e228207cd7c058600d6ee3826e5db75e3e60b5dca9eb4bbbc",
+      "transformations": [
+        {
+          "change": "workstation path to repository/campaign-relative identity",
+          "field": "/dataset_path"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/settings/preflight_sha256/preflight-local-001~1definition.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/settings/preflight_sha256/preflight-local-001~1local-telemetry.jsonl"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/test/chat.jsonl": {
+      "export_sha256": "9d3fdfdb94adf83416f9ea60e31af4147d76cbd533a1c9e045cc24e589e3933b",
+      "source_sha256": "9d3fdfdb94adf83416f9ea60e31af4147d76cbd533a1c9e045cc24e589e3933b",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/test/definition.json": {
+      "export_sha256": "540522be5c23129ac9f8ff25435bba29f2200495060222ce834b1284968d0f3b",
+      "source_sha256": "8634397f56eddb7db93ba1bf5c5a628c9f6e4ce78bfa347d484fa76519061715",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        }
+      ]
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/test/jev.jsonl": {
+      "export_sha256": "a78ec4310fb19838998e0556781ee0086f9f8fabf556c940b9463578a5333bf0",
+      "source_sha256": "a78ec4310fb19838998e0556781ee0086f9f8fabf556c940b9463578a5333bf0",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/test/summary.json": {
+      "export_sha256": "e5ee4254804ba17e8bc7e1985bd034d254cfa7cf1e835beab8e4d6edaa257e78",
+      "source_sha256": "e5ee4254804ba17e8bc7e1985bd034d254cfa7cf1e835beab8e4d6edaa257e78",
+      "transformations": []
+    },
+    "experiments/v002/evidence/campaign/v002-frozen/thresholds.json": {
+      "export_sha256": "0fbd609397568cd553c2e2cb88d309760d9eefe641e10fef021be24ee03fbf65",
+      "source_sha256": "b24ded05a614bf0951c85af18014e15790618296ea5affac0dbb626b28c20895",
+      "transformations": [
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/freeze_sha256"
+        }
+      ]
+    },
+    "experiments/v002/index.html": {
+      "export_sha256": "b01a1e8f3b7bf7be410c1c2eee9082220bf53db64b8b8c918e5f27b3d4b6e22d",
+      "source_sha256": "b01a1e8f3b7bf7be410c1c2eee9082220bf53db64b8b8c918e5f27b3d4b6e22d",
+      "transformations": []
+    },
+    "experiments/v002/label-review/aggregate-summary.json": {
+      "export_sha256": "cebcb085f720fd38212ceb05486687f0b99dfeb663ac058007099f3d8999c217",
+      "source_sha256": "cebcb085f720fd38212ceb05486687f0b99dfeb663ac058007099f3d8999c217",
+      "transformations": []
+    },
+    "experiments/v002/label-review/judgment-commitment.json": {
+      "export_sha256": "6ed57354058f519b3f0cfe2779deaefa1022bf5fdc25c179a5b2794b85243f76",
+      "source_sha256": "6ed57354058f519b3f0cfe2779deaefa1022bf5fdc25c179a5b2794b85243f76",
+      "transformations": []
+    },
+    "experiments/v002/label-review/review-plan.json": {
+      "export_sha256": "a7237a5f0cd5a5014070062e3dfa11334ccae633916652972c93de180ddca0bb",
+      "source_sha256": "a7237a5f0cd5a5014070062e3dfa11334ccae633916652972c93de180ddca0bb",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-calibration-report/index.html": {
+      "export_sha256": "8545b5aa7969bada17999653fd993baa1a874c9299fc9fffbf2f839c895532b5",
+      "source_sha256": "8545b5aa7969bada17999653fd993baa1a874c9299fc9fffbf2f839c895532b5",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-calibration-report/report.json": {
+      "export_sha256": "bffcb0e39e6ef51b35d825ffe6df652006da7219b1fd93d1e755eaabeeb14b3b",
+      "source_sha256": "7d9cf40a98247afcf857724824d75c6dafe4a77e885330a1bea387ef0a4be2b0",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/phase_locks/freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reports/v002-development-cloud-001-report-final/index.html": {
+      "export_sha256": "caafe10f258391b4623cf66d39ad053d0926a2264fc5758129b497701761d1ac",
+      "source_sha256": "caafe10f258391b4623cf66d39ad053d0926a2264fc5758129b497701761d1ac",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-development-cloud-001-report-final/report.json": {
+      "export_sha256": "7d23ea0c66fdb67247606265d6a4a61729aab5b49e6ea6ca7a03f6f675140f71",
+      "source_sha256": "845ccd25a371d3f98deb49e9843054cc3f9b9f5393b01860e9b6cdf228b2b264",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reports/v002-development-cloud-002-report/index.html": {
+      "export_sha256": "3cd273d1321fb27238638b9c95e04291db88f2de92a2a32f7fc423f34de8d8f6",
+      "source_sha256": "3cd273d1321fb27238638b9c95e04291db88f2de92a2a32f7fc423f34de8d8f6",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-development-cloud-002-report/report.json": {
+      "export_sha256": "ac1a79882884913590b0ddbe02423672c100e444dd2e8cd5c4dc08e40a44062d",
+      "source_sha256": "5579b76d2644c8983408507b1a2ac98e66405b7e20fd91e2c22f5c56f31742a3",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reports/v002-development-cloud-003-report/index.html": {
+      "export_sha256": "a96521b1af1bbeeb42d17060e0fdb89028107a4fc5c995d062bd4e7cb354b810",
+      "source_sha256": "a96521b1af1bbeeb42d17060e0fdb89028107a4fc5c995d062bd4e7cb354b810",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-development-cloud-003-report/report.json": {
+      "export_sha256": "e40d5d8e31206f732d8d434a8c0d383c77e823cdaf3539466544c341270a0975",
+      "source_sha256": "a3886c1ac9de5535e48de2e4d0682691aea91706148f7cee9926f295729ebe0a",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reports/v002-development-local-002-report/index.html": {
+      "export_sha256": "ce3f201bdd3fc13607e1a7e73ae8f88bec37c6f7ea509be6b58d1592ea5ac8cb",
+      "source_sha256": "ce3f201bdd3fc13607e1a7e73ae8f88bec37c6f7ea509be6b58d1592ea5ac8cb",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-development-local-002-report/report.json": {
+      "export_sha256": "6ab4d70d507074ea842100ee3bbf37606691ad53b17e44536dbcda961705d4d5",
+      "source_sha256": "88773bdfbe11b07d95534121b5f508e9c6250137e465dbd391e8de06c9be8880",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reports/v002-test-report/index.html": {
+      "export_sha256": "731bb40d4cca1a4f3edff2e62b07e00cb1e2864460dc72ebcea89df12ecbdc7e",
+      "source_sha256": "731bb40d4cca1a4f3edff2e62b07e00cb1e2864460dc72ebcea89df12ecbdc7e",
+      "transformations": []
+    },
+    "experiments/v002/reports/v002-test-report/report.json": {
+      "export_sha256": "4888a54ed94c343f796a4dd24ef0426e57adb83275b80afc748caff7a3acbac4",
+      "source_sha256": "4ee81d5778635e579d99dc6c8116b8e50062b7cb07a063b3d3163e3868ffe73e",
+      "transformations": [
+        {
+          "change": "hardware UUID to consistent public pseudonym",
+          "field": "/resource_before/gpu/0/uuid"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/phase_locks/freeze.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/phase_locks/thresholds.json"
+        },
+        {
+          "change": "rebind exact SHA-256 to corresponding exported bytes",
+          "field": "/source_artifacts/definition.json"
+        }
+      ]
+    },
+    "experiments/v002/reproduce.py": {
+      "export_sha256": "2bbf774d430ca68949dc4f344772c1a5ab2bad349f4d1eee2bf11466414a42cf",
+      "source_sha256": "2bbf774d430ca68949dc4f344772c1a5ab2bad349f4d1eee2bf11466414a42cf",
+      "transformations": []
+    },
+    "experiments/v002/tokenizer/tokenizer-manifest.json": {
+      "export_sha256": "84f40a9953de9923f546e700c2a36b8074337823dc51d6fe83cbb6849652f477",
+      "source_sha256": "84f40a9953de9923f546e700c2a36b8074337823dc51d6fe83cbb6849652f477",
+      "transformations": []
+    },
+    "logitpick/__init__.py": {
+      "export_sha256": "44e21e71d66380aefcb5bd49a6c2e8aeb007326bbb74fd6bd28745c5d96fd012",
+      "source_sha256": "44e21e71d66380aefcb5bd49a6c2e8aeb007326bbb74fd6bd28745c5d96fd012",
+      "transformations": []
+    },
+    "logitpick/__main__.py": {
+      "export_sha256": "17185e2197700bc9cb43a156aefb7b7db35902250ddfd1c6994280b37ff63e7b",
+      "source_sha256": "17185e2197700bc9cb43a156aefb7b7db35902250ddfd1c6994280b37ff63e7b",
+      "transformations": []
+    },
+    "logitpick/codes.py": {
+      "export_sha256": "28660480046569d87b736d2b826facc83dca6de405935edb9e220c11f8b999a9",
+      "source_sha256": "28660480046569d87b736d2b826facc83dca6de405935edb9e220c11f8b999a9",
+      "transformations": []
+    },
+    "logitpick/compact.py": {
+      "export_sha256": "8172f0989f833b4db86a48c54ad1ebfad5f75c3521b2c5d15d0149a1e1d95228",
+      "source_sha256": "8172f0989f833b4db86a48c54ad1ebfad5f75c3521b2c5d15d0149a1e1d95228",
+      "transformations": []
+    },
+    "logitpick/diffparse.py": {
+      "export_sha256": "0133a860f29f5352447ab3166a3800a5daea4af958a25915b234e3f7670635b4",
+      "source_sha256": "0133a860f29f5352447ab3166a3800a5daea4af958a25915b234e3f7670635b4",
+      "transformations": []
+    },
+    "logitpick/engine.py": {
+      "export_sha256": "54535fd2bc511f59fabf530605e1361cfa37d17ce0237ff68bccebd743e53ede",
+      "source_sha256": "54535fd2bc511f59fabf530605e1361cfa37d17ce0237ff68bccebd743e53ede",
+      "transformations": []
+    },
+    "logitpick/gate.py": {
+      "export_sha256": "bfc21e4e1bf399339e320674f38033fd4af26b6d20b02fe63e3d5cecf90ea718",
+      "source_sha256": "bfc21e4e1bf399339e320674f38033fd4af26b6d20b02fe63e3d5cecf90ea718",
+      "transformations": []
+    },
+    "logitpick/leakcheck.py": {
+      "export_sha256": "74f96eec8b58ea49853b0825e714807e2aef81ac24c8c7cbeae61cf611503c41",
+      "source_sha256": "74f96eec8b58ea49853b0825e714807e2aef81ac24c8c7cbeae61cf611503c41",
+      "transformations": []
+    },
+    "logitpick/mathutil.py": {
+      "export_sha256": "342e27163fcac327a786ceffffde0845901317c4e6eccf10afd73e71c8e9dbe5",
+      "source_sha256": "342e27163fcac327a786ceffffde0845901317c4e6eccf10afd73e71c8e9dbe5",
+      "transformations": []
+    },
+    "logitpick/ollama.py": {
+      "export_sha256": "0555888f69aefbc33915cd42dc0523b8723954618da3f6f6d58dac80acd2737a",
+      "source_sha256": "0555888f69aefbc33915cd42dc0523b8723954618da3f6f6d58dac80acd2737a",
+      "transformations": []
+    },
+    "logitpick/pick_payload.py": {
+      "export_sha256": "5c730626d596b8fbf624fe45aa02d0e44a283e9ae0c140fd96fe95096755e51a",
+      "source_sha256": "5c730626d596b8fbf624fe45aa02d0e44a283e9ae0c140fd96fe95096755e51a",
+      "transformations": []
+    },
+    "logitpick/policy.py": {
+      "export_sha256": "26b0e08b4f9d5e9bc99be5da65794e9c3d8e46feb0d5ccb1004177d48c7fbbe0",
+      "source_sha256": "26b0e08b4f9d5e9bc99be5da65794e9c3d8e46feb0d5ccb1004177d48c7fbbe0",
+      "transformations": []
+    },
+    "logitpick/prompt.py": {
+      "export_sha256": "d7d8e38e98ef1a589961d03ef0bda63426668d91b9c48c1372e11aa8bc4a0af0",
+      "source_sha256": "d7d8e38e98ef1a589961d03ef0bda63426668d91b9c48c1372e11aa8bc4a0af0",
+      "transformations": []
+    },
+    "logitpick/scans.py": {
+      "export_sha256": "2e90b8688cb5b8f940759e8aacac4d88af4cddc2202e1792798ba5ddfb6e4061",
+      "source_sha256": "2e90b8688cb5b8f940759e8aacac4d88af4cddc2202e1792798ba5ddfb6e4061",
+      "transformations": []
+    },
+    "logitpick/schema.py": {
+      "export_sha256": "830bd13c6432c0f6f1022deb2f074393b5fab74dd9ab8afef02a3566a6b41e18",
+      "source_sha256": "830bd13c6432c0f6f1022deb2f074393b5fab74dd9ab8afef02a3566a6b41e18",
+      "transformations": []
+    },
+    "logitpick/serve.py": {
+      "export_sha256": "97e32a69ec1492fa0c999f0ee8afad395f8374d99b05ca3da295573108e979e9",
+      "source_sha256": "97e32a69ec1492fa0c999f0ee8afad395f8374d99b05ca3da295573108e979e9",
+      "transformations": []
+    },
+    "release/CLAUDE-REVIEW.json": {
+      "export_sha256": "a6105ed67308020ab5707146eca7d35ded1750d608beb6e8ccc20b860b263f52",
+      "source_sha256": "a6105ed67308020ab5707146eca7d35ded1750d608beb6e8ccc20b860b263f52",
+      "transformations": []
+    },
+    "release/CLAUDE-REVIEW.md": {
+      "export_sha256": "7098dcfe022f2854361ca14e85fe61e04ff8f2e4e44e52ac5d7f50840dd1f42f",
+      "source_sha256": "7098dcfe022f2854361ca14e85fe61e04ff8f2e4e44e52ac5d7f50840dd1f42f",
+      "transformations": []
+    },
+    "release/CONTRIBUTING-PUBLIC.md": {
+      "export_sha256": "f26740ef7b38172694ce7f69bd37ff2e1d54e7c4038e2dc1c2428d649b29b556",
+      "source_sha256": "f26740ef7b38172694ce7f69bd37ff2e1d54e7c4038e2dc1c2428d649b29b556",
+      "transformations": []
+    },
+    "release/LIVE-SMOKE.json": {
+      "export_sha256": "439dbd861b12601a3d7f46368943cf0e48efb298be7b592dce02522166eaab46",
+      "source_sha256": "439dbd861b12601a3d7f46368943cf0e48efb298be7b592dce02522166eaab46",
+      "transformations": []
+    },
+    "release/README-PUBLIC.md": {
+      "export_sha256": "3c356ac409bc8d4db378d74916c8b59319879f27a084b9fc26e7869630b63fd3",
+      "source_sha256": "3c356ac409bc8d4db378d74916c8b59319879f27a084b9fc26e7869630b63fd3",
+      "transformations": []
+    },
+    "release/RELEASE-STATUS.md": {
+      "export_sha256": "52d3bcdaa0beaf804bdbedcb6fcd952c3da744fe2d780de86b74f03d387bd89e",
+      "source_sha256": "52d3bcdaa0beaf804bdbedcb6fcd952c3da744fe2d780de86b74f03d387bd89e",
+      "transformations": []
+    },
+    "release/REVIEW-DISPOSITION.md": {
+      "export_sha256": "48b7e3a875a0e44341b09c8d41938e8d43515580e192ff4dc3da848dd157916f",
+      "source_sha256": "48b7e3a875a0e44341b09c8d41938e8d43515580e192ff4dc3da848dd157916f",
+      "transformations": []
+    },
+    "release/VALIDATION.json": {
+      "export_sha256": "173bba0a83b115091fc1c9e1a6524333d137267d1437d1b306b900052df1a568",
+      "source_sha256": "173bba0a83b115091fc1c9e1a6524333d137267d1437d1b306b900052df1a568",
+      "transformations": []
+    },
+    "release/build_public.py": {
+      "export_sha256": "d815462c0ad61f4ab231165c1d92f40480663929ab240b82d9b3b6197c6021fb",
+      "source_sha256": "d815462c0ad61f4ab231165c1d92f40480663929ab240b82d9b3b6197c6021fb",
+      "transformations": []
+    },
+    "release/test_public_export.py": {
+      "export_sha256": "320bfcc251ec134a7354cdc25ced3e7cf3e71f476d7bc2c08c5719d24532fb3a",
+      "source_sha256": "320bfcc251ec134a7354cdc25ced3e7cf3e71f476d7bc2c08c5719d24532fb3a",
+      "transformations": []
+    },
+    "run.py": {
+      "export_sha256": "e59505ffc9793de0bd0c85a5eab3ccc17db58782d41c85a14abf4c7dfd8adde5",
+      "source_sha256": "e59505ffc9793de0bd0c85a5eab3ccc17db58782d41c85a14abf4c7dfd8adde5",
+      "transformations": []
+    },
+    "skills/README.md": {
+      "export_sha256": "8ff6c34bcea81ce3587e231269cb721a8433e6a7426a8e7ea77913015beb8570",
+      "source_sha256": "8ff6c34bcea81ce3587e231269cb721a8433e6a7426a8e7ea77913015beb8570",
+      "transformations": []
+    },
+    "skills/examples/check_fixture.py": {
+      "export_sha256": "f71b5366b9927080b1564578ce1143d7174e49e0b453b7ef3bef4127faa2a83b",
+      "source_sha256": "f71b5366b9927080b1564578ce1143d7174e49e0b453b7ef3bef4127faa2a83b",
+      "transformations": []
+    },
+    "skills/examples/demo.py": {
+      "export_sha256": "2a46aa8b8de29b6bc30cad6292fab7bbc86d1517e6502209d7b21eeeba9e0cf3",
+      "source_sha256": "2a46aa8b8de29b6bc30cad6292fab7bbc86d1517e6502209d7b21eeeba9e0cf3",
+      "transformations": []
+    },
+    "skills/examples/test_demo.py": {
+      "export_sha256": "f89a9d2d1ee29cdfb4d5e46911ce5ff0c444a5ea3af4efbc3773a4bcc4797814",
+      "source_sha256": "f89a9d2d1ee29cdfb4d5e46911ce5ff0c444a5ea3af4efbc3773a4bcc4797814",
+      "transformations": []
+    },
+    "skills/jev-hypothesize/SKILL.md": {
+      "export_sha256": "9885a04201e50d65ba9be12e650782579fdde272cf35773657efb136092906fb",
+      "source_sha256": "9885a04201e50d65ba9be12e650782579fdde272cf35773657efb136092906fb",
+      "transformations": []
+    },
+    "skills/jev-hypothesize/references/context.md": {
+      "export_sha256": "100a9c0bd90e7192f9cfddc601187d0cf7675188e73a16c3b81957a30e84df76",
+      "source_sha256": "100a9c0bd90e7192f9cfddc601187d0cf7675188e73a16c3b81957a30e84df76",
+      "transformations": []
+    },
+    "skills/jev-integrate/SKILL.md": {
+      "export_sha256": "b842e9eddde356bfcbef30450a4c053d20f3d56810ceba4c469c0c75cd177573",
+      "source_sha256": "b842e9eddde356bfcbef30450a4c053d20f3d56810ceba4c469c0c75cd177573",
+      "transformations": []
+    },
+    "skills/jev-integrate/references/context.md": {
+      "export_sha256": "100a9c0bd90e7192f9cfddc601187d0cf7675188e73a16c3b81957a30e84df76",
+      "source_sha256": "100a9c0bd90e7192f9cfddc601187d0cf7675188e73a16c3b81957a30e84df76",
+      "transformations": []
+    },
+    "study-execution/ANALYSIS.md": {
+      "export_sha256": "37a35a53d98893f5dbc896af97978ac7e0f1989250b04bbdd3daa6ed4bdd63ad",
+      "source_sha256": "37a35a53d98893f5dbc896af97978ac7e0f1989250b04bbdd3daa6ed4bdd63ad",
+      "transformations": []
+    },
+    "study-execution/FREEZE-AND-TOKENS.md": {
+      "export_sha256": "2fc567a7cf94a7629c3c43c47c621be34270033787188ba29e98e4a2ce5921b0",
+      "source_sha256": "2fc567a7cf94a7629c3c43c47c621be34270033787188ba29e98e4a2ce5921b0",
+      "transformations": []
+    },
+    "study-execution/METRICS.md": {
+      "export_sha256": "3cadccf91efb19c6ec7356d4eed7d2bb6951b1bec8be584fd628706d95276f67",
+      "source_sha256": "3cadccf91efb19c6ec7356d4eed7d2bb6951b1bec8be584fd628706d95276f67",
+      "transformations": []
+    },
+    "study-execution/PREFLIGHT.md": {
+      "export_sha256": "f41265fa1924317776d30b46b671964881a42d6b96e41b1e480bc8bd1742b533",
+      "source_sha256": "f41265fa1924317776d30b46b671964881a42d6b96e41b1e480bc8bd1742b533",
+      "transformations": []
+    },
+    "study-execution/README.md": {
+      "export_sha256": "d4c21dfdf613b41175b4e13f109c58a2349ee3c0411ed8c3ae52753f43e01ea5",
+      "source_sha256": "d4c21dfdf613b41175b4e13f109c58a2349ee3c0411ed8c3ae52753f43e01ea5",
+      "transformations": []
+    },
+    "study-execution/RUNNER.md": {
+      "export_sha256": "f9da03d17b3ca38240ab83f00fd74271abebd713c6a7dd1e2daf297b36112372",
+      "source_sha256": "f9da03d17b3ca38240ab83f00fd74271abebd713c6a7dd1e2daf297b36112372",
+      "transformations": []
+    },
+    "study-execution/TOKENIZER.md": {
+      "export_sha256": "0338278fb4dd4dd24c90ca3037de18a1ade7febf033aa50f21c74e310465e21a",
+      "source_sha256": "0338278fb4dd4dd24c90ca3037de18a1ade7febf033aa50f21c74e310465e21a",
+      "transformations": []
+    },
+    "study-execution/adapters.py": {
+      "export_sha256": "1320ef78325733dce446e6d035a5fb025c43ae3701da253be4f41dc254fb9809",
+      "source_sha256": "1320ef78325733dce446e6d035a5fb025c43ae3701da253be4f41dc254fb9809",
+      "transformations": []
+    },
+    "study-execution/analysis.py": {
+      "export_sha256": "09a1222e7895cb4cb0add2c52108724850439873c7e737005f407b724c1a259e",
+      "source_sha256": "09a1222e7895cb4cb0add2c52108724850439873c7e737005f407b724c1a259e",
+      "transformations": []
+    },
+    "study-execution/budget.py": {
+      "export_sha256": "29dd2015c59c84b4c07c7a8526d26ec00e94ad3db8c11f3ac2459108283465d5",
+      "source_sha256": "29dd2015c59c84b4c07c7a8526d26ec00e94ad3db8c11f3ac2459108283465d5",
+      "transformations": []
+    },
+    "study-execution/development.py": {
+      "export_sha256": "ea3a3bd2606baa528a60f6f6c79605d23ec2b3c7e041fd6abe03a78fa197d25d",
+      "source_sha256": "ea3a3bd2606baa528a60f6f6c79605d23ec2b3c7e041fd6abe03a78fa197d25d",
+      "transformations": []
+    },
+    "study-execution/development_report.py": {
+      "export_sha256": "452be8d6296c9e938bfd014252c7e8e071b3372bb200afdef723ad89fadee07f",
+      "source_sha256": "452be8d6296c9e938bfd014252c7e8e071b3372bb200afdef723ad89fadee07f",
+      "transformations": []
+    },
+    "study-execution/experiment_v2.py": {
+      "export_sha256": "142501972751da77735a2f70b6c7899300266dc09d9bf65117f2764a6ca8765e",
+      "source_sha256": "142501972751da77735a2f70b6c7899300266dc09d9bf65117f2764a6ca8765e",
+      "transformations": []
+    },
+    "study-execution/journal.py": {
+      "export_sha256": "10b39fb1c4690015a8fac5afc2d82b527f22b403838e946faec1d9d923e31db6",
+      "source_sha256": "10b39fb1c4690015a8fac5afc2d82b527f22b403838e946faec1d9d923e31db6",
+      "transformations": []
+    },
+    "study-execution/label-review.csv": {
+      "export_sha256": "dde95c0f86ebaa1a94e059f94e3a8d845205e6c8c33d9d5c2591260aee2affa8",
+      "source_sha256": "dde95c0f86ebaa1a94e059f94e3a8d845205e6c8c33d9d5c2591260aee2affa8",
+      "transformations": []
+    },
+    "study-execution/live_development.py": {
+      "export_sha256": "957f516eed86ec344a8b37381e160d82301bdf16f05c9711cc9965c01ebd447c",
+      "source_sha256": "957f516eed86ec344a8b37381e160d82301bdf16f05c9711cc9965c01ebd447c",
+      "transformations": []
+    },
+    "study-execution/local_capture.py": {
+      "export_sha256": "64b3a35b38daaa6b07d0539c5089d1cca0cb6de86e52c1555d63dd57c45fedf9",
+      "source_sha256": "64b3a35b38daaa6b07d0539c5089d1cca0cb6de86e52c1555d63dd57c45fedf9",
+      "transformations": []
+    },
+    "study-execution/local_resources.py": {
+      "export_sha256": "49de7a45287b13b0502695fcaf669b0907a662a1ee3612424cc7593109c14d18",
+      "source_sha256": "49de7a45287b13b0502695fcaf669b0907a662a1ee3612424cc7593109c14d18",
+      "transformations": []
+    },
+    "study-execution/local_worker.py": {
+      "export_sha256": "1a1921630c796adf78dad305f8ed20fda933aa6db43e2e8ec86f40662746e97a",
+      "source_sha256": "1a1921630c796adf78dad305f8ed20fda933aa6db43e2e8ec86f40662746e97a",
+      "transformations": []
+    },
+    "study-execution/locks.py": {
+      "export_sha256": "78b477b6a32217090dabb0de9ba1dcae1473815caa41abed176f081d1a5e92b7",
+      "source_sha256": "78b477b6a32217090dabb0de9ba1dcae1473815caa41abed176f081d1a5e92b7",
+      "transformations": []
+    },
+    "study-execution/measured_tokens.py": {
+      "export_sha256": "bd73da010f9a4d7647cffa2638f31148107579592cdcba910ee335f28c768185",
+      "source_sha256": "bd73da010f9a4d7647cffa2638f31148107579592cdcba910ee335f28c768185",
+      "transformations": []
+    },
+    "study-execution/memory_ablation.py": {
+      "export_sha256": "271632cead9b1c8fc3e0abb98657a497d1f5b8ae22c4aaa01753942b74164cf8",
+      "source_sha256": "271632cead9b1c8fc3e0abb98657a497d1f5b8ae22c4aaa01753942b74164cf8",
+      "transformations": []
+    },
+    "study-execution/metrics_report.py": {
+      "export_sha256": "9167f973c0f58acb0faf77dc0776055d93a159f5a287c906a1469704d64d2bb9",
+      "source_sha256": "9167f973c0f58acb0faf77dc0776055d93a159f5a287c906a1469704d64d2bb9",
+      "transformations": []
+    },
+    "study-execution/preflight.py": {
+      "export_sha256": "3671642929507e28357db7d3413a769a027b35d9c0a80c73f827e1606bc4b781",
+      "source_sha256": "3671642929507e28357db7d3413a769a027b35d9c0a80c73f827e1606bc4b781",
+      "transformations": []
+    },
+    "study-execution/replay_analysis.py": {
+      "export_sha256": "f1296e3a5d92db9b6695405b2c67fe3e0dfde30ff34579bdcccae5b121b13c4c",
+      "source_sha256": "f1296e3a5d92db9b6695405b2c67fe3e0dfde30ff34579bdcccae5b121b13c4c",
+      "transformations": []
+    },
+    "study-execution/review_pack.py": {
+      "export_sha256": "16eec32c33a1e1fd8d1a80fc2db195bc971c86948824fe37263f0f8da128bd47",
+      "source_sha256": "16eec32c33a1e1fd8d1a80fc2db195bc971c86948824fe37263f0f8da128bd47",
+      "transformations": []
+    },
+    "study-execution/routing_contract.py": {
+      "export_sha256": "65a770d4f3abbda7c5d1788a5533109dfa4dfd8207ebc69963c395dab735c50a",
+      "source_sha256": "65a770d4f3abbda7c5d1788a5533109dfa4dfd8207ebc69963c395dab735c50a",
+      "transformations": []
+    },
+    "study-execution/runner.py": {
+      "export_sha256": "574b01494e54dd1e6593a49f9e100a3a9b3bf93b370e8756cc8ca01a40b8b57d",
+      "source_sha256": "574b01494e54dd1e6593a49f9e100a3a9b3bf93b370e8756cc8ca01a40b8b57d",
+      "transformations": []
+    },
+    "study-execution/test_adapters.py": {
+      "export_sha256": "1fd487a534041e3939ad7122355745a0158f6d935cd56172a54c53fe7d6f9e36",
+      "source_sha256": "1fd487a534041e3939ad7122355745a0158f6d935cd56172a54c53fe7d6f9e36",
+      "transformations": []
+    },
+    "study-execution/test_analysis.py": {
+      "export_sha256": "38f28af2139d8a4a276fb04e845fb62cb4d24061a91cd306fdab5c2374625a15",
+      "source_sha256": "38f28af2139d8a4a276fb04e845fb62cb4d24061a91cd306fdab5c2374625a15",
+      "transformations": []
+    },
+    "study-execution/test_budget.py": {
+      "export_sha256": "890cda3b3b88f8232ee3c4a65f3bee5b9cdee93530e816d2e61dde65f0b6b8b0",
+      "source_sha256": "890cda3b3b88f8232ee3c4a65f3bee5b9cdee93530e816d2e61dde65f0b6b8b0",
+      "transformations": []
+    },
+    "study-execution/test_development.py": {
+      "export_sha256": "73fc4a5284434238094b09277e9dc3899e128ada25b53a667a8bbc4a5d10fad3",
+      "source_sha256": "73fc4a5284434238094b09277e9dc3899e128ada25b53a667a8bbc4a5d10fad3",
+      "transformations": []
+    },
+    "study-execution/test_development_report.py": {
+      "export_sha256": "33ce8c29986a39e6569e83097d35fd63e4f046afc3f5bacacb89455fe8ff14ee",
+      "source_sha256": "33ce8c29986a39e6569e83097d35fd63e4f046afc3f5bacacb89455fe8ff14ee",
+      "transformations": []
+    },
+    "study-execution/test_experiment_v2.py": {
+      "export_sha256": "52bc4286a2eea78d8b185e894a09cf2e98197538c0aee2eadacd7cc0e39bf793",
+      "source_sha256": "52bc4286a2eea78d8b185e894a09cf2e98197538c0aee2eadacd7cc0e39bf793",
+      "transformations": []
+    },
+    "study-execution/test_journal.py": {
+      "export_sha256": "e64aa0503681e293e57c17d2cb97bcd772913d84a395a9e0a30e6e8e5c7c543d",
+      "source_sha256": "e64aa0503681e293e57c17d2cb97bcd772913d84a395a9e0a30e6e8e5c7c543d",
+      "transformations": []
+    },
+    "study-execution/test_live_development.py": {
+      "export_sha256": "aa308308148d29a25f2ef76a237fa433cc457d023eb8e6901866bf00a4f878c0",
+      "source_sha256": "aa308308148d29a25f2ef76a237fa433cc457d023eb8e6901866bf00a4f878c0",
+      "transformations": []
+    },
+    "study-execution/test_local_capture.py": {
+      "export_sha256": "1dc8659952517cef6ba15a9c92631bfcdddc87a159762d3b6351151eccf47ec2",
+      "source_sha256": "1dc8659952517cef6ba15a9c92631bfcdddc87a159762d3b6351151eccf47ec2",
+      "transformations": []
+    },
+    "study-execution/test_local_resources.py": {
+      "export_sha256": "23ea11fbf3dde88922529f5589f80fbb84002778cf25b7f32b503be77555d8dc",
+      "source_sha256": "23ea11fbf3dde88922529f5589f80fbb84002778cf25b7f32b503be77555d8dc",
+      "transformations": []
+    },
+    "study-execution/test_locks.py": {
+      "export_sha256": "4fc883a30913212fd1005a468b65d9342506e571f43507eb7b4e3b233da8d1d4",
+      "source_sha256": "4fc883a30913212fd1005a468b65d9342506e571f43507eb7b4e3b233da8d1d4",
+      "transformations": []
+    },
+    "study-execution/test_measured_tokens.py": {
+      "export_sha256": "2ee656bbca7373de06fc8dcdc79b277d9ceadfdfd80ed1dfa185cc6e8f4ac614",
+      "source_sha256": "2ee656bbca7373de06fc8dcdc79b277d9ceadfdfd80ed1dfa185cc6e8f4ac614",
+      "transformations": []
+    },
+    "study-execution/test_memory_ablation.py": {
+      "export_sha256": "6fe9087abe1a959bbf8fea4fe197fe01b02c832f1f34b85aff8399a2f0aab4ff",
+      "source_sha256": "6fe9087abe1a959bbf8fea4fe197fe01b02c832f1f34b85aff8399a2f0aab4ff",
+      "transformations": []
+    },
+    "study-execution/test_preflight.py": {
+      "export_sha256": "7f1e358fe24deba4315d1f437ea00a9910123995f83cde4385972cceb1d81836",
+      "source_sha256": "7f1e358fe24deba4315d1f437ea00a9910123995f83cde4385972cceb1d81836",
+      "transformations": []
+    },
+    "study-execution/test_replay_analysis.py": {
+      "export_sha256": "b58c9f8a32902e08dc78de53ddf1256789846dace1d332de6e368bcc2971d3b7",
+      "source_sha256": "b58c9f8a32902e08dc78de53ddf1256789846dace1d332de6e368bcc2971d3b7",
+      "transformations": []
+    },
+    "study-execution/test_review_pack.py": {
+      "export_sha256": "b3aa4a13f3c26fff4ff18d4c3a9ec7aaaf9b1266ded27245676b7c7469cbb38c",
+      "source_sha256": "b3aa4a13f3c26fff4ff18d4c3a9ec7aaaf9b1266ded27245676b7c7469cbb38c",
+      "transformations": []
+    },
+    "study-execution/test_runner.py": {
+      "export_sha256": "404a5339a79d1c6493582b1ccbe059c98c8ef963186d2bb570ba2276a87ae2a6",
+      "source_sha256": "404a5339a79d1c6493582b1ccbe059c98c8ef963186d2bb570ba2276a87ae2a6",
+      "transformations": []
+    },
+    "study-execution/test_token_accounting.py": {
+      "export_sha256": "19f923c78c40d008c59185abd4c06c73e1b3abd2a13aee013e96bb09478754fd",
+      "source_sha256": "19f923c78c40d008c59185abd4c06c73e1b3abd2a13aee013e96bb09478754fd",
+      "transformations": []
+    },
+    "study-execution/test_transport.py": {
+      "export_sha256": "948c893c9f2c9142e09850482b2c87ca51641680f20a3c765958d430ff329ca1",
+      "source_sha256": "948c893c9f2c9142e09850482b2c87ca51641680f20a3c765958d430ff329ca1",
+      "transformations": []
+    },
+    "study-execution/token_accounting.py": {
+      "export_sha256": "b3388b22e09a493622d3c7f666a0f94e96582cf694acc27bd5d5489c6a15b40e",
+      "source_sha256": "b3388b22e09a493622d3c7f666a0f94e96582cf694acc27bd5d5489c6a15b40e",
+      "transformations": []
+    },
+    "study-execution/transport.py": {
+      "export_sha256": "85fa348bcfbe83dd872d0177509b3738a29859b631f50621b166430a51ea63df",
+      "source_sha256": "85fa348bcfbe83dd872d0177509b3738a29859b631f50621b166430a51ea63df",
+      "transformations": []
+    },
+    "study-next/README.md": {
+      "export_sha256": "0c98b2ca41db5ef0783103b80d692f82d87a3c09aaf63583351719d2ee795f9f",
+      "source_sha256": "2816b500da0acdcb787aad921e8c72eaac5fd25d2371e7c36cf032ab986d698c",
+      "transformations": [
+        {
+          "change": "replace private domain-note links with public context map"
+        }
+      ]
+    },
+    "study-next/bootstrap.py": {
+      "export_sha256": "4ade457be1d08e1fae94e065196db8b57a96a46519d6c4fab924ffd0938578a2",
+      "source_sha256": "4ade457be1d08e1fae94e065196db8b57a96a46519d6c4fab924ffd0938578a2",
+      "transformations": []
+    },
+    "study-next/coordinator.py": {
+      "export_sha256": "4e4146ceae6fb6a2649f53fa5b3cf3d91fbb3fa6ba2db9e3dbd1858e94ab7333",
+      "source_sha256": "4e4146ceae6fb6a2649f53fa5b3cf3d91fbb3fa6ba2db9e3dbd1858e94ab7333",
+      "transformations": []
+    },
+    "study-next/definition_next.py": {
+      "export_sha256": "c91f00e297cd5646b91e6d819b05ea0682e8d358df5dd889c91bb4591b151386",
+      "source_sha256": "c91f00e297cd5646b91e6d819b05ea0682e8d358df5dd889c91bb4591b151386",
+      "transformations": []
+    },
+    "study-next/durability.py": {
+      "export_sha256": "fbf35d0bfcc2c902a52080ad2e8f878d57988a0a0123fa12be035b017bfa9967",
+      "source_sha256": "fbf35d0bfcc2c902a52080ad2e8f878d57988a0a0123fa12be035b017bfa9967",
+      "transformations": []
+    },
+    "study-next/fixtures_next.py": {
+      "export_sha256": "6e39ca96f927a1bfc907d0caa3bca30ad2cefc602671201597ad753bf3ff68b5",
+      "source_sha256": "6e39ca96f927a1bfc907d0caa3bca30ad2cefc602671201597ad753bf3ff68b5",
+      "transformations": []
+    },
+    "study-next/run.py": {
+      "export_sha256": "88914f7c36e5fe51b9fa9d4e6679ab42adff2bc6cb792f486f060b761011afc7",
+      "source_sha256": "88914f7c36e5fe51b9fa9d4e6679ab42adff2bc6cb792f486f060b761011afc7",
+      "transformations": []
+    },
+    "study-next/test_cli.py": {
+      "export_sha256": "a4d95ebf96e0cd209e426fcf9b3efa8a41f3947fdad3b43c8f0aa5b26a48c10c",
+      "source_sha256": "a4d95ebf96e0cd209e426fcf9b3efa8a41f3947fdad3b43c8f0aa5b26a48c10c",
+      "transformations": []
+    },
+    "study-next/test_coordinator.py": {
+      "export_sha256": "c0861c7f3a7572a5ebbbfb46b7e7d7dd1558f867bde24a07b9bb4052ff271cf1",
+      "source_sha256": "c0861c7f3a7572a5ebbbfb46b7e7d7dd1558f867bde24a07b9bb4052ff271cf1",
+      "transformations": []
+    },
+    "study-next/test_definition_next.py": {
+      "export_sha256": "de6fdd83af00b7e4a16fa3f7df1b0b62e64d36fd8dd41b0315a92b89259a98a0",
+      "source_sha256": "de6fdd83af00b7e4a16fa3f7df1b0b62e64d36fd8dd41b0315a92b89259a98a0",
+      "transformations": []
+    },
+    "study-next/test_durability.py": {
+      "export_sha256": "9a92030ec0b024a2c07b0d1cdbcf960b86ab0f382160487d041547ffa5c814b8",
+      "source_sha256": "9a92030ec0b024a2c07b0d1cdbcf960b86ab0f382160487d041547ffa5c814b8",
+      "transformations": []
+    },
+    "study-next/test_recovery_edges.py": {
+      "export_sha256": "fc8c1b30ebbe6e261d7e604fbe11c55a2f7c2a07fe265161ab9c68d9181cbacf",
+      "source_sha256": "fc8c1b30ebbe6e261d7e604fbe11c55a2f7c2a07fe265161ab9c68d9181cbacf",
+      "transformations": []
+    },
+    "study-v2/MANIFEST.json": {
+      "export_sha256": "4d7836b034daa9ed325c5c727ebdc364bfb2cbe02023212b7557fc78083c0240",
+      "source_sha256": "4d7836b034daa9ed325c5c727ebdc364bfb2cbe02023212b7557fc78083c0240",
+      "transformations": []
+    },
+    "study-v2/README.md": {
+      "export_sha256": "549b4ecd36f842b444ea9889ea13d1bef8816113f16dd07ad4e10828201c5b74",
+      "source_sha256": "549b4ecd36f842b444ea9889ea13d1bef8816113f16dd07ad4e10828201c5b74",
+      "transformations": []
+    },
+    "study-v2/SEMANTIC_RUBRIC.md": {
+      "export_sha256": "166ade305bfcd900ad9f0f725603e82e85484b865e1378e75a812fd6fdfbb08b",
+      "source_sha256": "166ade305bfcd900ad9f0f725603e82e85484b865e1378e75a812fd6fdfbb08b",
+      "transformations": []
+    },
+    "study-v2/build.py": {
+      "export_sha256": "7bbe857227045b34513c2ac74f96155137d1cfcf611ecc0aae2a620a294c7006",
+      "source_sha256": "7bbe857227045b34513c2ac74f96155137d1cfcf611ecc0aae2a620a294c7006",
+      "transformations": []
+    },
+    "study-v2/calibration.json": {
+      "export_sha256": "afb59a9f68c66e1a2bb77c31ac5c6ec19857823573f14597452ab17ce80bfc24",
+      "source_sha256": "afb59a9f68c66e1a2bb77c31ac5c6ec19857823573f14597452ab17ce80bfc24",
+      "transformations": []
+    },
+    "study-v2/development-integrity.json": {
+      "export_sha256": "40753cc4d3a9ddf5c614c91d2a0d883d889c386d12c4703ba92ed213421eb5a4",
+      "source_sha256": "40753cc4d3a9ddf5c614c91d2a0d883d889c386d12c4703ba92ed213421eb5a4",
+      "transformations": []
+    },
+    "study-v2/development-validation.json": {
+      "export_sha256": "2202dda65fbcc94091429058645d956c23e22dcf7f6b450c18f50d4cfbad34e8",
+      "source_sha256": "2202dda65fbcc94091429058645d956c23e22dcf7f6b450c18f50d4cfbad34e8",
+      "transformations": []
+    },
+    "study-v2/development.json": {
+      "export_sha256": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+      "source_sha256": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+      "transformations": []
+    },
+    "study-v2/family-plan.json": {
+      "export_sha256": "acbf1774e4a0098446efb281e2690282501d78a91a2b61e8d3dce2141afb2dac",
+      "source_sha256": "acbf1774e4a0098446efb281e2690282501d78a91a2b61e8d3dce2141afb2dac",
+      "transformations": []
+    },
+    "study-v2/integrity.py": {
+      "export_sha256": "830bfffcfab527d64bb6a9aac35b56e74417015c3e2a62ef038c88bfe0f30ec6",
+      "source_sha256": "830bfffcfab527d64bb6a9aac35b56e74417015c3e2a62ef038c88bfe0f30ec6",
+      "transformations": []
+    },
+    "study-v2/sources/calibration/relational-null.txt": {
+      "export_sha256": "aee07d4da0d30c8e0667885c7fc4fecc4ad26ae5c1a85ead4437221d14240a02",
+      "source_sha256": "aee07d4da0d30c8e0667885c7fc4fecc4ad26ae5c1a85ead4437221d14240a02",
+      "transformations": []
+    },
+    "study-v2/sources/calibration/sandbox-packaging.txt": {
+      "export_sha256": "d63e7ba0deaf731982c3d1e132384f7d040ab33b65e363d868892c962f6b4277",
+      "source_sha256": "d63e7ba0deaf731982c3d1e132384f7d040ab33b65e363d868892c962f6b4277",
+      "transformations": []
+    },
+    "study-v2/sources/calibration/search-index.txt": {
+      "export_sha256": "2a2414b933ba0bb1e307cf68a4cd91c63e98565db3355d77405638228fd9d03e",
+      "source_sha256": "2a2414b933ba0bb1e307cf68a4cd91c63e98565db3355d77405638228fd9d03e",
+      "transformations": []
+    },
+    "study-v2/sources/calibration/unicode-text.txt": {
+      "export_sha256": "1817cfc275ff317582a5ae914fef17859a9d971cc492fcc92a2c51696dad3615",
+      "source_sha256": "1817cfc275ff317582a5ae914fef17859a9d971cc492fcc92a2c51696dad3615",
+      "transformations": []
+    },
+    "study-v2/sources/development/color-pipeline.txt": {
+      "export_sha256": "a4477304e4f00bae1d478cc23d90b652fe3de29ccf41e12e99011b6207d58822",
+      "source_sha256": "a4477304e4f00bae1d478cc23d90b652fe3de29ccf41e12e99011b6207d58822",
+      "transformations": []
+    },
+    "study-v2/sources/development/font-delivery.txt": {
+      "export_sha256": "6f7d278ff24599356c7ffffb93f60be32448fbe5f5513896b2cf5f9c0f1112fa",
+      "source_sha256": "6f7d278ff24599356c7ffffb93f60be32448fbe5f5513896b2cf5f9c0f1112fa",
+      "transformations": []
+    },
+    "study-v2/sources/development/keyboard-interaction.txt": {
+      "export_sha256": "0f2124c26b78287aed15e9c8c0d08ba77d3c3987b3e90bd2a92886ca412776b7",
+      "source_sha256": "0f2124c26b78287aed15e9c8c0d08ba77d3c3987b3e90bd2a92886ca412776b7",
+      "transformations": []
+    },
+    "study-v2/sources/development/numerical-representation.txt": {
+      "export_sha256": "65f920f56b8b32ead3cfbab6b9e319ae4ceaa539d6c22e16ebfb464eaebb8f3f",
+      "source_sha256": "65f920f56b8b32ead3cfbab6b9e319ae4ceaa539d6c22e16ebfb464eaebb8f3f",
+      "transformations": []
+    },
+    "study-v2/sources/test/browser-policy.txt": {
+      "export_sha256": "7b0032ed05afdd2eda7a4f28205b49e0a1f5ca937effe5893f06760314020bb1",
+      "source_sha256": "7b0032ed05afdd2eda7a4f28205b49e0a1f5ca937effe5893f06760314020bb1",
+      "transformations": []
+    },
+    "study-v2/sources/test/compressed-streams.txt": {
+      "export_sha256": "34f7a01ff9f1db6bdab8f466991afae0b410c759c0daca8ff5adcaa26874ac53",
+      "source_sha256": "34f7a01ff9f1db6bdab8f466991afae0b410c759c0daca8ff5adcaa26874ac53",
+      "transformations": []
+    },
+    "study-v2/sources/test/experimental-assignment.txt": {
+      "export_sha256": "8cba56a50c6c28ec1edd7e26a51f7ca6a9586177851daa26692c9acf6b102e6c",
+      "source_sha256": "8cba56a50c6c28ec1edd7e26a51f7ca6a9586177851daa26692c9acf6b102e6c",
+      "transformations": []
+    },
+    "study-v2/sources/test/laboratory-instruments.txt": {
+      "export_sha256": "6c783610421930131abfb334e457bb9716d50cdd1d5d4e1cdeb735f25a9ef4be",
+      "source_sha256": "6c783610421930131abfb334e457bb9716d50cdd1d5d4e1cdeb735f25a9ef4be",
+      "transformations": []
+    },
+    "study-v2/test.json": {
+      "export_sha256": "040f9b98927916c4ed585efd5c1cd1cd10150c8c2488d81f3381a9791c802035",
+      "source_sha256": "040f9b98927916c4ed585efd5c1cd1cd10150c8c2488d81f3381a9791c802035",
+      "transformations": []
+    },
+    "study-v2/validation.json": {
+      "export_sha256": "cbb0ee720fffc251b189b14fe2017b80273184ac89fde8823777d4d27f18a07d",
+      "source_sha256": "cbb0ee720fffc251b189b14fe2017b80273184ac89fde8823777d4d27f18a07d",
+      "transformations": []
+    },
+    "study-v2/verify.py": {
+      "export_sha256": "af1c677eb3c87b47402d2845c819aaa41b2602614b31c866fa1da10f7afcc2f4",
+      "source_sha256": "af1c677eb3c87b47402d2845c819aaa41b2602614b31c866fa1da10f7afcc2f4",
+      "transformations": []
+    },
+    "study/README.md": {
+      "export_sha256": "1331f574e241caa588f4a448c3a36a91260c373bf12dec4e22fd64d6ae7eb735",
+      "source_sha256": "1331f574e241caa588f4a448c3a36a91260c373bf12dec4e22fd64d6ae7eb735",
+      "transformations": []
+    },
+    "study/build_cases.py": {
+      "export_sha256": "484dbc9abaf78a795e5b4ece32eb4845f25b79b4d814e2022e9f19ca21c09b40",
+      "source_sha256": "484dbc9abaf78a795e5b4ece32eb4845f25b79b4d814e2022e9f19ca21c09b40",
+      "transformations": []
+    },
+    "study/cases.json": {
+      "export_sha256": "4e17008b3ed6e9b57d383db3bd5708eab81ce45afd43f6a8514eac9549bfa5ad",
+      "source_sha256": "4e17008b3ed6e9b57d383db3bd5708eab81ce45afd43f6a8514eac9549bfa5ad",
+      "transformations": []
+    },
+    "study/core.py": {
+      "export_sha256": "26c5b17a378dccba6ea35da10fd9958d84d8b0776368470f17b1845cd9a2a3cd",
+      "source_sha256": "26c5b17a378dccba6ea35da10fd9958d84d8b0776368470f17b1845cd9a2a3cd",
+      "transformations": []
+    },
+    "study/family-plan.json": {
+      "export_sha256": "94cc92b19be4d882bdc95756938a1da0438c7a13d2c0411baea4595798cb028d",
+      "source_sha256": "94cc92b19be4d882bdc95756938a1da0438c7a13d2c0411baea4595798cb028d",
+      "transformations": []
+    },
+    "study/manifest.json": {
+      "export_sha256": "ff0b5fbebdbd0d715c268cab10fdca2b937aef66cd4f7c299ff657ba5a3311d6",
+      "source_sha256": "ff0b5fbebdbd0d715c268cab10fdca2b937aef66cd4f7c299ff657ba5a3311d6",
+      "transformations": []
+    },
+    "study/run.py": {
+      "export_sha256": "e74fec4f2cc94aa620d8fafce8d53404596c5e3920d803b1331f3b3c7f06990d",
+      "source_sha256": "e74fec4f2cc94aa620d8fafce8d53404596c5e3920d803b1331f3b3c7f06990d",
+      "transformations": []
+    },
+    "study/test_core.py": {
+      "export_sha256": "eb2c139fa886d65e5f33ad8cd899856e7da401a565515f33c4b383240b789507",
+      "source_sha256": "eb2c139fa886d65e5f33ad8cd899856e7da401a565515f33c4b383240b789507",
+      "transformations": []
+    },
+    "testdata/fixtures/docs-typo.diff": {
+      "export_sha256": "ed70cadf3420c9196e4b2543ecae5a755c146009f183380177b9c637cf152f03",
+      "source_sha256": "ed70cadf3420c9196e4b2543ecae5a755c146009f183380177b9c637cf152f03",
+      "transformations": []
+    },
+    "testdata/fixtures/pagination.diff": {
+      "export_sha256": "feb6c475c25ad19ac00cb0dab0c3e332ae5bed9c511197cc57c6ebee0bd882f7",
+      "source_sha256": "feb6c475c25ad19ac00cb0dab0c3e332ae5bed9c511197cc57c6ebee0bd882f7",
+      "transformations": []
+    },
+    "testdata/fixtures/password-reset.diff": {
+      "export_sha256": "2dcb516d9ca35b7f5c9a1088682cb71ab9029719c1522d59023452e91585d234",
+      "source_sha256": "2dcb516d9ca35b7f5c9a1088682cb71ab9029719c1522d59023452e91585d234",
+      "transformations": []
+    },
+    "testdata/fixtures/traces-auth.json": {
+      "export_sha256": "18e009effa0aa522199798b13df1916ee631fb468c0c78248cecd806f06cbe3e",
+      "source_sha256": "18e009effa0aa522199798b13df1916ee631fb468c0c78248cecd806f06cbe3e",
+      "transformations": []
+    },
+    "testdata/fixtures/triage.json": {
+      "export_sha256": "e9f18dfd7a8a0c26a8a2f489a8f16c8ac2ba4884ed1afbcfc104bbe741b68301",
+      "source_sha256": "e9f18dfd7a8a0c26a8a2f489a8f16c8ac2ba4884ed1afbcfc104bbe741b68301",
+      "transformations": []
+    },
+    "testdata/live-baseline.json": {
+      "export_sha256": "97763006f08ec1b47dc3c39622c9f1288f82dc8dfd6428d9e24d46cad753efce",
+      "source_sha256": "97763006f08ec1b47dc3c39622c9f1288f82dc8dfd6428d9e24d46cad753efce",
+      "transformations": []
+    },
+    "testdata/live-proof-invoice.json": {
+      "export_sha256": "4263fde4e6eb4189b79801036dea42766a1f0e387eece44fab61ffafb1f1bd95",
+      "source_sha256": "4263fde4e6eb4189b79801036dea42766a1f0e387eece44fab61ffafb1f1bd95",
+      "transformations": []
+    },
+    "testdata/probe-2026-09-17.json": {
+      "export_sha256": "59d1849d21c2669fafc589d98608130cc8a949b9da5ae6c2253f3e6257e0085a",
+      "source_sha256": "59d1849d21c2669fafc589d98608130cc8a949b9da5ae6c2253f3e6257e0085a",
+      "transformations": []
+    },
+    "tests/test_claims.py": {
+      "export_sha256": "4053ec2dbc111630badc4d5572eb1772d960c019fc3782c3874e1a6de8126df6",
+      "source_sha256": "4053ec2dbc111630badc4d5572eb1772d960c019fc3782c3874e1a6de8126df6",
+      "transformations": []
+    },
+    "tests/test_compact.py": {
+      "export_sha256": "631fb5d5baafe349f0ac9c29def2274f52dfff928530ad76ff7ff8b5b8389423",
+      "source_sha256": "631fb5d5baafe349f0ac9c29def2274f52dfff928530ad76ff7ff8b5b8389423",
+      "transformations": []
+    },
+    "tests/test_engine.py": {
+      "export_sha256": "86be83648b3b3c7b3c6f2d3ecb234e7a2d4796fcd31be3c882220900521f626f",
+      "source_sha256": "86be83648b3b3c7b3c6f2d3ecb234e7a2d4796fcd31be3c882220900521f626f",
+      "transformations": []
+    },
+    "tests/test_gate.py": {
+      "export_sha256": "e958655a7632c091b747661e7e5bd7a4fc3adc5ac5e652cce68ae777aa13887a",
+      "source_sha256": "e958655a7632c091b747661e7e5bd7a4fc3adc5ac5e652cce68ae777aa13887a",
+      "transformations": []
+    },
+    "tests/test_live.py": {
+      "export_sha256": "414baa92eae3be783e7b3783288619425b5f9e5c177bf33da97d68908bb063b3",
+      "source_sha256": "414baa92eae3be783e7b3783288619425b5f9e5c177bf33da97d68908bb063b3",
+      "transformations": []
+    },
+    "tests/test_math.py": {
+      "export_sha256": "7bb4f535a64c438547c22856e10e498c8a4e24813e8d4933ff6ebb7cda09460e",
+      "source_sha256": "7bb4f535a64c438547c22856e10e498c8a4e24813e8d4933ff6ebb7cda09460e",
+      "transformations": []
+    },
+    "tests/test_payload.py": {
+      "export_sha256": "d17fc59509d8542e054730a7f80c17bf98c2d22b472e8790ffb5ba79f0443f57",
+      "source_sha256": "d17fc59509d8542e054730a7f80c17bf98c2d22b472e8790ffb5ba79f0443f57",
+      "transformations": []
+    },
+    "tests/test_schema.py": {
+      "export_sha256": "11c5d48055cd625c973e9295092bc22ac20e1a0a981e270b7d7bf58cda6e33ad",
+      "source_sha256": "11c5d48055cd625c973e9295092bc22ac20e1a0a981e270b7d7bf58cda6e33ad",
+      "transformations": []
+    }
+  },
+  "frozen_implementation_files_unchanged": 57,
+  "hardware_identifiers_pseudonymized": 1,
+  "kind": "sanitized derivative, not a new experiment",
+  "limits": [
+    "Original hashes bind private originals; they do not independently attest chronology.",
+    "Windows-only full replay remains unchanged.",
+    "No new model efficacy or human label validation is implied."
+  ],
+  "private_domain_notes_included": false,
+  "raw_model_journals_byte_identical": 17,
+  "schema": 1,
+  "source_commit": "70ff3182a5bf55391a8d92d09012a76b082f6029",
+  "source_history_copied": false,
+  "threshold_values_unchanged": true,
+  "transformer_sha256": "d815462c0ad61f4ab231165c1d92f40480663929ab240b82d9b3b6197c6021fb"
+}

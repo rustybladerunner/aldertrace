@@ -1,0 +1,26 @@
+{
+  "captured": "2026-09-17",
+  "model": "llama3.2",
+  "ollama": "0.34.1",
+  "note": "First live run of the frozen engine prompt (not the shorter probe). yes=0.72 is the real number; do not edit toward the probe's 0.95.",
+  "model_field": "llama3.2",
+  "backend": "ollama-generate-logprobs",
+  "answers": {
+    "arith": {
+      "choice": "yes",
+      "probabilities": {
+        "yes": 0.7203363757752919,
+        "no": 0.2796636242247082
+      },
+      "confidence": 0.145008,
+      "mass_on_codes": 0.996397,
+      "missing_options": [],
+      "status": "ok",
+      "codes": {
+        "yes": "A",
+        "no": "B"
+      },
+      "generated_token": "A"
+    }
+  }
+}

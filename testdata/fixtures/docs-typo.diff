@@ -1,0 +1,13 @@
+# SYNTHETIC_FIXTURE
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,5 +1,5 @@
+-## Quick strat
++## Quick start
+ 
+-Install the dependancies and run the dev server:
++Install the dependencies and run the dev server:
+ 
+ ```bash
+ pip install -r requirements.txt

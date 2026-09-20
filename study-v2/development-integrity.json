@@ -1,0 +1,15 @@
+{
+  "phase": "development-definition",
+  "frozen_assets": {
+    "build.py": "7bbe857227045b34513c2ac74f96155137d1cfcf611ecc0aae2a620a294c7006",
+    "family-plan.json": "acbf1774e4a0098446efb281e2690282501d78a91a2b61e8d3dce2141afb2dac",
+    "SEMANTIC_RUBRIC.md": "166ade305bfcd900ad9f0f725603e82e85484b865e1378e75a812fd6fdfbb08b",
+    "development.json": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+    "development-validation.json": "2202dda65fbcc94091429058645d956c23e22dcf7f6b450c18f50d4cfbad34e8",
+    "sources/development/numerical-representation.txt": "65f920f56b8b32ead3cfbab6b9e319ae4ceaa539d6c22e16ebfb464eaebb8f3f",
+    "sources/development/keyboard-interaction.txt": "0f2124c26b78287aed15e9c8c0d08ba77d3c3987b3e90bd2a92886ca412776b7",
+    "sources/development/font-delivery.txt": "6f7d278ff24599356c7ffffb93f60be32448fbe5f5513896b2cf5f9c0f1112fa",
+    "sources/development/color-pipeline.txt": "a4477304e4f00bae1d478cc23d90b652fe3de29ccf41e12e99011b6207d58822"
+  },
+  "scope": "Development inputs fixed before target-backend collection. Other splits remain under authoring. No evaluation freeze or independent review claimed."
+}

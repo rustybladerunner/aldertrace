@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "evidence_class": "release-only synthetic transport smoke, not development tuning or held-out evaluation",
+  "verified_utc": "2026-09-20T16:50:28.673210+00:00",
+  "operator_approval": "User explicitly approved this Aldertrace-only synthetic cloud check, overriding the host workspace cloud restriction for this check only.",
+  "case": {
+    "id": "release-smoke-20260920",
+    "family": "release-transport-health",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "synthetic/release-config.json",
+        "command": "check-release-config",
+        "skip_condition": "A trusted current matching successful check is required."
+      },
+      "current_revision": "synthetic-release-r1",
+      "scope_known": true,
+      "explanation": "",
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "synthetic-release-r1",
+          "artifact": "synthetic/release-config.json",
+          "command": "check-release-config",
+          "exit_code": 0
+        }
+      ]
+    },
+    "document": "Synthetic transport health fixture only.",
+    "label": {
+      "action": "skip",
+      "rationale": "Fresh synthetic trusted matching pass."
+    },
+    "review_status": "agent_authored_unreviewed"
+  },
+  "case_sha256": "013dba0952df5160db3af795f36a98f78be8b2f1c1f376d4fd9c8595915840f0",
+  "observations": [
+    {
+      "arm": "jev",
+      "requested_model": "jev-1.13.0",
+      "resolved_model": "jev-1.13.0",
+      "http_status": 200,
+      "elapsed_ms": 405.651,
+      "parsed": {
+        "answer": {
+          "choice": "skip",
+          "confidence": 0.98,
+          "probabilities": {
+            "read": 0.0,
+            "review": 0.0,
+            "run_check": 0.01,
+            "skip": 0.99
+          },
+          "type": "choice"
+        },
+        "confidence_kind": "provider_confidence",
+        "max_probability": 0.99,
+        "reason": null,
+        "valid": true
+      },
+      "request_sha256": "18f89c8aef9d071891e06f3fb02483112cc2910bb95f929d7ebf55d88be0b890",
+      "response_sha256": "c969cede40dd853913e7cad15b0720532d3e971e2190bbdef9337c22bdc2ee70"
+    },
+    {
+      "arm": "chat",
+      "requested_model": "openai/gpt-4.1-mini",
+      "resolved_model": "openai/gpt-4.1-mini",
+      "http_status": 200,
+      "elapsed_ms": 1398.207,
+      "parsed": {
+        "answer": {
+          "choice": "run_check",
+          "confidence": 0.9,
+          "probabilities": {
+            "read": 0.05,
+            "review": 0.05,
+            "run_check": 0.85,
+            "skip": 0.05
+          }
+        },
+        "confidence_kind": "self_reported_correctness",
+        "max_probability": 0.85,
+        "reason": null,
+        "valid": true
+      },
+      "request_sha256": "8fa816a2699acde815225830cf0b37372eed4c2dfb7b3755ae45c36f5e7b6978",
+      "response_sha256": "c91793dc780c5de7b8d3ad3f7ff23031381b30486e63041b002895de61e5351a"
+    }
+  ],
+  "usage_and_reservations": {
+    "phase": "development-preflight",
+    "synthetic_only": true,
+    "notes": [
+      {
+        "arm": "jev",
+        "case_id": "release-smoke-20260920",
+        "attempts": 1,
+        "valid": true,
+        "usage": [
+          {
+            "input_tokens": 530,
+            "output_tokens": 46,
+            "estimated_usd": "0.00002226",
+            "reported_usd": null,
+            "accounting_usd": "0.00002226",
+            "rate_snapshot": "2026-09-19; verify again before live execution"
+          }
+        ]
+      },
+      {
+        "arm": "chat",
+        "case_id": "release-smoke-20260920",
+        "attempts": 1,
+        "valid": true,
+        "usage": [
+          {
+            "input_tokens": 365,
+            "output_tokens": 41,
+            "estimated_usd": "0.0002116",
+            "reported_usd": "0.0002116",
+            "accounting_usd": "0.0002116",
+            "rate_snapshot": "2026-09-19; verify again before live execution"
+          }
+        ]
+      }
+    ],
+    "halted": null,
+    "reserved_usd": "0.00325",
+    "remaining_work": "Release-only check complete. No calibration/test dispatched.",
+    "aggregate_reserved_usd": "0.79075"
+  },
+  "private_journal_sha256": "3d2514db7fc4a4899c5db8b6ddf374b5c8f76e5bcf68c66e22a50f3f37f8c4db",
+  "privacy": "Allowlisted receipt only; credentials, response/request IDs and host paths omitted. Original raw journal retained privately.",
+  "limitations": [
+    "One synthetic fixture per model; transport/schema health only.",
+    "Raw decisions differ: Jev skip, chat run_check. No new efficacy or task-success claim.",
+    "Jev monetary cost is rate-estimated; chat cost is provider-reported.",
+    "Frozen evaluation, thresholds, local stop and simulation-only newer CLI are unchanged."
+  ]
+}

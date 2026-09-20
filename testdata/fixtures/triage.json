@@ -1,0 +1,19 @@
+{
+  "state": "# SYNTHETIC_FIXTURE\nPR adds a button rename and a debug print.",
+  "questions": {
+    "route": {
+      "instructions": "Which mode?",
+      "options": {
+        "fast": "Simple UI edit",
+        "full": "Complex multi-file work"
+      }
+    },
+    "noise": {
+      "instructions": "Is this mostly noise?",
+      "options": {
+        "yes": "mostly noise",
+        "no": "real work"
+      }
+    }
+  }
+}

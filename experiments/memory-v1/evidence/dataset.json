@@ -1,0 +1,814 @@
+{
+  "evidence_kind": "synthetic-development-mechanism",
+  "histories": [
+    {
+      "action": "skip",
+      "id": "h-weave",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "skip",
+      "id": "h-folio",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/719.json",
+            "command": "python fixtures/folio_pairs.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "skip",
+      "id": "h-audio",
+      "state": {
+        "current_revision": "530",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "audio/238.json",
+            "command": "python fixtures/impulse_grid.py",
+            "exit_code": 0,
+            "revision": "530",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "audio/238.json",
+          "command": "python fixtures/impulse_grid.py",
+          "kind": "executable",
+          "skip_condition": "Verify resampler impulses: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "skip",
+      "id": "h-fold",
+      "state": {
+        "current_revision": "840",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "paper/964.json",
+            "command": "python fixtures/fold_stops.py",
+            "exit_code": 0,
+            "revision": "840",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "paper/964.json",
+          "command": "python fixtures/fold_stops.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-fold stops: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "run_check",
+      "id": "h-loom-failed",
+      "state": {
+        "current_revision": "760",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/335.json",
+            "command": "python fixtures/treadle_order.py",
+            "exit_code": 3,
+            "revision": "760",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/335.json",
+          "command": "python fixtures/treadle_order.py",
+          "kind": "executable",
+          "skip_condition": "Verify treadle sequence: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "run_check",
+      "id": "h-drum-failed",
+      "state": {
+        "current_revision": "280",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "score/557.json",
+            "command": "python fixtures/bar_lengths.py",
+            "exit_code": 5,
+            "revision": "280",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "score/557.json",
+          "command": "python fixtures/bar_lengths.py",
+          "kind": "executable",
+          "skip_condition": "Verify percussion bars: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "review",
+      "id": "h-cut-unknown",
+      "state": {
+        "current_revision": "390",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "paper/683.json",
+            "command": "python fixtures/margin_clearance.py",
+            "exit_code": 0,
+            "revision": "390",
+            "trusted": true
+          }
+        ],
+        "scope_known": false,
+        "unit": {
+          "artifact": "paper/683.json",
+          "command": "python fixtures/margin_clearance.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-cut margins: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "action": "review",
+      "id": "h-stitch-conflict",
+      "state": {
+        "current_revision": "950",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/126.json",
+            "command": "python fixtures/repeat_closure.py",
+            "exit_code": 0,
+            "revision": "950",
+            "trusted": true
+          },
+          {
+            "artifact": "weaving/126.json",
+            "command": "python fixtures/repeat_closure.py",
+            "exit_code": 6,
+            "revision": "950",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/126.json",
+          "command": "python fixtures/repeat_closure.py",
+          "kind": "executable",
+          "skip_condition": "Verify stitch-repeat closure: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    }
+  ],
+  "queries": [
+    {
+      "expected": "skip",
+      "family": "exact-repeat",
+      "id": "q01",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "exact-repeat",
+      "id": "q02",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/719.json",
+            "command": "python fixtures/folio_pairs.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "exact-repeat",
+      "id": "q03",
+      "state": {
+        "current_revision": "530",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "audio/238.json",
+            "command": "python fixtures/impulse_grid.py",
+            "exit_code": 0,
+            "revision": "530",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "audio/238.json",
+          "command": "python fixtures/impulse_grid.py",
+          "kind": "executable",
+          "skip_condition": "Verify resampler impulses: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "exact-repeat",
+      "id": "q04",
+      "state": {
+        "current_revision": "840",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "paper/964.json",
+            "command": "python fixtures/fold_stops.py",
+            "exit_code": 0,
+            "revision": "840",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "paper/964.json",
+          "command": "python fixtures/fold_stops.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-fold stops: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "exact-repeat",
+      "id": "q05",
+      "state": {
+        "current_revision": "760",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/335.json",
+            "command": "python fixtures/treadle_order.py",
+            "exit_code": 3,
+            "revision": "760",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/335.json",
+          "command": "python fixtures/treadle_order.py",
+          "kind": "executable",
+          "skip_condition": "Verify treadle sequence: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "exact-repeat",
+      "id": "q06",
+      "state": {
+        "current_revision": "280",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "score/557.json",
+            "command": "python fixtures/bar_lengths.py",
+            "exit_code": 5,
+            "revision": "280",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "score/557.json",
+          "command": "python fixtures/bar_lengths.py",
+          "kind": "executable",
+          "skip_condition": "Verify percussion bars: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "review",
+      "family": "exact-repeat",
+      "id": "q07",
+      "state": {
+        "current_revision": "390",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "paper/683.json",
+            "command": "python fixtures/margin_clearance.py",
+            "exit_code": 0,
+            "revision": "390",
+            "trusted": true
+          }
+        ],
+        "scope_known": false,
+        "unit": {
+          "artifact": "paper/683.json",
+          "command": "python fixtures/margin_clearance.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-cut margins: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "review",
+      "family": "exact-repeat",
+      "id": "q08",
+      "state": {
+        "current_revision": "950",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/126.json",
+            "command": "python fixtures/repeat_closure.py",
+            "exit_code": 0,
+            "revision": "950",
+            "trusted": true
+          },
+          {
+            "artifact": "weaving/126.json",
+            "command": "python fixtures/repeat_closure.py",
+            "exit_code": 6,
+            "revision": "950",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/126.json",
+          "command": "python fixtures/repeat_closure.py",
+          "kind": "executable",
+          "skip_condition": "Verify stitch-repeat closure: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "near-repeat-valid",
+      "id": "q09",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. The operator added a note.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "near-repeat-valid",
+      "id": "q10",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. This note mentions pagination.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/719.json",
+            "command": "python fixtures/folio_pairs.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "near-repeat-valid",
+      "id": "q11",
+      "state": {
+        "current_revision": "530",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. The note now says verified.",
+        "runner_evidence": [
+          {
+            "artifact": "audio/238.json",
+            "command": "python fixtures/impulse_grid.py",
+            "exit_code": 0,
+            "revision": "530",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "audio/238.json",
+          "command": "python fixtures/impulse_grid.py",
+          "kind": "executable",
+          "skip_condition": "Verify resampler impulses: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "skip",
+      "family": "near-repeat-valid",
+      "id": "q12",
+      "state": {
+        "current_revision": "840",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. Comments were reformatted.",
+        "runner_evidence": [
+          {
+            "artifact": "paper/964.json",
+            "command": "python fixtures/fold_stops.py",
+            "exit_code": 0,
+            "revision": "840",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "paper/964.json",
+          "command": "python fixtures/fold_stops.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-fold stops: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "near-repeat-failed",
+      "id": "q13",
+      "state": {
+        "current_revision": "760",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. The same failure persists.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/335.json",
+            "command": "python fixtures/treadle_order.py",
+            "exit_code": 3,
+            "revision": "760",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/335.json",
+          "command": "python fixtures/treadle_order.py",
+          "kind": "executable",
+          "skip_condition": "Verify treadle sequence: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "near-repeat-failed",
+      "id": "q14",
+      "state": {
+        "current_revision": "280",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence. A new note was attached.",
+        "runner_evidence": [
+          {
+            "artifact": "score/557.json",
+            "command": "python fixtures/bar_lengths.py",
+            "exit_code": 5,
+            "revision": "280",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "score/557.json",
+          "command": "python fixtures/bar_lengths.py",
+          "kind": "executable",
+          "skip_condition": "Verify percussion bars: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "numeric-collision",
+      "id": "q15",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 1,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "stale-proof",
+      "id": "q16",
+      "state": {
+        "current_revision": "411",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "stale-proof",
+      "id": "q17",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "409",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "numeric-collision",
+      "id": "q18",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/483.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "wrong-proof-identity",
+      "id": "q19",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/covers.json",
+            "command": "python fixtures/folio_pairs.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "wrong-proof-identity",
+      "id": "q20",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/719.json",
+            "command": "python fixtures/trim_edges.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "untrusted-proof",
+      "id": "q21",
+      "state": {
+        "current_revision": "530",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "audio/238.json",
+            "command": "python fixtures/impulse_grid.py",
+            "exit_code": 0,
+            "revision": "530",
+            "trusted": false
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "audio/238.json",
+          "command": "python fixtures/impulse_grid.py",
+          "kind": "executable",
+          "skip_condition": "Verify resampler impulses: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "run_check",
+      "family": "missing-proof",
+      "id": "q22",
+      "state": {
+        "current_revision": "840",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [],
+        "scope_known": true,
+        "unit": {
+          "artifact": "paper/964.json",
+          "command": "python fixtures/fold_stops.py",
+          "kind": "executable",
+          "skip_condition": "Verify paper-fold stops: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "review",
+      "family": "conflicting-proof",
+      "id": "q23",
+      "state": {
+        "current_revision": "410",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 0,
+            "revision": "410",
+            "trusted": true
+          },
+          {
+            "artifact": "weaving/482.json",
+            "command": "python fixtures/selvage_count.py",
+            "exit_code": 6,
+            "revision": "410",
+            "trusted": true
+          }
+        ],
+        "scope_known": true,
+        "unit": {
+          "artifact": "weaving/482.json",
+          "command": "python fixtures/selvage_count.py",
+          "kind": "executable",
+          "skip_condition": "Verify selvage counts: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    },
+    {
+      "expected": "review",
+      "family": "unknown-scope",
+      "id": "q24",
+      "state": {
+        "current_revision": "620",
+        "explanation": "Synthetic fixture outcome is attached as typed runner evidence.",
+        "runner_evidence": [
+          {
+            "artifact": "binding/719.json",
+            "command": "python fixtures/folio_pairs.py",
+            "exit_code": 0,
+            "revision": "620",
+            "trusted": true
+          }
+        ],
+        "scope_known": false,
+        "unit": {
+          "artifact": "binding/719.json",
+          "command": "python fixtures/folio_pairs.py",
+          "kind": "executable",
+          "skip_condition": "Verify folio imposition: require a trusted current integer-zero result for this exact command and artifact."
+        }
+      }
+    }
+  ],
+  "review_status": "agent_authored_unreviewed",
+  "version": "memory-v1-mechanism-1"
+}

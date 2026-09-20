@@ -1,0 +1,2795 @@
+[
+  {
+    "id": "v2-0524defe7d44caa0",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/bidi-source-order.md",
+        "command": null,
+        "skip_condition": "Explain why the displayed order of mixed-direction text cannot be assumed to equal its stored logical order."
+      },
+      "current_revision": "unicode-text-bidi-source-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Copy the left-to-right screen positions as source order because rendering never rearranges the underlying sequence."
+    },
+    "document": "# Bidi Source Order\n\nMixed-direction text is stored in logical order and laid out according to directional rules. The visible order can differ from that logical sequence. Tools that inspect identifiers or structured text should make directional controls and logical contents inspectable where necessary. Test editing and selection behavior with mixed-direction examples. A screenshot alone cannot establish the sequence a parser received.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes rendered positions reveal the stored sequence directly."
+    },
+    "authoring_variant": "bidi-source-order/unsupported",
+    "concept_cluster": "unicode-text/bidi-source-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-07250e2d9a2ead6e",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/bidi-source-order.md",
+        "command": null,
+        "skip_condition": "Explain why the displayed order of mixed-direction text cannot be assumed to equal its stored logical order."
+      },
+      "current_revision": "unicode-text-bidi-source-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Bidirectional layout can reorder the visual presentation, so selection, debugging and validation should distinguish the logical code-point sequence from what is drawn."
+    },
+    "document": "# Bidi Source Order\n\nMixed-direction text is stored in logical order and laid out according to directional rules. The visible order can differ from that logical sequence. Tools that inspect identifiers or structured text should make directional controls and logical contents inspectable where necessary. Test editing and selection behavior with mixed-direction examples. A screenshot alone cannot establish the sequence a parser received.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Describes presentation reordering without treating it as a storage rewrite."
+    },
+    "authoring_variant": "bidi-source-order/supported",
+    "concept_cluster": "unicode-text/bidi-source-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-08b3e3b6752e39da",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/resource-limits.json",
+        "command": "python verify/memory_ceiling.py --bounded",
+        "skip_condition": "Exercise the configured memory ceiling with the disposable allocation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-resource-ceiling-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-resource-ceiling-r1",
+          "artifact": "sandbox/resource-limits.json",
+          "command": "python verify/memory_ceiling.py --bounded",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-resource-ceiling-r1",
+          "artifact": "sandbox/resource-limits.json",
+          "command": "python verify/cpu_limit.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The allocation fixture reached the prescribed limit and produced the expected successful harness outcome."
+    },
+    "document": "# Resource Ceiling\n\nExercise the configured memory ceiling with the disposable allocation fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The memory-ceiling check has its own bound success in addition to a CPU result."
+    },
+    "authoring_variant": "resource-ceiling/supported",
+    "concept_cluster": "sandbox-packaging/resource-ceiling",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-0abf23e1eada92da",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/mount-layout.json",
+        "command": "python verify/mount_view.py --fixture",
+        "skip_condition": "Verify the filesystem view exposed to the isolated fixture process. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-mount-visibility-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-mount-visibility-r1",
+          "artifact": "sandbox/mount-layout.json",
+          "command": "python verify/mount_view.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-mount-visibility-r1",
+          "artifact": "sandbox/diagnostic-layout.json",
+          "command": "python verify/mount_view.py --fixture",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The runner examined the declared mount layout after the final binding configuration was assembled."
+    },
+    "document": "# Mount Visibility\n\nVerify the filesystem view exposed to the isolated fixture process.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The matching layout passes; the separate diagnostic layout is a different artifact."
+    },
+    "authoring_variant": "mount-visibility/supported",
+    "concept_cluster": "sandbox-packaging/mount-visibility",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-0d3be199ff84409a",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/outer-join-filter.md",
+        "command": null,
+        "skip_condition": "Explain how placing a predicate on the nullable side in WHERE can remove unmatched rows from a left join."
+      },
+      "current_revision": "relational-null-outer-join-filter-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Unmatched rows have null-extended right-side fields, so a right-side predicate in WHERE may be UNKNOWN and filter them; put matching restrictions in ON when unmatched left rows must remain."
+    },
+    "document": "# Outer Join Filter\n\nA left join first forms matched rows and null-extended rows for unmatched left inputs. A subsequent WHERE condition still filters that result. Predicates on the right-side fields can therefore eliminate unmatched rows. Place restrictions according to the intended question: ON controls matches, while WHERE controls retained result rows. Test one matched and one unmatched left row before relying on a count or report.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects null extension to filtering and qualifies predicate placement by intent."
+    },
+    "authoring_variant": "outer-join-filter/supported",
+    "concept_cluster": "relational-null/outer-join-filter",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-0effd4d3e6ab5723",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/confusable-letters.md",
+        "command": null,
+        "skip_condition": "Explain why canonical normalization does not by itself eliminate look-alike characters from different scripts."
+      },
+      "current_revision": "unicode-text-confusable-letters-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Visually similar letters can be distinct code points without canonical equivalence, so normalization alone cannot implement a policy against cross-script confusables."
+    },
+    "document": "# Confusable Letters\n\nCharacters from different scripts can look similar while remaining distinct Unicode characters. Canonical normalization does not merge all visually confusable text. An application concerned with misleading identifiers needs an explicit policy, potentially including script restrictions or confusable analysis appropriate to its users. Avoid treating such a policy as a general restriction on ordinary multilingual prose, and test legitimate language use as well as misleading examples.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates canonical equivalence from visual resemblance."
+    },
+    "authoring_variant": "confusable-letters/supported",
+    "concept_cluster": "unicode-text/confusable-letters",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-1981465602e19981",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/nullable-join-key.md",
+        "command": null,
+        "skip_condition": "Explain why two missing keys do not match through an ordinary equality join and when an explicit null-safe rule is needed."
+      },
+      "current_revision": "relational-null-nullable-join-key-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Missing keys are equal by definition, so an ordinary equality join automatically joins all null keys to one another."
+    },
+    "document": "# Nullable Join Key\n\nOrdinary equality joins do not match two NULL keys merely because both values are absent. Whether absences should match is a domain decision, not a default identity rule. A null-safe comparison can express that decision but may create many-to-many matches among missing values. Test the expected multiplicity and avoid grouping unrelated entities solely because neither has an identifier.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes missingness establishes a shared key identity."
+    },
+    "authoring_variant": "nullable-join-key/unsupported",
+    "concept_cluster": "relational-null/nullable-join-key",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-1d300686b6442efa",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/count-expression.md",
+        "command": null,
+        "skip_condition": "Explain how COUNT(column) differs from COUNT(*) when the column contains NULL."
+      },
+      "current_revision": "relational-null-count-expression-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "COUNT(column) counts non-null expression values, whereas COUNT(*) counts rows, so rows with a null column contribute only to the latter."
+    },
+    "document": "# Count Expression\n\nCOUNT(*) reports the number of rows in its input group. COUNT(expression) reports the number of non-null values of that expression. These coincide only when the expression is non-null for every input row. Choose the form based on the question being asked, especially after outer joins. Include a group with null values and a group with no matching child values in validation fixtures.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes expression-value counting from row counting."
+    },
+    "authoring_variant": "count-expression/supported",
+    "concept_cluster": "relational-null/count-expression",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-21fa6b3b77ffbac7",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/locale-casing.md",
+        "command": null,
+        "skip_condition": "Explain why user-facing uppercasing may need a locale rather than a universal ASCII-style mapping."
+      },
+      "current_revision": "unicode-text-locale-casing-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Language-specific casing rules can differ, so a fixed ASCII transformation may produce the wrong letters for a user's language."
+    },
+    "document": "# Locale Casing\n\nUser-facing casing follows language conventions that may not match a default mapping. Locale-sensitive formatting should receive the intended language context rather than infer it from a few characters. Do not apply display-casing rules as an unexamined identifier-equality policy. Test the supported locales with representative non-ASCII examples and document behavior when locale information is absent.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies locale-dependent conventions and the limitation of a universal mapping."
+    },
+    "authoring_variant": "locale-casing/supported",
+    "concept_cluster": "unicode-text/locale-casing",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-2202aaf32afad95d",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/environment-map.json",
+        "command": "python verify/env_allowlist.py --clean",
+        "skip_condition": "Check the child-process environment against the declared synthetic allowlist. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-environment-filter-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-environment-filter-r1",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-environment-filter-r1",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-environment-filter-r1",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The current environment map has agreeing fixture results from the capture and verification stages."
+    },
+    "document": "# Environment Filter\n\nCheck the child-process environment against the declared synthetic allowlist.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Multiple applicable trusted successes agree; the untrusted contrary annotation has no authority."
+    },
+    "authoring_variant": "environment-filter/supported",
+    "concept_cluster": "sandbox-packaging/environment-filter",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-284b9a3d42b47716",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/launch-contract.json",
+        "command": "python verify/fd_inheritance.py --child",
+        "skip_condition": "Test whether the synthetic child inherits only the descriptors allowed by its launch contract. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-descriptor-leak-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "revision": "sandbox-packaging-descriptor-leak-r1",
+          "artifact": "sandbox/launch-contract.json",
+          "command": "python verify/fd_inheritance.py --child",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-descriptor-leak-r1",
+          "artifact": "sandbox/launch-contract.json",
+          "command": "python verify/fd_inheritance.py --child",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The descriptor list was collected, but its record identifies neither a trusted origin nor a verified command execution."
+    },
+    "document": "# Descriptor Leak\n\nTest whether the synthetic child inherits only the descriptors allowed by its launch contract.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A missing trust field and an explicitly untrusted record cannot establish trusted success."
+    },
+    "authoring_variant": "descriptor-leak/unsupported",
+    "concept_cluster": "sandbox-packaging/descriptor-leak",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-2b1bf2ddfe1f25fe",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/relative-path-contract.json",
+        "command": "python verify/cwd_resolution.py --relative",
+        "skip_condition": "Resolve the worker's relative fixture paths under the packaged working-directory contract. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-working-directory-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-working-directory-r1",
+          "artifact": "sandbox/absolute-path-contract.json",
+          "command": "python verify/cwd_resolution.py --relative",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-working-directory-r1",
+          "artifact": "sandbox/relative-path-contract.json",
+          "command": "python verify/json_parse.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The only relative-path test belongs to another invocation contract and the current contract merely has a JSON lint result."
+    },
+    "document": "# Working Directory\n\nResolve the worker's relative fixture paths under the packaged working-directory contract.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Neither success tests the required relative-path operation against this contract."
+    },
+    "authoring_variant": "working-directory/unsupported",
+    "concept_cluster": "sandbox-packaging/working-directory",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-2c60563209a86948",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/resource-limits.json",
+        "command": "python verify/memory_ceiling.py --bounded",
+        "skip_condition": "Exercise the configured memory ceiling with the disposable allocation fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-resource-ceiling-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-resource-ceiling-r1",
+          "artifact": "sandbox/resource-limits.json",
+          "command": "python verify/memory_ceiling.py --bounded",
+          "exit_code": "success"
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-resource-ceiling-r1",
+          "artifact": "sandbox/resource-limits.json",
+          "command": "python verify/cpu_limit.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A CPU ceiling test succeeded, while the memory test's returned status is the text success rather than an integer exit code."
+    },
+    "document": "# Resource Ceiling\n\nExercise the configured memory ceiling with the disposable allocation fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The memory result does not meet the typed evidence contract and CPU behavior cannot substitute for it."
+    },
+    "authoring_variant": "resource-ceiling/unsupported",
+    "concept_cluster": "sandbox-packaging/resource-ceiling",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-2ee37892c588660b",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/canonical-equivalence.md",
+        "command": null,
+        "skip_condition": "Explain how canonically equivalent text can have different code-point sequences and what that means for byte comparison."
+      },
+      "current_revision": "unicode-text-canonical-equivalence-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If two strings render as the same accented word, their bytes must match because fonts choose appearance after equality is decided."
+    },
+    "document": "# Canonical Equivalence\n\nUnicode can represent some text with either a precomposed character or a sequence containing a combining mark. These sequences need not be byte-identical. When canonical equivalence belongs to the application's equality contract, normalize consistently at a specified boundary. Preserve the original input when required for display or provenance. Normalization is not a general solution to look-alike characters or locale-sensitive collation.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes visual equivalence implies identical storage."
+    },
+    "authoring_variant": "canonical-equivalence/unsupported",
+    "concept_cluster": "unicode-text/canonical-equivalence",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-301901839bed6440",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/minimal-policy.json",
+        "command": "python verify/syscall_fixture.py --minimal",
+        "skip_condition": "Exercise the minimal syscall profile with the isolated synthetic worker fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-syscall-profile-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-syscall-profile-r1",
+          "artifact": "sandbox/minimal-policy.json",
+          "command": "python verify/syscall_fixture.py --minimal",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-syscall-profile-r1",
+          "artifact": "logs/worker-text.txt",
+          "command": "python verify/log_format.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The packaged policy allowed the declared fixture operations and blocked the forbidden probe in one completed runner execution."
+    },
+    "document": "# Syscall Profile\n\nExercise the minimal syscall profile with the isolated synthetic worker fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The policy fixture's own successful result is present independently of the log-format result."
+    },
+    "authoring_variant": "syscall-profile/supported",
+    "concept_cluster": "sandbox-packaging/syscall-profile",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-37022a168a09b111",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/supervisor-config.json",
+        "command": "python verify/signal_forward.py --child-fixture",
+        "skip_condition": "Check that the packaged supervisor forwards the fixture's termination signal as specified. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-signal-forwarding-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "supervisor-prototype",
+          "artifact": "sandbox/supervisor-config.json",
+          "command": "python verify/signal_forward.py --child-fixture",
+          "exit_code": 124
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-signal-forwarding-r1",
+          "artifact": "sandbox/supervisor-config.json",
+          "command": "python verify/signal_forward.py --child-fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-signal-forwarding-r1",
+          "artifact": "sandbox/supervisor-config.json",
+          "command": "python verify/signal_forward.py --child-fixture",
+          "exit_code": 124
+        }
+      ],
+      "explanation": "The forwarding fixture completed on this supervisor configuration after an earlier prototype timed out."
+    },
+    "document": "# Signal Forwarding\n\nCheck that the packaged supervisor forwards the fixture's termination signal as specified.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current trusted pass supersedes neither record by assumption; the other failures are simply inapplicable or untrusted."
+    },
+    "authoring_variant": "signal-forwarding/supported",
+    "concept_cluster": "sandbox-packaging/signal-forwarding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-396127b4299db39a",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/temporary-volume.json",
+        "command": "python verify/tmp_isolation.py --two-workers",
+        "skip_condition": "Verify that two synthetic workers receive the intended separate temporary storage views. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-temporary-storage-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "artifact": "sandbox/temporary-volume.json",
+          "command": "python verify/tmp_isolation.py --two-workers",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-temporary-storage-r1",
+          "artifact": "reports/tmp-usage.json",
+          "command": "python verify/report_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The retained success lacks a revision after the volume specification was edited, while a report-shape check still passes."
+    },
+    "document": "# Temporary Storage\n\nVerify that two synthetic workers receive the intended separate temporary storage views.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A revisionless isolation pass cannot certify the edited specification."
+    },
+    "authoring_variant": "temporary-storage/unsupported",
+    "concept_cluster": "sandbox-packaging/temporary-storage",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-3a6deb086ad85dd1",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/launch-contract.json",
+        "command": "python verify/fd_inheritance.py --child",
+        "skip_condition": "Test whether the synthetic child inherits only the descriptors allowed by its launch contract. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-descriptor-leak-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-descriptor-leak-r1",
+          "artifact": "sandbox/launch-contract.json",
+          "command": "python verify/fd_inheritance.py --child",
+          "exit_code": 3
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-descriptor-leak-r1",
+          "artifact": "sandbox/launch-contract.json",
+          "command": "python verify/fd_inheritance.py --child",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "launch-draft",
+          "artifact": "sandbox/launch-contract.json",
+          "command": "python verify/fd_inheritance.py --child",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The child descriptor list passed under the declared launch contract; a shell note is also attached."
+    },
+    "document": "# Descriptor Leak\n\nTest whether the synthetic child inherits only the descriptors allowed by its launch contract.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The sole applicable trusted outcome is success; draft and untrusted failures do not apply."
+    },
+    "authoring_variant": "descriptor-leak/supported",
+    "concept_cluster": "sandbox-packaging/descriptor-leak",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-3e48080f9b326224",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/null-order.md",
+        "command": null,
+        "skip_condition": "Explain why a report requiring a particular placement of nulls should specify that ordering rather than rely on an assumed default."
+      },
+      "current_revision": "relational-null-null-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "NULL is universally smaller than every value, so its placement is fixed across ascending and descending database sorts."
+    },
+    "document": "# Null Order\n\nNull placement in sorted output should be part of the report's contract. Defaults differ between database systems and can vary with sort direction. Use supported explicit null ordering or a tested expression that provides the required placement. Add a stable secondary key when deterministic ordering among ties matters. Validate null, non-null and tied values in both required sort directions.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Claims a universal ordering rule instead of using the database's supported semantics."
+    },
+    "authoring_variant": "null-order/unsupported",
+    "concept_cluster": "relational-null/null-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-41a3bf31bd1174fc",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/boost-profile.json",
+        "command": "python validate/ranking_fixture.py --boosts",
+        "skip_condition": "Validate the declared field boosts against the synthetic ranking fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-field-boosts-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-field-boosts-r1",
+          "artifact": "search/boost-profile.json",
+          "command": "python validate/ranking_fixture.py --boosts",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-field-boosts-r1",
+          "artifact": "search/alternate-profile.json",
+          "command": "python validate/ranking_fixture.py --boosts",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The selected product search mode and its boost profile are known, and the ranking fixture passes."
+    },
+    "document": "# Field Boosts\n\nValidate the declared field boosts against the synthetic ranking fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The required profile is identified and has a passing ranking result."
+    },
+    "authoring_variant": "field-boosts/supported",
+    "concept_cluster": "search-index/field-boosts",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-48d52f54eed3740f",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/not-in-null.md",
+        "command": null,
+        "skip_condition": "Explain why a nullable value in a NOT IN subquery can change the expected exclusion result."
+      },
+      "current_revision": "relational-null-not-in-null-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A null subquery member is automatically ignored by NOT IN, so it cannot change whether an unmatched value is retained."
+    },
+    "document": "# Not In Null\n\nNOT IN follows comparison and three-valued-logic rules. A null in its comparison set can prevent an otherwise unmatched value from yielding TRUE. Decide how absent values should behave, then express that decision explicitly. A correlated NOT EXISTS is often useful but must implement the actual matching rule. Test nulls on both sides rather than replacing syntax without considering the desired semantics.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes null members are discarded without affecting truth values."
+    },
+    "authoring_variant": "not-in-null/unsupported",
+    "concept_cluster": "relational-null/not-in-null",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-4e3d5ff12dc0dec1",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/canonical-equivalence.md",
+        "command": null,
+        "skip_condition": "Explain how canonically equivalent text can have different code-point sequences and what that means for byte comparison."
+      },
+      "current_revision": "unicode-text-canonical-equivalence-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A precomposed character and a base-plus-combining sequence may represent equivalent text but have different bytes; normalize to an agreed canonical form before an equality policy that requires it."
+    },
+    "document": "# Canonical Equivalence\n\nUnicode can represent some text with either a precomposed character or a sequence containing a combining mark. These sequences need not be byte-identical. When canonical equivalence belongs to the application's equality contract, normalize consistently at a specified boundary. Preserve the original input when required for display or provenance. Normalization is not a general solution to look-alike characters or locale-sensitive collation.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies multiple encodings of equivalent text and a suitable normalization boundary."
+    },
+    "authoring_variant": "canonical-equivalence/supported",
+    "concept_cluster": "unicode-text/canonical-equivalence",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-53043d35d5ea2d12",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/nullable-join-key.md",
+        "command": null,
+        "skip_condition": "Explain why two missing keys do not match through an ordinary equality join and when an explicit null-safe rule is needed."
+      },
+      "current_revision": "relational-null-nullable-join-key-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "NULL = NULL evaluates to UNKNOWN, so an equality join does not treat two absences as a match; use explicit null-safe semantics only if the domain says those rows belong together."
+    },
+    "document": "# Nullable Join Key\n\nOrdinary equality joins do not match two NULL keys merely because both values are absent. Whether absences should match is a domain decision, not a default identity rule. A null-safe comparison can express that decision but may create many-to-many matches among missing values. Test the expected multiplicity and avoid grouping unrelated entities solely because neither has an identifier.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Gives the comparison behavior while making the alternative dependent on domain intent."
+    },
+    "authoring_variant": "nullable-join-key/supported",
+    "concept_cluster": "relational-null/nullable-join-key",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-54c9d2a46f8d7c30",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/byte-limits.md",
+        "command": null,
+        "skip_condition": "Explain why a maximum UTF-8 byte length is not the same constraint as a maximum character count."
+      },
+      "current_revision": "unicode-text-byte-limits-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Encoded characters can occupy different numbers of bytes, so a storage byte limit requires measuring the encoded form rather than counting displayed characters."
+    },
+    "document": "# Byte Limits\n\nStorage and protocol limits often apply to encoded bytes. UTF-8 uses different byte lengths for different code points, and user-perceived characters can contain several code points. State which unit a limit uses and measure at that boundary. If truncation is permitted, avoid splitting an encoded sequence or an interaction-relevant grapheme. Test non-ASCII and combining sequences near the limit.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects variable-width encoding to the actual storage constraint."
+    },
+    "authoring_variant": "byte-limits/supported",
+    "concept_cluster": "unicode-text/byte-limits",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-54f67f75ed809c3d",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/facet-index.snapshot",
+        "command": "python validate/facet_counts.py --fixture",
+        "skip_condition": "Verify facet counts for the synthetic index snapshot. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-facet-counts-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/facet-index.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/facet-index.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/training.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The target snapshot's facet check failed twice, despite success on the separate training snapshot."
+    },
+    "document": "# Facet Counts\n\nVerify facet counts for the synthetic index snapshot.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Repeated applicable failures remain failures; another snapshot's pass does not establish these counts."
+    },
+    "authoring_variant": "facet-counts/unsupported",
+    "concept_cluster": "search-index/facet-counts",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-55a503b16c5b3353",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/relative-path-contract.json",
+        "command": "python verify/cwd_resolution.py --relative",
+        "skip_condition": "Resolve the worker's relative fixture paths under the packaged working-directory contract. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-working-directory-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-working-directory-r1",
+          "artifact": "sandbox/relative-path-contract.json",
+          "command": "python verify/cwd_resolution.py --relative",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-working-directory-r1",
+          "artifact": "sandbox/absolute-path-contract.json",
+          "command": "python verify/cwd_resolution.py --relative",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The finalized launch contract resolves both input and output fixture paths in the intended sandbox directory."
+    },
+    "document": "# Working Directory\n\nResolve the worker's relative fixture paths under the packaged working-directory contract.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A current success specifically covers the relative-path contract."
+    },
+    "authoring_variant": "working-directory/supported",
+    "concept_cluster": "sandbox-packaging/working-directory",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-5716a0390d5f9737",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/null-group.md",
+        "command": null,
+        "skip_condition": "Explain why grouping rows by a nullable field can put null-valued rows into one group even though ordinary NULL equality is not TRUE."
+      },
+      "current_revision": "relational-null-null-group-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Every null-valued row must form its own group because NULL = NULL is not TRUE."
+    },
+    "document": "# Null Group\n\nGROUP BY does not partition rows by repeatedly asking whether ordinary equality returns TRUE. Its grouping rules place null-valued instances of a grouping key together. This can create a large missing-value group that deserves explicit interpretation in a report. Validate grouping output alongside counts of missing data, and avoid describing the resulting bucket as a real category unless the domain defines it that way.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Applies ordinary comparison behavior as if it defined grouping partitioning."
+    },
+    "authoring_variant": "null-group/unsupported",
+    "concept_cluster": "relational-null/null-group",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-57d2af642181d1fa",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/egress-rules.json",
+        "command": "python verify/egress_probe.py --isolated",
+        "skip_condition": "Confirm the synthetic worker cannot reach the forbidden test endpoint under this policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-network-denial-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-network-denial-r1",
+          "artifact": "sandbox/egress-rules.json",
+          "command": "python verify/egress_probe.py --isolated",
+          "exit_code": 12
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-network-denial-r1",
+          "artifact": "sandbox/egress-rules.json",
+          "command": "python verify/json_parse.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The bundle parses, but the actual forbidden-endpoint probe reports that a connection was permitted."
+    },
+    "document": "# Network Denial\n\nConfirm the synthetic worker cannot reach the forbidden test endpoint under this policy.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Structural validity of the rules does not negate a failed functional denial test."
+    },
+    "authoring_variant": "network-denial/unsupported",
+    "concept_cluster": "sandbox-packaging/network-denial",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-58e6959abc1954ff",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/where-unknown.md",
+        "command": null,
+        "skip_condition": "Explain why a SQL WHERE predicate that evaluates to UNKNOWN does not retain the row."
+      },
+      "current_revision": "relational-null-where-unknown-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "UNKNOWN means the database has no reason to reject the row, so WHERE retains it until the value becomes known."
+    },
+    "document": "# Where Unknown\n\nSQL's three-valued logic distinguishes TRUE, FALSE and UNKNOWN. A WHERE clause retains rows only when its predicate is TRUE. Ordinary comparisons involving NULL often produce UNKNOWN, so they do not behave like a comparison against an ordinary sentinel value. Write explicit IS NULL or IS NOT NULL conditions when absence belongs to the selection rule and test those rows separately.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Invents deferred inclusion semantics that WHERE does not have."
+    },
+    "authoring_variant": "where-unknown/unsupported",
+    "concept_cluster": "relational-null/where-unknown",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-599b9710d7de1b6c",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/mount-layout.json",
+        "command": "python verify/mount_view.py --fixture",
+        "skip_condition": "Verify the filesystem view exposed to the isolated fixture process. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-mount-visibility-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-mount-visibility-r1",
+          "artifact": "sandbox/mount-layout.json",
+          "command": "python verify/mount_view.py --fixture"
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-mount-visibility-r1",
+          "artifact": "sandbox/diagnostic-layout.json",
+          "command": "python verify/mount_view.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The runner never recorded an outcome for the declared layout, although the diagnostic layout completed successfully."
+    },
+    "document": "# Mount Visibility\n\nVerify the filesystem view exposed to the isolated fixture process.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A missing outcome cannot be inferred from another layout's success."
+    },
+    "authoring_variant": "mount-visibility/unsupported",
+    "concept_cluster": "sandbox-packaging/mount-visibility",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-59e4504c1fa6df30",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/coalesce-meaning.md",
+        "command": null,
+        "skip_condition": "Explain why replacing NULL with zero can change the meaning of a numeric aggregate or report."
+      },
+      "current_revision": "relational-null-coalesce-meaning-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Replacing null with zero is always neutral because both values represent nothing and aggregate functions treat them identically."
+    },
+    "document": "# Coalesce Meaning\n\nNULL can represent unavailable or inapplicable data rather than a measured zero. Replacing it changes the input to expressions and can alter aggregates and downstream interpretation. Use COALESCE when the domain rule specifies the replacement, and retain missingness information when it matters. Check averages, denominators and displayed totals on a fixture containing both true zeros and absent measurements.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Equates absence with an observed numerical value without a domain justification."
+    },
+    "authoring_variant": "coalesce-meaning/unsupported",
+    "concept_cluster": "relational-null/coalesce-meaning",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-5bbb28e915e762dc",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/not-in-null.md",
+        "command": null,
+        "skip_condition": "Explain why a nullable value in a NOT IN subquery can change the expected exclusion result."
+      },
+      "current_revision": "relational-null-not-in-null-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The comparison against a null member can make NOT IN UNKNOWN rather than TRUE, so use a null-aware formulation such as an appropriately correlated NOT EXISTS when that matches the intended rule."
+    },
+    "document": "# Not In Null\n\nNOT IN follows comparison and three-valued-logic rules. A null in its comparison set can prevent an otherwise unmatched value from yielding TRUE. Decide how absent values should behave, then express that decision explicitly. A correlated NOT EXISTS is often useful but must implement the actual matching rule. Test nulls on both sides rather than replacing syntax without considering the desired semantics.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies the unknown comparison and a conditional alternative."
+    },
+    "authoring_variant": "not-in-null/supported",
+    "concept_cluster": "relational-null/not-in-null",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-5cca02209fcff560",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/identity-map.json",
+        "command": "python verify/uid_mapping.py --fixture",
+        "skip_condition": "Validate the synthetic namespace identity mapping selected for this launch. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-user-namespace-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-user-namespace-r1",
+          "artifact": "sandbox/identity-map.json",
+          "command": "python verify/uid_mapping.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-user-namespace-r1",
+          "artifact": "sandbox/alternate-map.json",
+          "command": "python verify/uid_mapping.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The caller has not chosen between two namespace configurations; both have separate passing fixture records."
+    },
+    "document": "# User Namespace\n\nValidate the synthetic namespace identity mapping selected for this launch.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Individual passing mappings do not determine which unresolved launch scope is required."
+    },
+    "authoring_variant": "user-namespace/unsupported",
+    "concept_cluster": "sandbox-packaging/user-namespace",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-67a61d60ef509dd8",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/synonym-bundle.json",
+        "command": "python validate/synonym_graph.py --paths",
+        "skip_condition": "Validate the token paths produced by the declared synthetic synonym graph. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-synonym-expansion-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "synonyms-draft",
+          "artifact": "search/synonym-bundle.json",
+          "command": "python validate/synonym_graph.py --paths",
+          "exit_code": 11
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-synonym-expansion-r1",
+          "artifact": "search/synonym-bundle.json",
+          "command": "python validate/synonym_graph.py --paths",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-synonym-expansion-r1",
+          "artifact": "search/stop-terms.json",
+          "command": "python validate/list_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The graph-path fixture passes for the current bundle even though a prior draft had a cycle error."
+    },
+    "document": "# Synonym Expansion\n\nValidate the token paths produced by the declared synthetic synonym graph.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current graph has a relevant successful execution, distinct from the draft and the unrelated list check."
+    },
+    "authoring_variant": "synonym-expansion/supported",
+    "concept_cluster": "search-index/synonym-expansion",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-686d0d1ac2bcdfd2",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/boost-profile.json",
+        "command": "python validate/ranking_fixture.py --boosts",
+        "skip_condition": "Validate the declared field boosts against the synthetic ranking fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-field-boosts-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-field-boosts-r1",
+          "artifact": "search/boost-profile.json",
+          "command": "python validate/ranking_fixture.py --boosts",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-field-boosts-r1",
+          "artifact": "search/alternate-profile.json",
+          "command": "python validate/ranking_fixture.py --boosts",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-field-boosts-r1",
+          "artifact": "search/boost-profile.json",
+          "command": "python validate/ranking_fixture.py --boosts",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Product mode remains undecided between two profiles, even though each profile passed its own ranking fixture."
+    },
+    "document": "# Field Boosts\n\nValidate the declared field boosts against the synthetic ranking fixture.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Evidence for multiple candidates does not resolve the unknown intended search mode."
+    },
+    "authoring_variant": "field-boosts/unsupported",
+    "concept_cluster": "search-index/field-boosts",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-6bc2f593b787b7e3",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/analyzer-plan.json",
+        "command": "python validate/analyzer_fixture.py --terms",
+        "skip_condition": "Compare the configured analyzer's emitted tokens with the synthetic term fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-analyzer-tokens-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-analyzer-tokens-r1",
+          "artifact": "search/analyzer-plan.json",
+          "command": "python validate/analyzer_fixture.py --terms",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-analyzer-tokens-r1",
+          "artifact": "bench/speed-plan.json",
+          "command": "python validate/speed_probe.py",
+          "exit_code": null
+        }
+      ],
+      "explanation": "The analyzer plan passes token expectations for the present fixture; a distinct indexing-speed probe remains incomplete."
+    },
+    "document": "# Analyzer Tokens\n\nCompare the configured analyzer's emitted tokens with the synthetic term fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The incomplete speed probe does not affect the matching token-analysis pass."
+    },
+    "authoring_variant": "analyzer-tokens/supported",
+    "concept_cluster": "search-index/analyzer-tokens",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-6f089a4893866a33",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/result-payload.snapshot",
+        "command": "python validate/stored_field_payload.py",
+        "skip_condition": "Check that synthetic search results return exactly the declared stored fields. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-stored-fields-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-stored-fields-r1",
+          "artifact": "search/result-payload.snapshot",
+          "command": "python validate/stored_field_payload.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-stored-fields-r1",
+          "artifact": "search/result-payload.snapshot",
+          "command": "python validate/payload_parser.py",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "payload-draft",
+          "artifact": "search/result-payload.snapshot",
+          "command": "python validate/stored_field_payload.py",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The returned payload fields passed verification on the current result snapshot while an unrelated parser reported a warning."
+    },
+    "document": "# Stored Fields\n\nCheck that synthetic search results return exactly the declared stored fields.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The payload contract has a current trusted pass; other entries cannot invalidate it."
+    },
+    "authoring_variant": "stored-fields/supported",
+    "concept_cluster": "search-index/stored-fields",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-7129a3b880a0eb0d",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/position-index.snapshot",
+        "command": "python validate/phrase_positions.py --ordered",
+        "skip_condition": "Verify stored term positions using the ordered-phrase fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-phrase-positions-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-phrase-positions-r1",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/phrase_positions.py --ordered",
+          "exit_code": 9
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-phrase-positions-r1",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/document_total.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "positions-old",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/phrase_positions.py --ordered",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The document total is correct, but the phrase fixture found missing positions in the current snapshot."
+    },
+    "document": "# Phrase Positions\n\nVerify stored term positions using the ordered-phrase fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Correct totals and historical position results cannot cancel the current phrase-position failure."
+    },
+    "authoring_variant": "phrase-positions/unsupported",
+    "concept_cluster": "search-index/phrase-positions",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-7752192f94d16957",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/delete-fixture.snapshot",
+        "command": "python validate/tombstone_view.py --refresh",
+        "skip_condition": "Check that removed synthetic documents are absent from the refreshed search view. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-delete-visibility-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-delete-visibility-r1",
+          "artifact": "search/delete-fixture.snapshot",
+          "command": "python validate/tombstone_view.py --refresh",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "unrefreshed-view",
+          "artifact": "search/delete-fixture.snapshot",
+          "command": "python validate/tombstone_view.py --refresh",
+          "exit_code": 6
+        }
+      ],
+      "explanation": "The refreshed deletion fixture passed for the present snapshot; a previous unrefreshed view remains as background evidence."
+    },
+    "document": "# Delete Visibility\n\nCheck that removed synthetic documents are absent from the refreshed search view.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The required current-view deletion check has a trusted success."
+    },
+    "authoring_variant": "delete-visibility/supported",
+    "concept_cluster": "search-index/delete-visibility",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-78d8097292ec5525",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/result-payload.snapshot",
+        "command": "python validate/stored_field_payload.py",
+        "skip_condition": "Check that synthetic search results return exactly the declared stored fields. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-stored-fields-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-stored-fields-r1",
+          "artifact": "search/result-payload.snapshot",
+          "command": "python validate/stored_field_payload.py",
+          "exit_code": true
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-stored-fields-r1",
+          "artifact": "search/result-payload.snapshot",
+          "command": "python validate/payload_parser.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The wrapper stored true as the success status and separately recorded a successful payload-parser run."
+    },
+    "document": "# Stored Fields\n\nCheck that synthetic search results return exactly the declared stored fields.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Boolean true is not integer exit zero and parsing alone does not verify the stored-field contract."
+    },
+    "authoring_variant": "stored-fields/unsupported",
+    "concept_cluster": "search-index/stored-fields",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-794d499aad9ff73a",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/minimal-policy.json",
+        "command": "python verify/syscall_fixture.py --minimal",
+        "skip_condition": "Exercise the minimal syscall profile with the isolated synthetic worker fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-syscall-profile-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": 1,
+          "revision": "sandbox-packaging-syscall-profile-r1",
+          "artifact": "sandbox/minimal-policy.json",
+          "command": "python verify/syscall_fixture.py --minimal",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-syscall-profile-r1",
+          "artifact": "logs/worker-text.txt",
+          "command": "python verify/log_format.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Only the fixture's console summary was kept; the formal runner entry has a numeric trust flag instead of the required boolean provenance."
+    },
+    "document": "# Syscall Profile\n\nExercise the minimal syscall profile with the isolated synthetic worker fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Numeric one is not boolean trusted provenance, and formatting logs is not the required fixture execution."
+    },
+    "authoring_variant": "syscall-profile/unsupported",
+    "concept_cluster": "sandbox-packaging/syscall-profile",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-798f025e6c7a5b9b",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/egress-rules.json",
+        "command": "python verify/egress_probe.py --isolated",
+        "skip_condition": "Confirm the synthetic worker cannot reach the forbidden test endpoint under this policy. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-network-denial-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-network-denial-r1",
+          "artifact": "sandbox/egress-rules.json",
+          "command": "python verify/egress_probe.py --isolated",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-network-denial-r1",
+          "artifact": "sandbox/egress-rules.json",
+          "command": "python verify/json_parse.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The isolated endpoint probe reports the expected denial using the current rule bundle."
+    },
+    "document": "# Network Denial\n\nConfirm the synthetic worker cannot reach the forbidden test endpoint under this policy.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The functional denial test passes, not merely the rule parser."
+    },
+    "authoring_variant": "network-denial/supported",
+    "concept_cluster": "sandbox-packaging/network-denial",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-7a17737e4317129e",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/compatibility-normalization.md",
+        "command": null,
+        "skip_condition": "Explain why compatibility normalization requires a deliberate product decision rather than being interchangeable with canonical normalization."
+      },
+      "current_revision": "unicode-text-compatibility-normalization-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "All normalization forms preserve every distinction; choosing a compatibility form only changes processing speed."
+    },
+    "document": "# Compatibility Normalization\n\nCompatibility normalization intentionally folds some distinctions beyond canonical equivalence. That can be appropriate for a search key while being inappropriate for archival text or an identifier contract. Choose the form according to the application's semantics and retain original text when needed. Test examples whose distinctions matter to the product; normalization is a policy choice rather than a universal cleanup step.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Misrepresents normalization forms as semantically interchangeable."
+    },
+    "authoring_variant": "compatibility-normalization/unsupported",
+    "concept_cluster": "unicode-text/compatibility-normalization",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-7ce5e189822788bb",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/environment-map.json",
+        "command": "python verify/env_allowlist.py --clean",
+        "skip_condition": "Check the child-process environment against the declared synthetic allowlist. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-environment-filter-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-environment-filter-r1",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-environment-filter-r1",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 1
+        },
+        {
+          "trusted": true,
+          "revision": "environment-old",
+          "artifact": "sandbox/environment-map.json",
+          "command": "python verify/env_allowlist.py --clean",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Two trusted runs on the same bound input disagree about whether an undeclared variable reached the child."
+    },
+    "document": "# Environment Filter\n\nCheck the child-process environment against the declared synthetic allowlist.\n",
+    "label": {
+      "action": "review",
+      "rationale": "The old pass cannot adjudicate the contradictory current results."
+    },
+    "authoring_variant": "environment-filter/unsupported",
+    "concept_cluster": "sandbox-packaging/environment-filter",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-8754a04ae30a75fd",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/analyzer-plan.json",
+        "command": "python validate/analyzer_fixture.py --terms",
+        "skip_condition": "Compare the configured analyzer's emitted tokens with the synthetic term fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-analyzer-tokens-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-analyzer-tokens-r1",
+          "artifact": "search/analyzer-plan.json",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-analyzer-tokens-r1",
+          "artifact": "bench/speed-plan.json",
+          "command": "python validate/speed_probe.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The token fixture output was imported without its command field; the only fully typed success is for a speed probe."
+    },
+    "document": "# Analyzer Tokens\n\nCompare the configured analyzer's emitted tokens with the synthetic term fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Neither record binds success to the required analyzer command."
+    },
+    "authoring_variant": "analyzer-tokens/unsupported",
+    "concept_cluster": "search-index/analyzer-tokens",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-884a30f7fb9564ba",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/null-group.md",
+        "command": null,
+        "skip_condition": "Explain why grouping rows by a nullable field can put null-valued rows into one group even though ordinary NULL equality is not TRUE."
+      },
+      "current_revision": "relational-null-null-group-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "SQL grouping uses its grouping equivalence rules rather than ordinary equality truth evaluation, so null-valued grouping keys can share a group."
+    },
+    "document": "# Null Group\n\nGROUP BY does not partition rows by repeatedly asking whether ordinary equality returns TRUE. Its grouping rules place null-valued instances of a grouping key together. This can create a large missing-value group that deserves explicit interpretation in a report. Validate grouping output alongside counts of missing data, and avoid describing the resulting bucket as a real category unless the domain defines it that way.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates grouping semantics from a scalar comparison predicate."
+    },
+    "authoring_variant": "null-group/supported",
+    "concept_cluster": "relational-null/null-group",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-8af2eae2e2826ab6",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/merge-fixture.snapshot",
+        "command": "python validate/merged_results.py --deduplicate",
+        "skip_condition": "Verify deduplication and ordering in the synthetic merged shard result. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-shard-merge-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/merged_results.py --deduplicate",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/document_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/merged_results.py --deduplicate",
+          "exit_code": 8
+        }
+      ],
+      "explanation": "The merged result passed its dedicated fixture and an independent document-shape check."
+    },
+    "document": "# Shard Merge\n\nVerify deduplication and ordering in the synthetic merged shard result.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The dedicated merge pass establishes the prerequisite despite an untrusted contrary note."
+    },
+    "authoring_variant": "shard-merge/supported",
+    "concept_cluster": "search-index/shard-merge",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-8b3b111727dc6841",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/price-sort.snapshot",
+        "command": "python validate/numeric_sort.py --signed",
+        "skip_condition": "Verify numeric ordering of the synthetic signed-value sort fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-numeric-sort-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-numeric-sort-r1",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "lexicographic-version",
+          "artifact": "search/price-sort.snapshot",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-numeric-sort-r1",
+          "artifact": "search/price-sort.snapshot",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A successful sort record omits its artifact and a second record belongs to the old lexicographic index."
+    },
+    "document": "# Numeric Sort\n\nVerify numeric ordering of the synthetic signed-value sort fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Neither incomplete nor stale trusted evidence certifies the current numeric-sort snapshot."
+    },
+    "authoring_variant": "numeric-sort/unsupported",
+    "concept_cluster": "search-index/numeric-sort",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-8c1fdaeb7a8c5d72",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/price-sort.snapshot",
+        "command": "python validate/numeric_sort.py --signed",
+        "skip_condition": "Verify numeric ordering of the synthetic signed-value sort fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-numeric-sort-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-numeric-sort-r1",
+          "artifact": "search/price-sort.snapshot",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "lexicographic-version",
+          "artifact": "search/price-sort.snapshot",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 4
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-numeric-sort-r1",
+          "artifact": "search/price-sort.snapshot",
+          "command": "python validate/numeric_sort.py --signed",
+          "exit_code": 4
+        }
+      ],
+      "explanation": "The numeric sort fixture passes for the current snapshot despite an old lexicographic-index failure."
+    },
+    "document": "# Numeric Sort\n\nVerify numeric ordering of the synthetic signed-value sort fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current required comparison succeeds; old and untrusted failures do not bind to it."
+    },
+    "authoring_variant": "numeric-sort/supported",
+    "concept_cluster": "search-index/numeric-sort",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-8d09cc307c2bc71e",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/identity-map.json",
+        "command": "python verify/uid_mapping.py --fixture",
+        "skip_condition": "Validate the synthetic namespace identity mapping selected for this launch. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-user-namespace-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-user-namespace-r1",
+          "artifact": "sandbox/identity-map.json",
+          "command": "python verify/uid_mapping.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-user-namespace-r1",
+          "artifact": "sandbox/alternate-map.json",
+          "command": "python verify/uid_mapping.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The launch target is resolved, and the fixture confirms the selected user mapping behaves as declared."
+    },
+    "document": "# User Namespace\n\nValidate the synthetic namespace identity mapping selected for this launch.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Known scope plus a matching trusted mapping pass permits this prerequisite skip."
+    },
+    "authoring_variant": "user-namespace/supported",
+    "concept_cluster": "sandbox-packaging/user-namespace",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-95b42a1c187698be",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/byte-limits.md",
+        "command": null,
+        "skip_condition": "Explain why a maximum UTF-8 byte length is not the same constraint as a maximum character count."
+      },
+      "current_revision": "unicode-text-byte-limits-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Any string of fifty characters fits a fifty-byte UTF-8 field because Unicode standardizes character size."
+    },
+    "document": "# Byte Limits\n\nStorage and protocol limits often apply to encoded bytes. UTF-8 uses different byte lengths for different code points, and user-perceived characters can contain several code points. State which unit a limit uses and measure at that boundary. If truncation is permitted, avoid splitting an encoded sequence or an interaction-relevant grapheme. Test non-ASCII and combining sequences near the limit.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes a fixed one-byte representation for all Unicode text."
+    },
+    "authoring_variant": "byte-limits/unsupported",
+    "concept_cluster": "unicode-text/byte-limits",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-9c812ab9f6ab8620",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/check-unknown.md",
+        "command": null,
+        "skip_condition": "Explain why a SQL CHECK expression can need an explicit NOT NULL requirement to prohibit absent values."
+      },
+      "current_revision": "relational-null-check-unknown-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "In common SQL CHECK semantics, UNKNOWN does not violate the check, so a positive-value expression alone can allow NULL; add the intended non-null constraint explicitly."
+    },
+    "document": "# Check Unknown\n\nCHECK constraints and WHERE clauses use their results for different purposes. Under common SQL CHECK semantics, a constraint fails when its expression is FALSE; UNKNOWN can pass. A positivity check therefore need not prohibit NULL. If the field must be present and positive, express both requirements and verify them on the selected database. Include an absent value in the constraint test fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies how constraint acceptance differs from WHERE selection."
+    },
+    "authoring_variant": "check-unknown/supported",
+    "concept_cluster": "relational-null/check-unknown",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-9d90d40c7e3d39b3",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/null-order.md",
+        "command": null,
+        "skip_condition": "Explain why a report requiring a particular placement of nulls should specify that ordering rather than rely on an assumed default."
+      },
+      "current_revision": "relational-null-null-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Default null placement can depend on the database and sort direction, so specify the intended null ordering or an equivalent explicit expression for the supported engine."
+    },
+    "document": "# Null Order\n\nNull placement in sorted output should be part of the report's contract. Defaults differ between database systems and can vary with sort direction. Use supported explicit null ordering or a tested expression that provides the required placement. Add a stable secondary key when deterministic ordering among ties matters. Validate null, non-null and tied values in both required sort directions.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects portability and direction to an explicit ordering contract."
+    },
+    "authoring_variant": "null-order/supported",
+    "concept_cluster": "relational-null/null-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-a0f9f4bd56ee23f1",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/confusable-letters.md",
+        "command": null,
+        "skip_condition": "Explain why canonical normalization does not by itself eliminate look-alike characters from different scripts."
+      },
+      "current_revision": "unicode-text-confusable-letters-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Normalizing to NFC merges every character with the same visible shape, making mixed-script look-alikes impossible."
+    },
+    "document": "# Confusable Letters\n\nCharacters from different scripts can look similar while remaining distinct Unicode characters. Canonical normalization does not merge all visually confusable text. An application concerned with misleading identifiers needs an explicit policy, potentially including script restrictions or confusable analysis appropriate to its users. Avoid treating such a policy as a general restriction on ordinary multilingual prose, and test legitimate language use as well as misleading examples.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Attributes visual-confusable folding to a normalization form that does not provide it."
+    },
+    "authoring_variant": "confusable-letters/unsupported",
+    "concept_cluster": "unicode-text/confusable-letters",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-a5114a05a0df8dd5",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/outer-join-filter.md",
+        "command": null,
+        "skip_condition": "Explain how placing a predicate on the nullable side in WHERE can remove unmatched rows from a left join."
+      },
+      "current_revision": "relational-null-outer-join-filter-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A LEFT JOIN preserves all left rows regardless of any later WHERE clause, so right-side filtering cannot remove them."
+    },
+    "document": "# Outer Join Filter\n\nA left join first forms matched rows and null-extended rows for unmatched left inputs. A subsequent WHERE condition still filters that result. Predicates on the right-side fields can therefore eliminate unmatched rows. Place restrictions according to the intended question: ON controls matches, while WHERE controls retained result rows. Test one matched and one unmatched left row before relying on a count or report.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Ignores filtering that happens after the join result is formed."
+    },
+    "authoring_variant": "outer-join-filter/unsupported",
+    "concept_cluster": "relational-null/outer-join-filter",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-a8269e5bfd931b3a",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/highlight-fixture.snapshot",
+        "command": "python validate/highlight_spans.py --offsets",
+        "skip_condition": "Validate returned highlight spans against the indexed synthetic source text. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-highlight-spans-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-highlight-spans-r1",
+          "artifact": "search/highlight-fixture.snapshot",
+          "command": "python validate/highlight_spans.py --offsets",
+          "exit_code": -1
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-highlight-spans-r1",
+          "artifact": "search/snippet-fixture.snapshot",
+          "command": "python validate/snippet_length.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The span fixture terminated with an error while the snippet-length check completed successfully."
+    },
+    "document": "# Highlight Spans\n\nValidate returned highlight spans against the indexed synthetic source text.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "An execution error on the required check remains unmet despite another check's success."
+    },
+    "authoring_variant": "highlight-spans/unsupported",
+    "concept_cluster": "search-index/highlight-spans",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-ae63f419e5395e6a",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/highlight-fixture.snapshot",
+        "command": "python validate/highlight_spans.py --offsets",
+        "skip_condition": "Validate returned highlight spans against the indexed synthetic source text. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-highlight-spans-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-highlight-spans-r1",
+          "artifact": "search/highlight-fixture.snapshot",
+          "command": "python validate/highlight_spans.py --offsets",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-highlight-spans-r1",
+          "artifact": "search/snippet-fixture.snapshot",
+          "command": "python validate/snippet_length.py",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The span fixture passes and its command, input and revision are all present in the trusted record."
+    },
+    "document": "# Highlight Spans\n\nValidate returned highlight spans against the indexed synthetic source text.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A separate snippet-length failure does not change the highlight-span proof."
+    },
+    "authoring_variant": "highlight-spans/supported",
+    "concept_cluster": "search-index/highlight-spans",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-b0129eb419804c4c",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/supervisor-config.json",
+        "command": "python verify/signal_forward.py --child-fixture",
+        "skip_condition": "Check that the packaged supervisor forwards the fixture's termination signal as specified. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-signal-forwarding-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-signal-forwarding-r1",
+          "artifact": "sandbox/supervisor-config.json",
+          "command": "python verify/signal_forward.py --child-fixture",
+          "exit_code": 124
+        },
+        {
+          "trusted": false,
+          "revision": "sandbox-packaging-signal-forwarding-r1",
+          "artifact": "sandbox/supervisor-config.json",
+          "command": "python verify/signal_forward.py --child-fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The current forwarding fixture timed out and an assistant annotation claims the child probably exited correctly."
+    },
+    "document": "# Signal Forwarding\n\nCheck that the packaged supervisor forwards the fixture's termination signal as specified.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A timeout is not success, and an untrusted optimistic annotation cannot repair it."
+    },
+    "authoring_variant": "signal-forwarding/unsupported",
+    "concept_cluster": "sandbox-packaging/signal-forwarding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-b05bb2508c4e2354",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/unique-null-policy.md",
+        "command": null,
+        "skip_condition": "Explain why a uniqueness requirement involving nullable keys must be checked against the selected database's null policy."
+      },
+      "current_revision": "relational-null-unique-null-policy-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Database systems and available constraint modes can differ in how unique constraints treat nulls; verify the actual chosen constraint instead of assuming it permits exactly one null."
+    },
+    "document": "# Unique Null Policy\n\nA product rule such as at most one missing identifier is not automatically expressed by every nullable UNIQUE constraint. Null treatment can differ across systems and supported constraint forms. Consult and test the selected engine's behavior before relying on it. Include multiple null keys and composite keys with partly missing components. Keep the domain requirement separate from assumptions about one familiar database.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Recognizes that uniqueness of nullable keys depends on the concrete constraint semantics."
+    },
+    "authoring_variant": "unique-null-policy/supported",
+    "concept_cluster": "relational-null/unique-null-policy",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-b9bacf03ede743e0",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/stream-boundaries.md",
+        "command": null,
+        "skip_condition": "Explain why a streaming UTF-8 decoder may need to retain bytes between input chunks."
+      },
+      "current_revision": "unicode-text-stream-boundaries-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A multibyte sequence can be split across chunks, so the decoder must keep an incomplete suffix and finish it when the next bytes arrive."
+    },
+    "document": "# Stream Boundaries\n\nA transport's chunk boundaries need not align with UTF-8 character boundaries. A streaming decoder keeps enough state to complete a partial sequence from the next chunk. At the end of the stream it must handle an unfinished sequence according to the declared error policy. Test every split position in representative multibyte strings, rather than only inputs delivered as one complete buffer.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies arbitrary transport segmentation and the required decoder state."
+    },
+    "authoring_variant": "stream-boundaries/supported",
+    "concept_cluster": "unicode-text/stream-boundaries",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-c451e34134add024",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/grapheme-cursor.md",
+        "command": null,
+        "skip_condition": "Explain why moving a text cursor by one code point can split what a user perceives as one character."
+      },
+      "current_revision": "unicode-text-grapheme-cursor-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A displayed grapheme may contain several code points, so editing navigation should use the intended grapheme-boundary rules instead of blindly advancing one code point."
+    },
+    "document": "# Grapheme Cursor\n\nCode points are encoding units of meaning, while a grapheme cluster can combine several of them into a user-perceived character. A cursor or deletion operation that steps by code point may separate marks or pieces of a joined sequence. Choose explicit segmentation behavior for the editor and test combining marks and joined symbols. Storage offsets and editing positions need not use the same units.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates code points from user-perceived grapheme clusters."
+    },
+    "authoring_variant": "grapheme-cursor/supported",
+    "concept_cluster": "unicode-text/grapheme-cursor",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-c6c24d12ad663af8",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/count-expression.md",
+        "command": null,
+        "skip_condition": "Explain how COUNT(column) differs from COUNT(*) when the column contains NULL."
+      },
+      "current_revision": "relational-null-count-expression-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Both forms count every row; choosing a column merely tells the optimizer which index to read."
+    },
+    "document": "# Count Expression\n\nCOUNT(*) reports the number of rows in its input group. COUNT(expression) reports the number of non-null values of that expression. These coincide only when the expression is non-null for every input row. Choose the form based on the question being asked, especially after outer joins. Include a group with null values and a group with no matching child values in validation fixtures.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats a semantic difference as a performance-only choice."
+    },
+    "authoring_variant": "count-expression/unsupported",
+    "concept_cluster": "relational-null/count-expression",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-c7b6e29408ec555b",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/position-index.snapshot",
+        "command": "python validate/phrase_positions.py --ordered",
+        "skip_condition": "Verify stored term positions using the ordered-phrase fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-phrase-positions-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-phrase-positions-r1",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/phrase_positions.py --ordered",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-phrase-positions-r1",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/document_total.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "positions-old",
+          "artifact": "search/position-index.snapshot",
+          "command": "python validate/phrase_positions.py --ordered",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The ordered phrase searches matched expected positions in the current snapshot with a successful typed result."
+    },
+    "document": "# Phrase Positions\n\nVerify stored term positions using the ordered-phrase fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The required position check itself passes, in addition to unrelated or old evidence."
+    },
+    "authoring_variant": "phrase-positions/supported",
+    "concept_cluster": "search-index/phrase-positions",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-cdabf8771b44b925",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/where-unknown.md",
+        "command": null,
+        "skip_condition": "Explain why a SQL WHERE predicate that evaluates to UNKNOWN does not retain the row."
+      },
+      "current_revision": "relational-null-where-unknown-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "WHERE keeps rows for which the predicate is TRUE; NULL-related comparisons may produce UNKNOWN, which is not TRUE and is filtered out."
+    },
+    "document": "# Where Unknown\n\nSQL's three-valued logic distinguishes TRUE, FALSE and UNKNOWN. A WHERE clause retains rows only when its predicate is TRUE. Ordinary comparisons involving NULL often produce UNKNOWN, so they do not behave like a comparison against an ordinary sentinel value. Write explicit IS NULL or IS NOT NULL conditions when absence belongs to the selection rule and test those rows separately.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Gives the truth-value selection rule and connects it to null comparisons."
+    },
+    "authoring_variant": "where-unknown/supported",
+    "concept_cluster": "relational-null/where-unknown",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-d2273e3d98248cd0",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/decoder-replacement.md",
+        "command": null,
+        "skip_condition": "Explain why silently replacing invalid byte sequences can erase distinctions that an input-validation boundary needs."
+      },
+      "current_revision": "unicode-text-decoder-replacement-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Replacement decoding can map different invalid inputs to the same replacement character, so a strict boundary should reject malformed encoding when preserving those distinctions matters."
+    },
+    "document": "# Decoder Replacement\n\nText decoders may reject malformed byte sequences or replace them. Replacement is useful for tolerant display, but can discard which bytes were malformed and make distinct inputs look alike. Select the behavior at the boundary according to the contract. Preserve raw bytes separately if diagnostics require them, and do not assume a successfully decoded replacement string proves the original encoding was valid.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Explains the many-to-one transformation and when rejection is needed."
+    },
+    "authoring_variant": "decoder-replacement/supported",
+    "concept_cluster": "unicode-text/decoder-replacement",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-d3f9f6f4b244a33c",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/compatibility-normalization.md",
+        "command": null,
+        "skip_condition": "Explain why compatibility normalization requires a deliberate product decision rather than being interchangeable with canonical normalization."
+      },
+      "current_revision": "unicode-text-compatibility-normalization-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Compatibility normalization can collapse distinctions such as presentation variants that the application might need to preserve, so its broader equivalence policy must be intentional."
+    },
+    "document": "# Compatibility Normalization\n\nCompatibility normalization intentionally folds some distinctions beyond canonical equivalence. That can be appropriate for a search key while being inappropriate for archival text or an identifier contract. Choose the form according to the application's semantics and retain original text when needed. Test examples whose distinctions matter to the product; normalization is a policy choice rather than a universal cleanup step.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies potentially meaningful collapsed distinctions and the need for a chosen equality policy."
+    },
+    "authoring_variant": "compatibility-normalization/supported",
+    "concept_cluster": "unicode-text/compatibility-normalization",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-d4d4d29399b6d4f8",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/casefold-length.md",
+        "command": null,
+        "skip_condition": "Explain why case-insensitive matching cannot assume case folding preserves string length."
+      },
+      "current_revision": "unicode-text-casefold-length-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Case folding merely flips one bit per character, so offsets in the folded string can always index the original unchanged."
+    },
+    "document": "# Casefold Length\n\nCase folding supports caseless comparison but is not necessarily a one-code-point substitution. A folded string can have a different length from its source. If search operates on transformed text and then highlights the original, maintain an appropriate position mapping. Test expansions and combining sequences rather than validating only ASCII. Lowercasing for display and case folding for matching are distinct operations.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes both a simplistic representation and length preservation."
+    },
+    "authoring_variant": "casefold-length/unsupported",
+    "concept_cluster": "unicode-text/casefold-length",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-d55958b913ea9ab1",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/unique-null-policy.md",
+        "command": null,
+        "skip_condition": "Explain why a uniqueness requirement involving nullable keys must be checked against the selected database's null policy."
+      },
+      "current_revision": "relational-null-unique-null-policy-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The SQL word UNIQUE universally allows exactly one null in every nullable key, so no engine-specific verification is necessary."
+    },
+    "document": "# Unique Null Policy\n\nA product rule such as at most one missing identifier is not automatically expressed by every nullable UNIQUE constraint. Null treatment can differ across systems and supported constraint forms. Consult and test the selected engine's behavior before relying on it. Include multiple null keys and composite keys with partly missing components. Keep the domain requirement separate from assumptions about one familiar database.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Claims a universal null policy across implementations and configurations."
+    },
+    "authoring_variant": "unique-null-policy/unsupported",
+    "concept_cluster": "relational-null/unique-null-policy",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-d5f28c039c81598c",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/stream-boundaries.md",
+        "command": null,
+        "skip_condition": "Explain why a streaming UTF-8 decoder may need to retain bytes between input chunks."
+      },
+      "current_revision": "unicode-text-stream-boundaries-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Each transport chunk must be a complete UTF-8 string; decode chunks independently and replace any unfinished suffix immediately."
+    },
+    "document": "# Stream Boundaries\n\nA transport's chunk boundaries need not align with UTF-8 character boundaries. A streaming decoder keeps enough state to complete a partial sequence from the next chunk. At the end of the stream it must handle an unfinished sequence according to the declared error policy. Test every split position in representative multibyte strings, rather than only inputs delivered as one complete buffer.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes chunk boundaries align with encoded characters and loses split sequences."
+    },
+    "authoring_variant": "stream-boundaries/unsupported",
+    "concept_cluster": "unicode-text/stream-boundaries",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-d945edc952aa69da",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/delete-fixture.snapshot",
+        "command": "python validate/tombstone_view.py --refresh",
+        "skip_condition": "Check that removed synthetic documents are absent from the refreshed search view. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-delete-visibility-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-delete-visibility-r1",
+          "artifact": "search/delete-fixture.snapshot",
+          "command": "python validate/tombstone_view.py --refresh",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-delete-visibility-r1",
+          "artifact": "search/delete-fixture.snapshot",
+          "command": "python validate/tombstone_view.py --refresh",
+          "exit_code": 6
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-delete-visibility-r1",
+          "artifact": "search/delete-fixture.snapshot",
+          "command": "python validate/tombstone_view.py --refresh",
+          "exit_code": 6
+        }
+      ],
+      "explanation": "Two current bound results disagree on whether the removed document is still searchable."
+    },
+    "document": "# Delete Visibility\n\nCheck that removed synthetic documents are absent from the refreshed search view.\n",
+    "label": {
+      "action": "review",
+      "rationale": "More copies of one outcome do not resolve a trusted contradiction with no authoritative run ordering."
+    },
+    "authoring_variant": "delete-visibility/unsupported",
+    "concept_cluster": "search-index/delete-visibility",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-de01be35f9a31199",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/locale-casing.md",
+        "command": null,
+        "skip_condition": "Explain why user-facing uppercasing may need a locale rather than a universal ASCII-style mapping."
+      },
+      "current_revision": "unicode-text-locale-casing-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Alphabetic case is universal; applying the English ASCII mapping to every script preserves the correct local spelling."
+    },
+    "document": "# Locale Casing\n\nUser-facing casing follows language conventions that may not match a default mapping. Locale-sensitive formatting should receive the intended language context rather than infer it from a few characters. Do not apply display-casing rules as an unexamined identifier-equality policy. Test the supported locales with representative non-ASCII examples and document behavior when locale information is absent.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Generalizes a narrow mapping to languages it cannot represent correctly."
+    },
+    "authoring_variant": "locale-casing/unsupported",
+    "concept_cluster": "unicode-text/locale-casing",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-df64d9178075d900",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/synonym-bundle.json",
+        "command": "python validate/synonym_graph.py --paths",
+        "skip_condition": "Validate the token paths produced by the declared synthetic synonym graph. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-synonym-expansion-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "synonyms-draft",
+          "artifact": "search/synonym-bundle.json",
+          "command": "python validate/synonym_graph.py --paths",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-synonym-expansion-r1",
+          "artifact": "search/synonym-bundle.json",
+          "command": "python validate/synonym_graph.py --paths",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-synonym-expansion-r1",
+          "artifact": "search/stop-terms.json",
+          "command": "python validate/list_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A draft graph passed, but the changed bundle has only a non-authoritative success claim and a successful list-shape check."
+    },
+    "document": "# Synonym Expansion\n\nValidate the token paths produced by the declared synthetic synonym graph.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "No trusted current graph-path result exists for the changed synonym bundle."
+    },
+    "authoring_variant": "synonym-expansion/unsupported",
+    "concept_cluster": "search-index/synonym-expansion",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-ede5cf9dbdbc0983",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/decoder-replacement.md",
+        "command": null,
+        "skip_condition": "Explain why silently replacing invalid byte sequences can erase distinctions that an input-validation boundary needs."
+      },
+      "current_revision": "unicode-text-decoder-replacement-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Replacement characters retain the exact original invalid bytes, so validation after replacement has all the same information as validation before it."
+    },
+    "document": "# Decoder Replacement\n\nText decoders may reject malformed byte sequences or replace them. Replacement is useful for tolerant display, but can discard which bytes were malformed and make distinct inputs look alike. Select the behavior at the boundary according to the contract. Preserve raw bytes separately if diagnostics require them, and do not assume a successfully decoded replacement string proves the original encoding was valid.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Falsely claims lossless recovery from generic replacement characters."
+    },
+    "authoring_variant": "decoder-replacement/unsupported",
+    "concept_cluster": "unicode-text/decoder-replacement",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-ef566379d03a46ec",
+    "family": "sandbox-packaging",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sandbox/temporary-volume.json",
+        "command": "python verify/tmp_isolation.py --two-workers",
+        "skip_condition": "Verify that two synthetic workers receive the intended separate temporary storage views. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "sandbox-packaging-temporary-storage-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-temporary-storage-r1",
+          "artifact": "sandbox/temporary-volume.json",
+          "command": "python verify/tmp_isolation.py --two-workers",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "sandbox-packaging-temporary-storage-r1",
+          "artifact": "reports/tmp-usage.json",
+          "command": "python verify/report_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Both workers completed the isolation fixture against the same final volume specification and the overall check passed."
+    },
+    "document": "# Temporary Storage\n\nVerify that two synthetic workers receive the intended separate temporary storage views.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The functional isolation result covers the final specification."
+    },
+    "authoring_variant": "temporary-storage/supported",
+    "concept_cluster": "sandbox-packaging/temporary-storage",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/sandbox-packaging.txt"
+  },
+  {
+    "id": "v2-efd3ac929e13ab13",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/check-unknown.md",
+        "command": null,
+        "skip_condition": "Explain why a SQL CHECK expression can need an explicit NOT NULL requirement to prohibit absent values."
+      },
+      "current_revision": "relational-null-check-unknown-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "CHECK(amount > 0) necessarily rejects NULL because NULL is not a positive number in ordinary arithmetic."
+    },
+    "document": "# Check Unknown\n\nCHECK constraints and WHERE clauses use their results for different purposes. Under common SQL CHECK semantics, a constraint fails when its expression is FALSE; UNKNOWN can pass. A positivity check therefore need not prohibit NULL. If the field must be present and positive, express both requirements and verify them on the selected database. Include an absent value in the constraint test fixture.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes mathematical intuition determines the three-valued constraint result."
+    },
+    "authoring_variant": "check-unknown/unsupported",
+    "concept_cluster": "relational-null/check-unknown",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-f0e67eddeafa6db3",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/casefold-length.md",
+        "command": null,
+        "skip_condition": "Explain why case-insensitive matching cannot assume case folding preserves string length."
+      },
+      "current_revision": "unicode-text-casefold-length-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Some characters fold to multiple code points, so folded indices and lengths may differ from the original; preserve an offset mapping when highlighting matches."
+    },
+    "document": "# Casefold Length\n\nCase folding supports caseless comparison but is not necessarily a one-code-point substitution. A folded string can have a different length from its source. If search operates on transformed text and then highlights the original, maintain an appropriate position mapping. Test expansions and combining sequences rather than validating only ASCII. Lowercasing for display and case folding for matching are distinct operations.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Names expansion and its concrete effect on offset-based features."
+    },
+    "authoring_variant": "casefold-length/supported",
+    "concept_cluster": "unicode-text/casefold-length",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  },
+  {
+    "id": "v2-f234cc26f146b70b",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/merge-fixture.snapshot",
+        "command": "python validate/merged_results.py --deduplicate",
+        "skip_condition": "Verify deduplication and ordering in the synthetic merged shard result. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-shard-merge-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/document_shape.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/merged_results.py --deduplicate",
+          "exit_code": 0
+        },
+        {
+          "revision": "search-index-shard-merge-r1",
+          "artifact": "search/merge-fixture.snapshot",
+          "command": "python validate/merged_results.py --deduplicate",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The merge fixture has no trusted result; only document shape was verified and a copied merge summary claims success."
+    },
+    "document": "# Shard Merge\n\nVerify deduplication and ordering in the synthetic merged shard result.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Document shape and unsupported claims cannot demonstrate correct merged behavior."
+    },
+    "authoring_variant": "shard-merge/unsupported",
+    "concept_cluster": "search-index/shard-merge",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-f9b178003073e935",
+    "family": "search-index",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "search/facet-index.snapshot",
+        "command": "python validate/facet_counts.py --fixture",
+        "skip_condition": "Verify facet counts for the synthetic index snapshot. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "search-index-facet-counts-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/facet-index.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/training.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 2
+        },
+        {
+          "trusted": false,
+          "revision": "search-index-facet-counts-r1",
+          "artifact": "search/facet-index.snapshot",
+          "command": "python validate/facet_counts.py --fixture",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The snapshot's facet counts pass; the audit includes a failed check for a separate training snapshot."
+    },
+    "document": "# Facet Counts\n\nVerify facet counts for the synthetic index snapshot.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Only the current target's trusted result governs this facet prerequisite."
+    },
+    "authoring_variant": "facet-counts/supported",
+    "concept_cluster": "search-index/facet-counts",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/search-index.txt"
+  },
+  {
+    "id": "v2-fab8eb7055bf02aa",
+    "family": "relational-null",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/relational-null/coalesce-meaning.md",
+        "command": null,
+        "skip_condition": "Explain why replacing NULL with zero can change the meaning of a numeric aggregate or report."
+      },
+      "current_revision": "relational-null-coalesce-meaning-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Missing and measured zero can mean different things; COALESCE merges those states and can change counts, averages or interpretation unless the domain explicitly treats absence as zero."
+    },
+    "document": "# Coalesce Meaning\n\nNULL can represent unavailable or inapplicable data rather than a measured zero. Replacing it changes the input to expressions and can alter aggregates and downstream interpretation. Use COALESCE when the domain rule specifies the replacement, and retain missingness information when it matters. Check averages, denominators and displayed totals on a fixture containing both true zeros and absent measurements.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies semantic information lost by the substitution."
+    },
+    "authoring_variant": "coalesce-meaning/supported",
+    "concept_cluster": "relational-null/coalesce-meaning",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/relational-null.txt"
+  },
+  {
+    "id": "v2-fbc4ff96dad27c3b",
+    "family": "unicode-text",
+    "split": "calibration",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/unicode-text/grapheme-cursor.md",
+        "command": null,
+        "skip_condition": "Explain why moving a text cursor by one code point can split what a user perceives as one character."
+      },
+      "current_revision": "unicode-text-grapheme-cursor-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Every Unicode code point is one visible character, so code-point indexing always gives natural cursor movement."
+    },
+    "document": "# Grapheme Cursor\n\nCode points are encoding units of meaning, while a grapheme cluster can combine several of them into a user-perceived character. A cursor or deletion operation that steps by code point may separate marks or pieces of a joined sequence. Choose explicit segmentation behavior for the editor and test combining marks and joined symbols. Storage offsets and editing positions need not use the same units.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Incorrectly assumes a one-to-one mapping between code points and displayed characters."
+    },
+    "authoring_variant": "grapheme-cursor/unsupported",
+    "concept_cluster": "unicode-text/grapheme-cursor",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/calibration/unicode-text.txt"
+  }
+]

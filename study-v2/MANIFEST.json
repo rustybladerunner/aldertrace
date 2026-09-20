@@ -1,0 +1,33 @@
+{
+  "version": "aldertrace-study-v2-draft-1",
+  "phase": "pre-inference-dataset-integrity",
+  "model_definition_frozen": false,
+  "human_reviewed": false,
+  "results_status": "provisional; agent-authored and unreviewed",
+  "assets": {
+    "build.py": "7bbe857227045b34513c2ac74f96155137d1cfcf611ecc0aae2a620a294c7006",
+    "calibration.json": "afb59a9f68c66e1a2bb77c31ac5c6ec19857823573f14597452ab17ce80bfc24",
+    "development-integrity.json": "40753cc4d3a9ddf5c614c91d2a0d883d889c386d12c4703ba92ed213421eb5a4",
+    "development-validation.json": "2202dda65fbcc94091429058645d956c23e22dcf7f6b450c18f50d4cfbad34e8",
+    "development.json": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+    "family-plan.json": "acbf1774e4a0098446efb281e2690282501d78a91a2b61e8d3dce2141afb2dac",
+    "integrity.py": "830bfffcfab527d64bb6a9aac35b56e74417015c3e2a62ef038c88bfe0f30ec6",
+    "README.md": "549b4ecd36f842b444ea9889ea13d1bef8816113f16dd07ad4e10828201c5b74",
+    "SEMANTIC_RUBRIC.md": "166ade305bfcd900ad9f0f725603e82e85484b865e1378e75a812fd6fdfbb08b",
+    "sources/calibration/relational-null.txt": "aee07d4da0d30c8e0667885c7fc4fecc4ad26ae5c1a85ead4437221d14240a02",
+    "sources/calibration/sandbox-packaging.txt": "d63e7ba0deaf731982c3d1e132384f7d040ab33b65e363d868892c962f6b4277",
+    "sources/calibration/search-index.txt": "2a2414b933ba0bb1e307cf68a4cd91c63e98565db3355d77405638228fd9d03e",
+    "sources/calibration/unicode-text.txt": "1817cfc275ff317582a5ae914fef17859a9d971cc492fcc92a2c51696dad3615",
+    "sources/development/color-pipeline.txt": "a4477304e4f00bae1d478cc23d90b652fe3de29ccf41e12e99011b6207d58822",
+    "sources/development/font-delivery.txt": "6f7d278ff24599356c7ffffb93f60be32448fbe5f5513896b2cf5f9c0f1112fa",
+    "sources/development/keyboard-interaction.txt": "0f2124c26b78287aed15e9c8c0d08ba77d3c3987b3e90bd2a92886ca412776b7",
+    "sources/development/numerical-representation.txt": "65f920f56b8b32ead3cfbab6b9e319ae4ceaa539d6c22e16ebfb464eaebb8f3f",
+    "sources/test/browser-policy.txt": "7b0032ed05afdd2eda7a4f28205b49e0a1f5ca937effe5893f06760314020bb1",
+    "sources/test/compressed-streams.txt": "34f7a01ff9f1db6bdab8f466991afae0b410c759c0daca8ff5adcaa26874ac53",
+    "sources/test/experimental-assignment.txt": "8cba56a50c6c28ec1edd7e26a51f7ca6a9586177851daa26692c9acf6b102e6c",
+    "sources/test/laboratory-instruments.txt": "6c783610421930131abfb334e457bb9716d50cdd1d5d4e1cdeb735f25a9ef4be",
+    "test.json": "040f9b98927916c4ed585efd5c1cd1cd10150c8c2488d81f3381a9791c802035",
+    "validation.json": "cbb0ee720fffc251b189b14fe2017b80273184ac89fde8823777d4d27f18a07d",
+    "verify.py": "af1c677eb3c87b47402d2845c819aaa41b2602614b31c866fa1da10f7afcc2f4"
+  }
+}

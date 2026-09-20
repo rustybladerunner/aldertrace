@@ -1,0 +1,418 @@
+{
+  "claim_boundary": "Preliminary synthetic retrieval mechanism ablation; not Calyx product efficacy, calibration, model savings or task success.",
+  "counts": {
+    "history_records": 8,
+    "non_skippable_queries": 16,
+    "recommendation_rows": 96,
+    "skip_eligible_queries": 8,
+    "total_lookup_timings": 2976,
+    "unique_queries": 24
+  },
+  "dataset_sha256": "22e734986bd3b352b457028ac4bc9dfe42de533fca2bf11b0e113515347240e0",
+  "definition_sha256": "cb2308bf9eade5244537f47c3660bc0cfdc8dd96b75d29d70b52ad6416bba91b",
+  "deterministic_reference": {
+    "gate_action_matches": 24,
+    "gate_safe_skips": 8,
+    "model_calls_required_for_this_fixture": 0
+  },
+  "environment": {
+    "blas_threads_requested": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "evidence_kind": "synthetic-development-mechanism",
+  "limitations": [
+    "Curated paired/corrupted fixtures are dependent and not a population sample.",
+    "Frozen threshold 0.8 was selected as a simple convention, not calibrated or tuned.",
+    "Timing repeats characterize this process only; they do not increase unique query count.",
+    "No persistent Calyx memory, reinforcement, MCP schema cost or remote fallback was exercised.",
+    "A retrieval hit is only a simulated fallback avoidance; trusted machine_gate already decides every case.",
+    "Exact cache is whole-state equality, not a cache of a real measured model response.",
+    "Labels are agent-authored and unreviewed; source commit attribution comes from the prior local review."
+  ],
+  "metrics": {
+    "exact_cache": {
+      "actual_cost_savings_usd": null,
+      "actual_model_calls_avoided": null,
+      "actual_token_savings": null,
+      "candidate_binding_mismatches": 0,
+      "candidate_hits": 8,
+      "enforced_action_matches": 20,
+      "enforced_unsafe_skips": 0,
+      "false_action_reuses": 0,
+      "families": {
+        "conflicting-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "exact-repeat": {
+          "candidate_hits": 8,
+          "enforced_unsafe_skips": 0,
+          "queries": 8,
+          "raw_unsafe_skips": 0
+        },
+        "missing-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-failed": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-valid": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 4,
+          "raw_unsafe_skips": 0
+        },
+        "numeric-collision": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "stale-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "unknown-scope": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "untrusted-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "wrong-proof-identity": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        }
+      },
+      "history_records": 8,
+      "index_build_ms": 0.2224,
+      "latency_repetitions_per_query": 31,
+      "lookup_p50_ms": 0.0215,
+      "lookup_p95_ms": 0.0754,
+      "lookup_samples": 744,
+      "per_query_median_p50_ms": 0.0215,
+      "per_query_median_p95_ms": 0.0249,
+      "queries": 24,
+      "raw_action_matches": 10,
+      "raw_stale_proof_skips": 0,
+      "raw_unsafe_skips": 0,
+      "response_changes_across_repetitions": 0,
+      "safe_enforced_skips": 4,
+      "simulated_fallback_calls_avoided": 8
+    },
+    "no_memory": {
+      "actual_cost_savings_usd": null,
+      "actual_model_calls_avoided": null,
+      "actual_token_savings": null,
+      "candidate_binding_mismatches": 0,
+      "candidate_hits": 0,
+      "enforced_action_matches": 16,
+      "enforced_unsafe_skips": 0,
+      "false_action_reuses": 0,
+      "families": {
+        "conflicting-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "exact-repeat": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 8,
+          "raw_unsafe_skips": 0
+        },
+        "missing-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-failed": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-valid": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 4,
+          "raw_unsafe_skips": 0
+        },
+        "numeric-collision": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "stale-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "unknown-scope": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "untrusted-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "wrong-proof-identity": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        }
+      },
+      "history_records": 8,
+      "index_build_ms": 0.0085,
+      "latency_repetitions_per_query": 31,
+      "lookup_p50_ms": 0.0012,
+      "lookup_p95_ms": 0.002,
+      "lookup_samples": 744,
+      "per_query_median_p50_ms": 0.0012,
+      "per_query_median_p95_ms": 0.0012,
+      "queries": 24,
+      "raw_action_matches": 4,
+      "raw_stale_proof_skips": 0,
+      "raw_unsafe_skips": 0,
+      "response_changes_across_repetitions": 0,
+      "safe_enforced_skips": 0,
+      "simulated_fallback_calls_avoided": 0
+    },
+    "stock_calyx_flylsh": {
+      "actual_cost_savings_usd": null,
+      "actual_model_calls_avoided": null,
+      "actual_token_savings": null,
+      "candidate_binding_mismatches": 1,
+      "candidate_hits": 22,
+      "enforced_action_matches": 24,
+      "enforced_unsafe_skips": 0,
+      "false_action_reuses": 9,
+      "families": {
+        "conflicting-proof": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "exact-repeat": {
+          "candidate_hits": 8,
+          "enforced_unsafe_skips": 0,
+          "queries": 8,
+          "raw_unsafe_skips": 0
+        },
+        "missing-proof": {
+          "candidate_hits": 0,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-failed": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-valid": {
+          "candidate_hits": 4,
+          "enforced_unsafe_skips": 0,
+          "queries": 4,
+          "raw_unsafe_skips": 0
+        },
+        "numeric-collision": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        },
+        "stale-proof": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        },
+        "unknown-scope": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "untrusted-proof": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "wrong-proof-identity": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        }
+      },
+      "history_records": 8,
+      "index_build_ms": 4.8087,
+      "latency_repetitions_per_query": 31,
+      "lookup_p50_ms": 0.7516,
+      "lookup_p95_ms": 2.3067,
+      "lookup_samples": 744,
+      "per_query_median_p50_ms": 0.7439,
+      "per_query_median_p95_ms": 0.864,
+      "queries": 24,
+      "raw_action_matches": 13,
+      "raw_stale_proof_skips": 2,
+      "raw_unsafe_skips": 9,
+      "response_changes_across_repetitions": 0,
+      "safe_enforced_skips": 8,
+      "simulated_fallback_calls_avoided": 22
+    },
+    "token_jaccard": {
+      "actual_cost_savings_usd": null,
+      "actual_model_calls_avoided": null,
+      "actual_token_savings": null,
+      "candidate_binding_mismatches": 1,
+      "candidate_hits": 24,
+      "enforced_action_matches": 24,
+      "enforced_unsafe_skips": 0,
+      "false_action_reuses": 10,
+      "families": {
+        "conflicting-proof": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "exact-repeat": {
+          "candidate_hits": 8,
+          "enforced_unsafe_skips": 0,
+          "queries": 8,
+          "raw_unsafe_skips": 0
+        },
+        "missing-proof": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "near-repeat-failed": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 0
+        },
+        "near-repeat-valid": {
+          "candidate_hits": 4,
+          "enforced_unsafe_skips": 0,
+          "queries": 4,
+          "raw_unsafe_skips": 0
+        },
+        "numeric-collision": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        },
+        "stale-proof": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        },
+        "unknown-scope": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "untrusted-proof": {
+          "candidate_hits": 1,
+          "enforced_unsafe_skips": 0,
+          "queries": 1,
+          "raw_unsafe_skips": 1
+        },
+        "wrong-proof-identity": {
+          "candidate_hits": 2,
+          "enforced_unsafe_skips": 0,
+          "queries": 2,
+          "raw_unsafe_skips": 2
+        }
+      },
+      "history_records": 8,
+      "index_build_ms": 1.7194,
+      "latency_repetitions_per_query": 31,
+      "lookup_p50_ms": 0.0993,
+      "lookup_p95_ms": 0.3166,
+      "lookup_samples": 744,
+      "per_query_median_p50_ms": 0.0982,
+      "per_query_median_p95_ms": 0.1096,
+      "queries": 24,
+      "raw_action_matches": 14,
+      "raw_stale_proof_skips": 2,
+      "raw_unsafe_skips": 10,
+      "response_changes_across_repetitions": 0,
+      "safe_enforced_skips": 8,
+      "simulated_fallback_calls_avoided": 24
+    }
+  },
+  "prespecified_numeric_collision": {
+    "history_id": "h-weave",
+    "numeric_token_sets_equal": false,
+    "query_id": "q15",
+    "same_active_indices": true,
+    "same_dense_features": true
+  },
+  "provisional": true,
+  "raw_sha256": "a3824a6e6adb93f4f214823494ec9400333f9053268cba256c374a9f1a4ea798",
+  "resources": {
+    "actual_model_calls": 0,
+    "calyx_import_and_initialization_ms": 206.5015,
+    "cloud_cost_usd": 0,
+    "cpu_seconds": 0.78125,
+    "elapsed_seconds": 1.3198791000031633,
+    "peak_process_memory_bytes": null,
+    "projection_array_bytes": 1048576
+  },
+  "source": {
+    "commit_verification": "Inherited from prior local release review; archive has no .git. Module bytes are independently hash-checked here.",
+    "license": "MIT; copyright 2026 Calyx Research Team; no implementation vendored",
+    "reported_commit": "05d5dddf2c66b82e40fcbc40502a01e6336314be",
+    "sha256": {
+      "LICENSE": "16d1ce2cf935d55314a6e975bf71e22937520b921517e44839efc29b9d196a7d",
+      "src/calyx_mcp/config.py": "28ca4a47cf4953b08e78b0c912fa48dc9796d0d63cf85b30b2f01dc2044099d9",
+      "src/calyx_mcp/hasher.py": "bbd91d602e055907c177dd3ef393eb6510979cda96c8e23e39fa28feea5ea52c"
+    }
+  },
+  "threshold": 0.8,
+  "version": "memory-v1-mechanism-1"
+}

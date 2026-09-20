@@ -1,0 +1,20 @@
+{
+  "phase": "offline-draft",
+  "ready_for_heldout_model_evaluation": false,
+  "pending": [
+    "human label review",
+    "near-duplicate review",
+    "models and tokenizer",
+    "budget approval",
+    "calibration and threshold freeze"
+  ],
+  "assets": {
+    "build_cases.py": "484dbc9abaf78a795e5b4ece32eb4845f25b79b4d814e2022e9f19ca21c09b40",
+    "cases.json": "4e17008b3ed6e9b57d383db3bd5708eab81ce45afd43f6a8514eac9549bfa5ad",
+    "core.py": "26c5b17a378dccba6ea35da10fd9958d84d8b0776368470f17b1845cd9a2a3cd",
+    "family-plan.json": "94cc92b19be4d882bdc95756938a1da0438c7a13d2c0411baea4595798cb028d",
+    "README.md": "1331f574e241caa588f4a448c3a36a91260c373bf12dec4e22fd64d6ae7eb735",
+    "run.py": "e74fec4f2cc94aa620d8fafce8d53404596c5e3920d803b1331f3b3c7f06990d",
+    "test_core.py": "eb2c139fa886d65e5f33ad8cd899856e7da401a565515f33c4b383240b789507"
+  }
+}

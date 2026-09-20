@@ -1,0 +1,27 @@
+{
+  "model": "llama3.2",
+  "backend": "ollama-generate-logprobs",
+  "answers": {
+    "fraud": {
+      "choice": "clean",
+      "probabilities": {
+        "fraud": 0.10785554995765413,
+        "clean": 0.8560330648679177,
+        "review": 0.03611138517442815
+      },
+      "confidence": 0.55108,
+      "mass_on_codes": 0.997989,
+      "missing_options": [],
+      "status": "ok",
+      "codes": {
+        "fraud": "A",
+        "clean": "B",
+        "review": "C"
+      },
+      "generated_token": "B",
+      "eval_ms": 0.0,
+      "eval_count": 1,
+      "prompt_chars": 343
+    }
+  }
+}

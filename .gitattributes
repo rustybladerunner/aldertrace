@@ -1,0 +1,2 @@
+# Preserve benchmark hashes and synthetic diff bytes across platforms.
+* -text

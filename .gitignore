@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+live-last.json
+.pytest_cache/
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Private agent state and machine configuration
+.agent/
+.claude/
+.codex/
+.cursor/
+.vscode/
+
+# Generated run evidence: publish only through a reviewed explicit export
+study/results/
+study-execution/runs/
+runs/
+*.jsonl
+*.log
+
+# Separate author-review material; excluded from the initial public cut
+research/calyx-v1.0.7/

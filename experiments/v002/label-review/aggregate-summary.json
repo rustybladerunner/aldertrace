@@ -1,0 +1,43 @@
+{
+  "by_split": {
+    "calibration": {
+      "agreements": 48,
+      "ambiguities": 0,
+      "disagreements": 0,
+      "executable_reviewed": 8,
+      "semantic_reviewed": 40,
+      "skip_eligibility_disagreements": 0
+    },
+    "development": {
+      "agreements": 48,
+      "ambiguities": 0,
+      "disagreements": 0,
+      "executable_reviewed": 8,
+      "semantic_reviewed": 40,
+      "skip_eligibility_disagreements": 0
+    },
+    "test": {
+      "agreements": 48,
+      "ambiguities": 0,
+      "disagreements": 0,
+      "executable_reviewed": 8,
+      "semantic_reviewed": 40,
+      "skip_eligibility_disagreements": 0
+    }
+  },
+  "claim_boundary": "Agreement among separate agents is not human label validation, target-backend efficacy, or a production safety guarantee.",
+  "completed_utc": "2026-09-20T03:51:59.451984+00:00",
+  "freeze_recommendation": "No label-review blocker found; freeze may proceed provisionally if other protocol prerequisites pass.",
+  "holdout_handling": "Root receives this aggregate summary only; blind records, mapping and detailed comparisons remain quarantined here.",
+  "human_adjudication_performed": false,
+  "judgment_commitment_sha256": "6ed57354058f519b3f0cfe2779deaefa1022bf5fdc25c179a5b2794b85243f76",
+  "judgments_sha256": "73d2b0046a63a606c277ca38773d800b44522e85f34aafbb7988e119d46d4f25",
+  "reviewer": "separate agent /root/local_budget; not human or independent external assessor",
+  "source_sha256": {
+    "calibration": "afb59a9f68c66e1a2bb77c31ac5c6ec19857823573f14597452ab17ce80bfc24",
+    "development": "6c1db840e8e2bd49d0be9937169774f48161a961309fbae0e2536dfa320a72f6",
+    "test": "040f9b98927916c4ed585efd5c1cd1cd10150c8c2488d81f3381a9791c802035"
+  },
+  "status": "agent_review_provisional",
+  "total_reviewed": 144
+}

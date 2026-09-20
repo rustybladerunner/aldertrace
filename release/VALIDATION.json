@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "source_tested": "dd44d64dbee4c3ab969e5a6ee1506027678e4766",
+  "scope": "local sanitized derivative and standalone skills; no public push",
+  "full_replay": {
+    "reports": 6,
+    "complete": 5,
+    "incomplete_local": 1,
+    "matches_saved": true,
+    "token_proxy_recomputed": true,
+    "export_inventory": 95,
+    "frozen_implementation": 57,
+    "original_dataset_assets": 7,
+    "v2_dataset_assets": 24,
+    "raw_model_journals_byte_identical": 17,
+    "live_calls": 0
+  },
+  "offline_tests": {
+    "instrument": {
+      "passed_default": 57,
+      "skipped_optional_default": 2,
+      "optional_rerun_passed": 2
+    },
+    "skill_example": 7,
+    "export_identity": 4
+  },
+  "privacy": {
+    "candidate_files_scanned": 271,
+    "non_utf8_files": 0,
+    "remaining_pattern_matches": [
+      {
+        "path": "study-execution/test_live_development.py",
+        "line": 69,
+        "classification": "explicit SYNTHETIC_SECRET fixture checks child-process environment sanitization"
+      }
+    ],
+    "limitations": "Pattern scan plus reviewed export provenance cannot certify absence of every possible disclosure."
+  },
+  "reviews": {
+    "standards_hard_violations": 0,
+    "spec_confirmed_violations": 0,
+    "optional_maintainability": "Extract digest rebinding helper if exporter complexity grows; not required now.",
+    "resolved_release_status": "Fresh routing smoke passed after explicit scoped user authorization; publication approval still pending."
+  },
+  "cloud": {
+    "aggregate_cap_usd": "2",
+    "aggregate_reserved_usd": ".79075",
+    "claude_reported_usd": ".039999",
+    "fresh_routing_smoke": "passed; see LIVE-SMOKE.json",
+    "smoke_reported_or_estimated_usd": ".00023386"
+  },
+  "local": "stopped; no additional local-model time",
+  "publication": "pending explicit approval; never publish private source history"
+}

@@ -1,0 +1,2566 @@
+[
+  {
+    "id": "v2-01158a56b002addf",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "prints/catalog-proof.tif",
+        "command": "python checks/icc_embed.py --required",
+        "skip_condition": "Confirm that the print proof embeds the required color profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-icc-embedding-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-icc-embedding-r1",
+          "artifact": "previews/catalog-proof.png",
+          "command": "python checks/icc_embed.py --required",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-icc-embedding-r1",
+          "artifact": "prints/catalog-proof.tif",
+          "command": "python checks/tiff_pages.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The profile inspection succeeded for the screen preview rather than the print proof."
+    },
+    "document": "# Icc Embedding\n\nConfirm that the print proof embeds the required color profile.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Neither record is a successful instance of the required command on the required artifact."
+    },
+    "authoring_variant": "icc-embedding/unsupported",
+    "concept_cluster": "color-pipeline/icc-embedding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-01df897fe3c1b6e9",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/latin-core.woff2",
+        "command": "python checks/glyph_inventory.py --latin",
+        "skip_condition": "Confirm that the Latin subset contains every glyph required by the synthetic specimen. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-glyph-subset-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-plan-previous",
+          "artifact": "fonts/latin-core.woff2",
+          "command": "python checks/glyph_inventory.py --latin",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The package contains a new subset, but the only retained check was executed before the final glyph list changed."
+    },
+    "document": "# Glyph Subset\n\nConfirm that the Latin subset contains every glyph required by the synthetic specimen.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The available pass belongs to an earlier candidate and cannot establish this subset's coverage."
+    },
+    "authoring_variant": "glyph-subset/unsupported",
+    "concept_cluster": "font-delivery/glyph-subset",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-077be26c383f7951",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/relative-tolerance.md",
+        "command": null,
+        "skip_condition": "Explain why a numerical comparison often needs both absolute and relative tolerances."
+      },
+      "current_revision": "numerical-representation-relative-tolerance-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Use one fixed percentage for every comparison, including a reference value of zero, because a percentage is scale independent."
+    },
+    "document": "# Relative Tolerance\n\nA common comparison bounds the absolute difference by the larger of an absolute tolerance and a relative tolerance times the compared magnitudes. The absolute term controls behavior around zero. The relative term permits errors proportional to scale. Both values must come from the problem's accuracy requirements; a library default is not evidence that two scientific or engineering results are interchangeable.\n",
+    "label": {
+      "action": "read",
+      "rationale": "A percentage alone does not supply a meaningful nonzero tolerance around zero."
+    },
+    "authoring_variant": "relative-tolerance/unsupported",
+    "concept_cluster": "numerical-representation/relative-tolerance",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-07fcf702b0239e6e",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "composites/title-card.exr",
+        "command": "python checks/blend_reference.py --linear",
+        "skip_condition": "Compare the composited title card with the linear-light blend reference. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-linear-blend-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-linear-blend-r1",
+          "artifact": "composites/title-card.exr",
+          "command": "python checks/blend_reference.py --linear",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "legacy-blend",
+          "artifact": "composites/title-card.exr",
+          "command": "python checks/blend_reference.py --linear",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The composited frame agrees with its reference and the comparison identifies this exact candidate."
+    },
+    "document": "# Linear Blend\n\nCompare the composited title card with the linear-light blend reference.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current trusted blend comparison establishes the required property."
+    },
+    "authoring_variant": "linear-blend/supported",
+    "concept_cluster": "color-pipeline/linear-blend",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-084f49cb76afb92a",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/tab-order.md",
+        "command": null,
+        "skip_condition": "Explain why visual rearrangement alone does not guarantee a matching keyboard focus order."
+      },
+      "current_revision": "keyboard-interaction-tab-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Moving a button with CSS also moves its place in Tab order, so DOM order cannot affect keyboard use."
+    },
+    "document": "# Tab Order\n\nVisual layouts can reorder items without changing their document order. Keyboard users may then traverse controls in an order that jumps around the screen or obscures dependencies. Prefer a logical source order and check responsive arrangements. Positive tabindex values add a separate ordering system and usually make maintenance harder; use them only with a justified, tested interaction contract.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes CSS positioning rewrites sequential navigation order."
+    },
+    "authoring_variant": "tab-order/unsupported",
+    "concept_cluster": "keyboard-interaction/tab-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-0aa15e054458832a",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/roving-focus.md",
+        "command": null,
+        "skip_condition": "Explain how roving tabindex reduces Tab stops inside a composite widget while preserving internal keyboard navigation."
+      },
+      "current_revision": "keyboard-interaction-roving-focus-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "One item is in the page Tab sequence and the others use tabindex -1; the widget moves focus with its documented keys and updates the active tab stop."
+    },
+    "document": "# Roving Focus\n\nComposite widgets can provide one Tab stop while using arrow keys for movement within the widget. Roving tabindex changes which item has tabindex zero and moves focus as selection or active position changes. This requires a consistent widget-specific keyboard contract. Test entry, exit, disabled items and dynamic removal; changing tabindex alone does not implement the interaction.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Includes both the external entry point and internal navigation responsibility."
+    },
+    "authoring_variant": "roving-focus/supported",
+    "concept_cluster": "keyboard-interaction/roving-focus",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-0c102bc0b127dc08",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/fallback-metrics.json",
+        "command": "python checks/fallback_metrics.py",
+        "skip_condition": "Validate the fallback metric overrides for the specified text font. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-fallback-metrics-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-fallback-metrics-r1",
+          "artifact": "fonts/fallback-metrics.json",
+          "command": "python checks/fallback_metrics.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The active text-font choice is resolved and its matching overrides passed their metric comparison."
+    },
+    "document": "# Fallback Metrics\n\nValidate the fallback metric overrides for the specified text font.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Known scope and a matching metric-check pass satisfy the executable prerequisite."
+    },
+    "authoring_variant": "fallback-metrics/supported",
+    "concept_cluster": "font-delivery/fallback-metrics",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-0e5f01b5d2dc70d0",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "exports/book-text.otf",
+        "command": "python checks/kern_roundtrip.py",
+        "skip_condition": "Validate kerning preservation after the font conversion round trip. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-kerning-roundtrip-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-kerning-roundtrip-r1",
+          "artifact": "exports/book-text.otf",
+          "command": "python checks/kern_roundtrip.py",
+          "exit_code": "0"
+        }
+      ],
+      "explanation": "The evidence export lost status typing and retained a textual zero after conversion."
+    },
+    "document": "# Kerning Roundtrip\n\nValidate kerning preservation after the font conversion round trip.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The contract requires an integer runner status, not a string that merely resembles it."
+    },
+    "authoring_variant": "kerning-roundtrip/unsupported",
+    "concept_cluster": "font-delivery/kerning-roundtrip",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-0f65953766a252aa",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/button-semantics.md",
+        "command": null,
+        "skip_condition": "Explain why using a native button usually requires less custom keyboard behavior than styling a generic container as clickable."
+      },
+      "current_revision": "keyboard-interaction-button-semantics-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Native buttons already provide focusability, activation semantics and disabled behavior; a generic element needs those behaviors implemented and tested explicitly."
+    },
+    "document": "# Button Semantics\n\nA control's appearance does not provide its interaction semantics. Native buttons participate in keyboard focus and expose button behavior to user agents. A generic container with a click handler lacks parts of that contract unless they are implemented explicitly. Use the native element where possible and verify its accessible name, focus appearance and disabled behavior in the actual interface.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects the element choice to concrete built-in interaction behaviors."
+    },
+    "authoring_variant": "button-semantics/supported",
+    "concept_cluster": "keyboard-interaction/button-semantics",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-163bea4d922e2f37",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "masks/poster-gamut.png",
+        "command": "python checks/gamut_mask.py --display-p3",
+        "skip_condition": "Verify the gamut-warning mask against the Display-P3 test patches. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-gamut-flags-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-gamut-flags-r1",
+          "artifact": "masks/poster-gamut.png",
+          "command": "python checks/gamut_mask.py --display-p3",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-gamut-flags-r1",
+          "artifact": "masks/poster-srgb.png",
+          "command": "python checks/gamut_mask.py --display-p3",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The display profile is still being selected; a successful Display-P3 test cannot decide between the competing intended targets."
+    },
+    "document": "# Gamut Flags\n\nVerify the gamut-warning mask against the Display-P3 test patches.\n",
+    "label": {
+      "action": "review",
+      "rationale": "The unresolved profile scope must be settled before granting a skip."
+    },
+    "authoring_variant": "gamut-flags/unsupported",
+    "concept_cluster": "color-pipeline/gamut-flags",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-18b0b0d812f04af1",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/overflow-order.md",
+        "command": null,
+        "skip_condition": "Explain why multiplying before dividing can overflow even when the intended final mathematical value is representable."
+      },
+      "current_revision": "numerical-representation-overflow-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If the final real-number answer fits, intermediate operations cannot overflow because the processor sees the whole expression."
+    },
+    "document": "# Overflow Order\n\nIntermediate results are evaluated within the chosen numerical format. A product may overflow before a later division would have reduced it to an ordinary value. Rescaling or rearranging operations can avoid overflow, but can introduce different underflow, rounding or zero-division behavior. Exercise boundary values and compare to a suitable reference rather than replacing expressions solely on algebraic appearance.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes a guarantee across the expression that ordinary evaluated operations do not provide."
+    },
+    "authoring_variant": "overflow-order/unsupported",
+    "concept_cluster": "numerical-representation/overflow-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-2191975204bd7c87",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "profiles/print-adaptation.json",
+        "command": "python checks/whitepoint_delta.py --d50",
+        "skip_condition": "Validate the D50 adaptation coefficients against the synthetic neutral-patch reference. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-whitepoint-adaptation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-whitepoint-adaptation-r1",
+          "artifact": "profiles/print-adaptation.json",
+          "command": "python checks/whitepoint_delta.py --d50",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-whitepoint-adaptation-r1",
+          "artifact": "profiles/print-adaptation.json",
+          "command": "python checks/json_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The coefficient set passed and the record includes the command that computed the comparison."
+    },
+    "document": "# Whitepoint Adaptation\n\nValidate the D50 adaptation coefficients against the synthetic neutral-patch reference.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The whitepoint-specific pass is present in addition to a generic schema check."
+    },
+    "authoring_variant": "whitepoint-adaptation/supported",
+    "concept_cluster": "color-pipeline/whitepoint-adaptation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-21eaea2647ae0f92",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/nonassociativity.md",
+        "command": null,
+        "skip_condition": "Explain why parallel regrouping of a floating-point sum can change its result."
+      },
+      "current_revision": "numerical-representation-nonassociativity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Addition is associative over real numbers, so every thread count must produce exactly the same floating-point bits."
+    },
+    "document": "# Nonassociativity\n\nA parallel reduction commonly changes the grouping of additions when the worker count changes. In finite precision, rounding occurs at intermediate operations, so the result can change even when every input appears exactly once. If reproducibility matters, specify a reduction order or a reproducible summation algorithm and test the supported execution modes. Bitwise disagreement alone does not identify missing data.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Transfers a real-number identity to finite-precision arithmetic without accounting for rounding."
+    },
+    "authoring_variant": "nonassociativity/unsupported",
+    "concept_cluster": "numerical-representation/nonassociativity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-22494fa6c65827b2",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/hidden-controls.md",
+        "command": null,
+        "skip_condition": "Explain why visually hiding an interactive element may leave a keyboard navigation problem."
+      },
+      "current_revision": "keyboard-interaction-hidden-controls-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A transparent control is harmless because users cannot click what they cannot see, and keyboard focus follows visibility automatically."
+    },
+    "document": "# Hidden Controls\n\nOpacity, off-screen positioning and clipping can hide a control visually without removing it from sequential focus. That can leave a user apparently stuck on an invisible target. Select a hiding technique appropriate to whether content should remain accessible, and disable or remove interaction when the control is unavailable. Inspect keyboard traversal while menus and panels are closed.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Ignores invisible keyboard targets and assumes transparency changes focus rules."
+    },
+    "authoring_variant": "hidden-controls/unsupported",
+    "concept_cluster": "keyboard-interaction/hidden-controls",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-229935b123e7a3ed",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/nonassociativity.md",
+        "command": null,
+        "skip_condition": "Explain why parallel regrouping of a floating-point sum can change its result."
+      },
+      "current_revision": "numerical-representation-nonassociativity-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Each addition rounds, so regrouping changes the intermediate rounded values; a different reduction tree can therefore produce a different final sum."
+    },
+    "document": "# Nonassociativity\n\nA parallel reduction commonly changes the grouping of additions when the worker count changes. In finite precision, rounding occurs at intermediate operations, so the result can change even when every input appears exactly once. If reproducibility matters, specify a reduction order or a reproducible summation algorithm and test the supported execution modes. Bitwise disagreement alone does not identify missing data.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes real arithmetic from sequences of rounded operations."
+    },
+    "authoring_variant": "nonassociativity/supported",
+    "concept_cluster": "numerical-representation/nonassociativity",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-23176c4bc73fd6ec",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "textures/signal-bars.rgba",
+        "command": "python checks/channel_swizzle.py --rgba",
+        "skip_condition": "Validate RGBA channel ordering with the synthetic signal-bar fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-channel-order-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-channel-order-r1",
+          "artifact": "textures/signal-bars.rgba",
+          "command": "python checks/channel_swizzle.py --rgba",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-channel-order-r1",
+          "artifact": "textures/signal-bars.rgba",
+          "command": "python checks/channel_swizzle.py --rgba",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Both retained executions of the required signal-bar check succeeded for the same current input."
+    },
+    "document": "# Channel Order\n\nValidate RGBA channel ordering with the synthetic signal-bar fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Duplicate agreeing successful records do not introduce a contradictory outcome."
+    },
+    "authoring_variant": "channel-order/supported",
+    "concept_cluster": "color-pipeline/channel-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-2812b02ba2544b94",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "packages/display-family.zip",
+        "command": "python checks/license_presence.py --font",
+        "skip_condition": "Check that this font archive includes its declared license text. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-license-entry-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A developer says the license was visible while browsing the source tree, but no archive check was retained."
+    },
+    "document": "# License Entry\n\nCheck that this font archive includes its declared license text.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Source-tree prose supplies no trusted result for the delivered archive."
+    },
+    "authoring_variant": "license-entry/unsupported",
+    "concept_cluster": "font-delivery/license-entry",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-326db154ee21f5d1",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "outputs/test-pattern.yuv",
+        "command": "python checks/range_limits.py --broadcast",
+        "skip_condition": "Measure legal signal limits in the broadcast test pattern. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-range-clipping-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-range-clipping-r1",
+          "artifact": "outputs/test-pattern.yuv",
+          "command": "python checks/range_limits.py --broadcast",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "other-range",
+          "artifact": "outputs/test-pattern.yuv",
+          "command": "python checks/range_limits.py --broadcast",
+          "exit_code": 2
+        }
+      ],
+      "explanation": "The current test pattern has one applicable passing measurement and an obsolete failure for another range preset."
+    },
+    "document": "# Range Clipping\n\nMeasure legal signal limits in the broadcast test pattern.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Only the current matching result determines this prerequisite."
+    },
+    "authoring_variant": "range-clipping/supported",
+    "concept_cluster": "color-pipeline/range-clipping",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-34b1c8c011049293",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/nan-comparison.md",
+        "command": null,
+        "skip_condition": "Explain why comparing a floating-point value to NaN with equality does not detect NaN."
+      },
+      "current_revision": "numerical-representation-nan-comparison-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "NaN is unordered and does not compare equal even to itself; use the format's dedicated NaN predicate."
+    },
+    "document": "# Nan Comparison\n\nNaN propagates through many floating-point operations and signals an invalid or indeterminate numerical result. Ordinary equality is not a NaN test: NaN does not compare equal to itself. Use an explicit is-NaN predicate, then decide whether to reject, propagate or record the condition. Do not silently replace NaN with zero unless that behavior belongs to the application contract.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Gives the relevant comparison behavior and the correct detection mechanism."
+    },
+    "authoring_variant": "nan-comparison/supported",
+    "concept_cluster": "numerical-representation/nan-comparison",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-38d8766062a87ffb",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/editorial-italic.otf",
+        "command": "python checks/style_linking.py --italic",
+        "skip_condition": "Verify that the italic face's style-linking tables select the intended synthetic family. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-italic-selection-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-italic-selection-r1",
+          "artifact": "fonts/editorial-italic.otf",
+          "command": "python checks/style_linking.py --italic",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The style-linking checker ran on the italic binary that will enter the release bundle."
+    },
+    "document": "# Italic Selection\n\nVerify that the italic face's style-linking tables select the intended synthetic family.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "All required proof identities match the italic face under consideration."
+    },
+    "authoring_variant": "italic-selection/supported",
+    "concept_cluster": "font-delivery/italic-selection",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-3f714b8c4b1e9e8f",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "profiles/print-adaptation.json",
+        "command": "python checks/whitepoint_delta.py --d50",
+        "skip_condition": "Validate the D50 adaptation coefficients against the synthetic neutral-patch reference. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-whitepoint-adaptation-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-whitepoint-adaptation-r1",
+          "artifact": "profiles/print-adaptation.json",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-whitepoint-adaptation-r1",
+          "artifact": "profiles/print-adaptation.json",
+          "command": "python checks/json_shape.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The wrapper recorded a success without identifying which command produced it."
+    },
+    "document": "# Whitepoint Adaptation\n\nValidate the D50 adaptation coefficients against the synthetic neutral-patch reference.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A missing command identity plus a generic schema pass cannot prove the adaptation check ran."
+    },
+    "authoring_variant": "whitepoint-adaptation/unsupported",
+    "concept_cluster": "color-pipeline/whitepoint-adaptation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-425e5ef49044ee39",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "release/body-compressed.woff2",
+        "command": "python checks/decode_woff2.py --strict",
+        "skip_condition": "Decode the final compressed font with the strict fixture decoder. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-woff-decoder-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-woff-decoder-r1",
+          "artifact": "release/body-compressed.woff2",
+          "command": "python checks/decode_woff2.py --strict",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "font-delivery-woff-decoder-r1",
+          "artifact": "release/body-compressed.woff2",
+          "command": "python checks/decode_woff2.py --strict",
+          "exit_code": 9
+        }
+      ],
+      "explanation": "The strict decoder consumed the final compressed file, while an unrelated inspection note reports a warning."
+    },
+    "document": "# Woff Decoder\n\nDecode the final compressed font with the strict fixture decoder.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A relevant trusted decoder pass is present and the warning is not trusted proof."
+    },
+    "authoring_variant": "woff-decoder/supported",
+    "concept_cluster": "font-delivery/woff-decoder",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-47f07d0778c312a4",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/east-asia.ttc",
+        "command": "python checks/collection_members.py",
+        "skip_condition": "Enumerate and validate the face members of this font collection. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-collection-members-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-collection-members-r1",
+          "artifact": "fonts/east-asia.ttc",
+          "command": "python checks/collection_members.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "font-delivery-collection-members-r1",
+          "artifact": "notes/member-plan.txt",
+          "command": "python checks/collection_members.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The face enumeration completed on the present collection file without omitting any required member."
+    },
+    "document": "# Collection Members\n\nEnumerate and validate the face members of this font collection.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The matching collection result passes; an additional record for planning notes is irrelevant."
+    },
+    "authoring_variant": "collection-members/supported",
+    "concept_cluster": "font-delivery/collection-members",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-48bbbf7076de5642",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/east-asia.ttc",
+        "command": "python checks/collection_members.py",
+        "skip_condition": "Enumerate and validate the face members of this font collection. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-collection-members-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": false,
+          "revision": "font-delivery-collection-members-r1",
+          "artifact": "fonts/east-asia.ttc",
+          "command": "python checks/collection_members.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A copied terminal transcript claims all members exist, but its provenance is explicitly not trusted."
+    },
+    "document": "# Collection Members\n\nEnumerate and validate the face members of this font collection.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "An untrusted transcript cannot replace the required typed runner evidence."
+    },
+    "authoring_variant": "collection-members/unsupported",
+    "concept_cluster": "font-delivery/collection-members",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-4a9a053b81450652",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/roving-focus.md",
+        "command": null,
+        "skip_condition": "Explain how roving tabindex reduces Tab stops inside a composite widget while preserving internal keyboard navigation."
+      },
+      "current_revision": "keyboard-interaction-roving-focus-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Set every item to tabindex -1 and omit internal key handling; then Tab can still visit them in their displayed order."
+    },
+    "document": "# Roving Focus\n\nComposite widgets can provide one Tab stop while using arrow keys for movement within the widget. Roving tabindex changes which item has tabindex zero and moves focus as selection or active position changes. This requires a consistent widget-specific keyboard contract. Test entry, exit, disabled items and dynamic removal; changing tabindex alone does not implement the interaction.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Removes the entry points and assumes keyboard navigation that has not been implemented."
+    },
+    "authoring_variant": "roving-focus/unsupported",
+    "concept_cluster": "keyboard-interaction/roving-focus",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-4cc7835882bdd42a",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "outputs/test-pattern.yuv",
+        "command": "python checks/range_limits.py --broadcast",
+        "skip_condition": "Measure legal signal limits in the broadcast test pattern. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-range-clipping-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-range-clipping-r1",
+          "artifact": "outputs/test-pattern.yuv",
+          "command": "python checks/range_limits.py --broadcast",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-range-clipping-r1",
+          "artifact": "outputs/test-pattern.yuv",
+          "command": "python checks/range_limits.py --broadcast",
+          "exit_code": 2
+        },
+        {
+          "trusted": false,
+          "revision": "color-pipeline-range-clipping-r1",
+          "artifact": "outputs/test-pattern.yuv",
+          "command": "python checks/range_limits.py --broadcast",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Applicable trusted measurements disagree about clipping and neither is marked authoritative."
+    },
+    "document": "# Range Clipping\n\nMeasure legal signal limits in the broadcast test pattern.\n",
+    "label": {
+      "action": "review",
+      "rationale": "An extra untrusted success cannot resolve contradictory trusted measurements."
+    },
+    "authoring_variant": "range-clipping/unsupported",
+    "concept_cluster": "color-pipeline/range-clipping",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-4e6aada45090d5ac",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "textures/signal-bars.rgba",
+        "command": "python checks/channel_swizzle.py --rgba",
+        "skip_condition": "Validate RGBA channel ordering with the synthetic signal-bar fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-channel-order-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-channel-order-r1",
+          "artifact": "textures/signal-bars.rgba",
+          "command": "python checks/channel_swizzle.py --rgba",
+          "exit_code": false
+        }
+      ],
+      "explanation": "The signal-bar harness returned a boolean false that a wrapper treated as zero."
+    },
+    "document": "# Channel Order\n\nValidate RGBA channel ordering with the synthetic signal-bar fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Boolean false is not the required integer exit code even though some programming languages compare them equal."
+    },
+    "authoring_variant": "channel-order/unsupported",
+    "concept_cluster": "color-pipeline/channel-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-51be7a292eaa1143",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/roundtrip-text.md",
+        "command": null,
+        "skip_condition": "Explain why limiting printed significant digits can break a floating-point value's text round trip."
+      },
+      "current_revision": "numerical-representation-roundtrip-text-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Human-readable decimal output is always exact, so trimming digits affects appearance but never reparsing."
+    },
+    "document": "# Roundtrip Text\n\nSerializing a floating-point number to text introduces a separate representation choice. A short rounded display may parse to a different floating-point value. Use a formatter designed to round-trip when persistence or reproducibility requires the original value. Keep display formatting separate from storage formatting, and verify with difficult values rather than a few short decimal examples.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats discarded numerical information as presentation-only information."
+    },
+    "authoring_variant": "roundtrip-text/unsupported",
+    "concept_cluster": "numerical-representation/roundtrip-text",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-52866590cd2092f5",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-indicator.md",
+        "command": null,
+        "skip_condition": "Explain why removing the browser outline requires a visible replacement focus indicator."
+      },
+      "current_revision": "keyboard-interaction-focus-indicator-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Keyboard users need to locate the active control before activating it; removing the outline without another clear indicator hides that location."
+    },
+    "document": "# Focus Indicator\n\nA visible focus indicator tells users which control will respond to their next keyboard action. It must remain perceivable against the actual background and should not be clipped by surrounding containers. If replacing the default outline, provide a clear alternative. Test keyboard navigation through every control rather than checking only pointer hover states or a static screenshot.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Names the lost information and the affected interaction."
+    },
+    "authoring_variant": "focus-indicator/supported",
+    "concept_cluster": "keyboard-interaction/focus-indicator",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-59b1dbecf4ed075b",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/cancellation.md",
+        "command": null,
+        "skip_condition": "Explain how subtraction of nearly equal floating-point values can lose useful significant digits and name a remedy."
+      },
+      "current_revision": "numerical-representation-cancellation-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The subtraction always has the same relative accuracy as its operands, so increasing their magnitudes prevents cancellation."
+    },
+    "document": "# Cancellation\n\nSubtracting two nearby approximations can leave a result whose leading meaningful digits were already lost during earlier rounding. The subtraction operation need not itself be unusually inaccurate for relative error in the result to be large. Inspect the expression's conditioning and prefer a stable algebraic reformulation; additional precision can help when no suitable reformulation exists. Compare against a higher-precision reference on near-equal inputs.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Claims relative accuracy is preserved and recommends a magnitude change that does not repair cancellation."
+    },
+    "authoring_variant": "cancellation/unsupported",
+    "concept_cluster": "numerical-representation/cancellation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-5bd1ad57b79d8cb1",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/symbol-map.otf",
+        "command": "python checks/cmap_ranges.py",
+        "skip_condition": "Check that the symbol font's character-map ranges match its declared encoding profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-unicode-map-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-unicode-map-r1",
+          "artifact": "fonts/symbol-map.otf",
+          "command": "python checks/cmap_ranges.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "font-delivery-unicode-map-r1",
+          "artifact": "fonts/symbol-map.otf",
+          "command": "python checks/build_size.py",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The symbol map has a matching current result and a separate unrelated build diagnostic."
+    },
+    "document": "# Unicode Map\n\nCheck that the symbol font's character-map ranges match its declared encoding profile.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The failed size diagnostic is not this command; the character-map check itself passes."
+    },
+    "authoring_variant": "unicode-map/supported",
+    "concept_cluster": "font-delivery/unicode-map",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-655435e633c6deef",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/editorial-italic.otf",
+        "command": "python checks/style_linking.py --italic",
+        "skip_condition": "Verify that the italic face's style-linking tables select the intended synthetic family. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-italic-selection-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-italic-selection-r1",
+          "artifact": "fonts/editorial-regular.otf",
+          "command": "python checks/style_linking.py --italic",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The saved output describes a valid regular face; the italic binary has not been checked."
+    },
+    "document": "# Italic Selection\n\nVerify that the italic face's style-linking tables select the intended synthetic family.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Success for the regular face cannot certify the separate italic artifact."
+    },
+    "authoring_variant": "italic-selection/unsupported",
+    "concept_cluster": "font-delivery/italic-selection",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-67238c7ced269b60",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/decimal-fractions.md",
+        "command": null,
+        "skip_condition": "Explain why repeated additions of a decimal fraction can disagree with the mathematical decimal total in binary floating point."
+      },
+      "current_revision": "numerical-representation-decimal-fractions-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Decimal literals are stored as their exact written digits; any discrepancy after addition proves a compiler bug."
+    },
+    "document": "# Decimal Fractions\n\nBinary floating-point formats represent a finite subset of numbers. A decimal such as one tenth generally needs an infinite binary expansion and is rounded to a nearby representable value. Arithmetic rounds again where necessary. Choose decimal or fixed-point arithmetic when the application's contract requires exact decimal units, and otherwise select a justified comparison tolerance instead of expecting exact decimal identities.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Incorrectly assumes an exact decimal representation for binary floating point."
+    },
+    "authoring_variant": "decimal-fractions/unsupported",
+    "concept_cluster": "numerical-representation/decimal-fractions",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-6a9de8826bc1c571",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/nan-comparison.md",
+        "command": null,
+        "skip_condition": "Explain why comparing a floating-point value to NaN with equality does not detect NaN."
+      },
+      "current_revision": "numerical-representation-nan-comparison-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Test value == NaN because any value is equal to itself, including a missing-number marker."
+    },
+    "document": "# Nan Comparison\n\nNaN propagates through many floating-point operations and signals an invalid or indeterminate numerical result. Ordinary equality is not a NaN test: NaN does not compare equal to itself. Use an explicit is-NaN predicate, then decide whether to reject, propagate or record the condition. Do not silently replace NaN with zero unless that behavior belongs to the application contract.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes reflexive equality for NaN and therefore proposes a check that does not detect it."
+    },
+    "authoring_variant": "nan-comparison/unsupported",
+    "concept_cluster": "numerical-representation/nan-comparison",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-6dfda98c5aefe05b",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/underflow.md",
+        "command": null,
+        "skip_condition": "Explain how gradual underflow differs from abruptly replacing every very small nonzero result with zero."
+      },
+      "current_revision": "numerical-representation-underflow-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Subnormal values preserve a diminishing amount of precision below the normal range, whereas flush-to-zero discards that nonzero tail immediately."
+    },
+    "document": "# Underflow\n\nMany floating-point environments support subnormal values below the smallest normal magnitude. These allow gradual loss of precision instead of an immediate jump to zero. Some execution modes flush such values to zero for performance. Record the relevant mode when tiny values matter, and test algorithms near underflow; identical source expressions can behave differently under different runtime settings.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Describes the representational role and reduced precision of subnormals."
+    },
+    "authoring_variant": "underflow/supported",
+    "concept_cluster": "numerical-representation/underflow",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-6f676901f9d79090",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "prints/catalog-proof.tif",
+        "command": "python checks/icc_embed.py --required",
+        "skip_condition": "Confirm that the print proof embeds the required color profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-icc-embedding-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-icc-embedding-r1",
+          "artifact": "prints/catalog-proof.tif",
+          "command": "python checks/icc_embed.py --required",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The actual proof file contains the expected profile according to the matching runner."
+    },
+    "document": "# Icc Embedding\n\nConfirm that the print proof embeds the required color profile.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The required profile check succeeded on the declared proof."
+    },
+    "authoring_variant": "icc-embedding/supported",
+    "concept_cluster": "color-pipeline/icc-embedding",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-77789f37bd997977",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/large-integers.md",
+        "command": null,
+        "skip_condition": "Explain how an integer can lose exactness when converted to a floating-point format with limited significand precision."
+      },
+      "current_revision": "numerical-representation-large-integers-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Above the exact consecutive-integer range, adjacent integers share representable values, so conversion may round an identifier even without arithmetic."
+    },
+    "document": "# Large Integers\n\nA format's largest magnitude says nothing about whether every integer below that magnitude is representable. With a fixed significand width, spacing grows as magnitude grows. Large neighboring integers can map to the same floating-point value. Keep identifiers and exact counters in integer or textual form where required, and test serialization boundaries with values near the format's consecutive-integer limit.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates representable magnitude from the spacing between representable values."
+    },
+    "authoring_variant": "large-integers/supported",
+    "concept_cluster": "numerical-representation/large-integers",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-800cb3b875603074",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sprites/interface-atlas.png",
+        "command": "python checks/palette_indices.py --roundtrip",
+        "skip_condition": "Verify palette indices after the atlas export and reimport round trip. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-palette-roundtrip-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-palette-roundtrip-r1",
+          "artifact": "sprites/interface-atlas.png",
+          "command": "python checks/palette_indices.py --roundtrip",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-palette-roundtrip-r1",
+          "artifact": "sprites/old-atlas.png",
+          "command": "python checks/palette_indices.py --roundtrip",
+          "exit_code": 7
+        }
+      ],
+      "explanation": "The reimported atlas preserves the fixture indices according to the bound round-trip result."
+    },
+    "document": "# Palette Roundtrip\n\nVerify palette indices after the atlas export and reimport round trip.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current artifact passes despite an irrelevant record for a different atlas."
+    },
+    "authoring_variant": "palette-roundtrip/supported",
+    "concept_cluster": "color-pipeline/palette-roundtrip",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-823c7a467e0e7311",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "composites/title-card.exr",
+        "command": "python checks/blend_reference.py --linear",
+        "skip_condition": "Compare the composited title card with the linear-light blend reference. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-linear-blend-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": false,
+          "revision": "color-pipeline-linear-blend-r1",
+          "artifact": "composites/title-card.exr",
+          "command": "python checks/blend_reference.py --linear",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "legacy-blend",
+          "artifact": "composites/title-card.exr",
+          "command": "python checks/blend_reference.py --linear",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A visual signoff was transcribed as if it were a runner pass, but the record remains untrusted."
+    },
+    "document": "# Linear Blend\n\nCompare the composited title card with the linear-light blend reference.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "No trusted execution result covers the current composite."
+    },
+    "authoring_variant": "linear-blend/unsupported",
+    "concept_cluster": "color-pipeline/linear-blend",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-866458c0dea36a0c",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "sprites/interface-atlas.png",
+        "command": "python checks/palette_indices.py --roundtrip",
+        "skip_condition": "Verify palette indices after the atlas export and reimport round trip. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-palette-roundtrip-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "artifact": "sprites/interface-atlas.png",
+          "command": "python checks/palette_indices.py --roundtrip",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-palette-roundtrip-r1",
+          "artifact": "sprites/old-atlas.png",
+          "command": "python checks/palette_indices.py --roundtrip",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "An interrupted wrapper retained the artifact and exit status but omitted the checked revision."
+    },
+    "document": "# Palette Roundtrip\n\nVerify palette indices after the atlas export and reimport round trip.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Neither incomplete current evidence nor another atlas's pass binds success to this candidate revision."
+    },
+    "authoring_variant": "palette-roundtrip/unsupported",
+    "concept_cluster": "color-pipeline/palette-roundtrip",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-8798cd991ae69854",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "renders/icon-edge.exr",
+        "command": "python checks/alpha_edges.py --premultiplied",
+        "skip_condition": "Test the premultiplied-alpha edge fixture in the exported image. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-alpha-association-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-alpha-association-r1",
+          "artifact": "renders/icon-edge.exr",
+          "command": "python checks/alpha_edges.py --premultiplied",
+          "exit_code": 6
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-alpha-association-r1",
+          "artifact": "thumb/icon-edge.png",
+          "command": "python checks/thumb_size.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The export's edge test reports color leakage into transparent pixels."
+    },
+    "document": "# Alpha Association\n\nTest the premultiplied-alpha edge fixture in the exported image.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "An unrelated successful thumbnail check cannot replace the failed alpha-edge check."
+    },
+    "authoring_variant": "alpha-association/unsupported",
+    "concept_cluster": "color-pipeline/alpha-association",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-8804105a8029e06b",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/large-integers.md",
+        "command": null,
+        "skip_condition": "Explain how an integer can lose exactness when converted to a floating-point format with limited significand precision."
+      },
+      "current_revision": "numerical-representation-large-integers-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Floating-point numbers can express huge magnitudes, therefore every smaller integer remains exact when converted."
+    },
+    "document": "# Large Integers\n\nA format's largest magnitude says nothing about whether every integer below that magnitude is representable. With a fixed significand width, spacing grows as magnitude grows. Large neighboring integers can map to the same floating-point value. Keep identifiers and exact counters in integer or textual form where required, and test serialization boundaries with values near the format's consecutive-integer limit.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Confuses range with precision and ignores rounding during conversion."
+    },
+    "authoring_variant": "large-integers/unsupported",
+    "concept_cluster": "numerical-representation/large-integers",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-93dbc490d53f447a",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/keyboard-test.md",
+        "command": null,
+        "skip_condition": "Explain why pointer-only end-to-end tests cannot establish that all controls are operable from the keyboard."
+      },
+      "current_revision": "keyboard-interaction-keyboard-test-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Pointer tests bypass focus order and key activation, so keyboard traversal and activation need direct tests of their own."
+    },
+    "document": "# Keyboard Test\n\nPointer automation can successfully click an element that a keyboard user cannot reach, cannot identify as focused, or cannot activate with expected keys. Add tests that enter the page, traverse controls and complete the intended task with keyboard input. Include open and closed overlays and dynamic content. Check actual focus state as well as whether the final business action occurred.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies interaction paths the pointer tests never exercise."
+    },
+    "authoring_variant": "keyboard-test/supported",
+    "concept_cluster": "keyboard-interaction/keyboard-test",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-96229817976956e4",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "color/preview-lut.cube",
+        "command": "python checks/transfer_curve.py --reference",
+        "skip_condition": "Compare the preview lookup table with the required transfer-curve fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-transfer-curve-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "lut-draft",
+          "artifact": "color/preview-lut.cube",
+          "command": "python checks/transfer_curve.py --reference",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "color-pipeline-transfer-curve-r1",
+          "artifact": "color/preview-lut.cube",
+          "command": "python checks/transfer_curve.py --reference",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Only the obsolete lookup table was tested; the replacement file's curve has not been measured."
+    },
+    "document": "# Transfer Curve\n\nCompare the preview lookup table with the required transfer-curve fixture.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The trusted success is stale and the current apparent success is not trusted."
+    },
+    "authoring_variant": "transfer-curve/unsupported",
+    "concept_cluster": "color-pipeline/transfer-curve",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-9cb8ef02ce2c31bb",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-indicator.md",
+        "command": null,
+        "skip_condition": "Explain why removing the browser outline requires a visible replacement focus indicator."
+      },
+      "current_revision": "keyboard-interaction-focus-indicator-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Hover styling is an adequate replacement because a keyboard user's mouse pointer remains on the focused control."
+    },
+    "document": "# Focus Indicator\n\nA visible focus indicator tells users which control will respond to their next keyboard action. It must remain perceivable against the actual background and should not be clipped by surrounding containers. If replacing the default outline, provide a clear alternative. Test keyboard navigation through every control rather than checking only pointer hover states or a static screenshot.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Incorrectly assumes pointer position follows keyboard focus."
+    },
+    "authoring_variant": "focus-indicator/unsupported",
+    "concept_cluster": "keyboard-interaction/focus-indicator",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-9d5dd0cb1f3b19a0",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/keyboard-test.md",
+        "command": null,
+        "skip_condition": "Explain why pointer-only end-to-end tests cannot establish that all controls are operable from the keyboard."
+      },
+      "current_revision": "keyboard-interaction-keyboard-test-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "If every control responds to click automation, keyboard operation follows automatically from sharing the same event handler."
+    },
+    "document": "# Keyboard Test\n\nPointer automation can successfully click an element that a keyboard user cannot reach, cannot identify as focused, or cannot activate with expected keys. Add tests that enter the page, traverse controls and complete the intended task with keyboard input. Include open and closed overlays and dynamic content. Check actual focus state as well as whether the final business action occurred.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Assumes shared click handling proves reachability and key behavior."
+    },
+    "authoring_variant": "keyboard-test/unsupported",
+    "concept_cluster": "keyboard-interaction/keyboard-test",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-9d61e55db5afd787",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-on-update.md",
+        "command": null,
+        "skip_condition": "Explain why moving focus on every background data refresh can disrupt keyboard work."
+      },
+      "current_revision": "keyboard-interaction-focus-on-update-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Refreshes are unrelated to the user's navigation and can steal focus mid-action; preserve the current location unless the workflow requires an explicit move."
+    },
+    "document": "# Focus On Update\n\nBackground updates can occur while a user is typing or navigating. Automatically focusing the updated area changes the destination of subsequent keystrokes and can make the interface unpredictable. Preserve focus for routine refreshes and communicate changes through an appropriate non-disruptive mechanism. Move focus only when an explicit user action or required workflow transition makes the destination meaningful.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects asynchronous updates to interruption of the current task."
+    },
+    "authoring_variant": "focus-on-update/supported",
+    "concept_cluster": "keyboard-interaction/focus-on-update",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-a55885600ffb7846",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/underflow.md",
+        "command": null,
+        "skip_condition": "Explain how gradual underflow differs from abruptly replacing every very small nonzero result with zero."
+      },
+      "current_revision": "numerical-representation-underflow-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Underflow always means the operation produced exactly zero; a stored nonzero subnormal indicates memory corruption."
+    },
+    "document": "# Underflow\n\nMany floating-point environments support subnormal values below the smallest normal magnitude. These allow gradual loss of precision instead of an immediate jump to zero. Some execution modes flush such values to zero for performance. Record the relevant mode when tiny values matter, and test algorithms near underflow; identical source expressions can behave differently under different runtime settings.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Incorrectly excludes the subnormal range from legitimate floating-point values."
+    },
+    "authoring_variant": "underflow/unsupported",
+    "concept_cluster": "numerical-representation/underflow",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-a6c1e8b1cf07946a",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/hidden-controls.md",
+        "command": null,
+        "skip_condition": "Explain why visually hiding an interactive element may leave a keyboard navigation problem."
+      },
+      "current_revision": "keyboard-interaction-hidden-controls-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Some visual hiding techniques leave the element focusable, so Tab can land on an invisible control; remove unavailable controls from interaction as well as view."
+    },
+    "document": "# Hidden Controls\n\nOpacity, off-screen positioning and clipping can hide a control visually without removing it from sequential focus. That can leave a user apparently stuck on an invisible target. Select a hiding technique appropriate to whether content should remain accessible, and disable or remove interaction when the control is unavailable. Inspect keyboard traversal while menus and panels are closed.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Distinguishes appearance from focusability and calls for consistent availability."
+    },
+    "authoring_variant": "hidden-controls/supported",
+    "concept_cluster": "keyboard-interaction/hidden-controls",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-a6ebb0d03e5b59eb",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/tab-order.md",
+        "command": null,
+        "skip_condition": "Explain why visual rearrangement alone does not guarantee a matching keyboard focus order."
+      },
+      "current_revision": "keyboard-interaction-tab-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Sequential focus generally follows document order and focusability rules, so CSS placement can put the visible arrangement out of step with keyboard traversal."
+    },
+    "document": "# Tab Order\n\nVisual layouts can reorder items without changing their document order. Keyboard users may then traverse controls in an order that jumps around the screen or obscures dependencies. Prefer a logical source order and check responsive arrangements. Positive tabindex values add a separate ordering system and usually make maintenance harder; use them only with a justified, tested interaction contract.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies the distinct mechanisms behind visual and sequential focus order."
+    },
+    "authoring_variant": "tab-order/supported",
+    "concept_cluster": "keyboard-interaction/tab-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-a96930d7383c4c93",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/symbol-map.otf",
+        "command": "python checks/cmap_ranges.py",
+        "skip_condition": "Check that the symbol font's character-map ranges match its declared encoding profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-unicode-map-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-unicode-map-r1",
+          "artifact": "fonts/symbol-map.otf",
+          "command": "python checks/cmap_ranges.py",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "font-delivery-unicode-map-r1",
+          "artifact": "fonts/symbol-map.otf",
+          "command": "python checks/cmap_ranges.py",
+          "exit_code": 5
+        }
+      ],
+      "explanation": "Two equally applicable character-map records disagree and no authoritative ordering was supplied."
+    },
+    "document": "# Unicode Map\n\nCheck that the symbol font's character-map ranges match its declared encoding profile.\n",
+    "label": {
+      "action": "review",
+      "rationale": "Conflicting trusted results for the same proof identity require review rather than choosing the favorable result."
+    },
+    "authoring_variant": "unicode-map/unsupported",
+    "concept_cluster": "font-delivery/unicode-map",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-aa97df58b4571896",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-on-update.md",
+        "command": null,
+        "skip_condition": "Explain why moving focus on every background data refresh can disrupt keyboard work."
+      },
+      "current_revision": "keyboard-interaction-focus-on-update-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Focus should jump to the newest data after every refresh because newer information always deserves priority over an in-progress action."
+    },
+    "document": "# Focus On Update\n\nBackground updates can occur while a user is typing or navigating. Automatically focusing the updated area changes the destination of subsequent keystrokes and can make the interface unpredictable. Preserve focus for routine refreshes and communicate changes through an appropriate non-disruptive mechanism. Move focus only when an explicit user action or required workflow transition makes the destination meaningful.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Treats recency as permission to disrupt the user's interaction."
+    },
+    "authoring_variant": "focus-on-update/unsupported",
+    "concept_cluster": "keyboard-interaction/focus-on-update",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-b10828075721d808",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/ui-small.ttf",
+        "command": "python checks/hint_tables.py --screen",
+        "skip_condition": "Verify the hinting tables required by the screen-font profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-hinting-tables-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "hint-prototype",
+          "artifact": "fonts/ui-small.ttf",
+          "command": "python checks/hint_tables.py --screen",
+          "exit_code": 2
+        },
+        {
+          "trusted": true,
+          "revision": "font-delivery-hinting-tables-r1",
+          "artifact": "fonts/ui-small.ttf",
+          "command": "python checks/hint_tables.py --screen",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Both an older unhinted prototype failure and the current corrected font's pass are present."
+    },
+    "document": "# Hinting Tables\n\nVerify the hinting tables required by the screen-font profile.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The failure is for another revision; the current artifact has its own relevant pass."
+    },
+    "authoring_variant": "hinting-tables/supported",
+    "concept_cluster": "font-delivery/hinting-tables",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-b1f9f42c229d79a2",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "release/body-compressed.woff2",
+        "command": "python checks/decode_woff2.py --strict",
+        "skip_condition": "Decode the final compressed font with the strict fixture decoder. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-woff-decoder-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-woff-decoder-r1",
+          "command": "python checks/decode_woff2.py --strict",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The decoder result lacks the file identity because a wrapper dropped that field."
+    },
+    "document": "# Woff Decoder\n\nDecode the final compressed font with the strict fixture decoder.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "Without the artifact binding, the success cannot be tied to this compressed font."
+    },
+    "authoring_variant": "woff-decoder/unsupported",
+    "concept_cluster": "font-delivery/woff-decoder",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-b5c205254caf4cb3",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/decimal-fractions.md",
+        "command": null,
+        "skip_condition": "Explain why repeated additions of a decimal fraction can disagree with the mathematical decimal total in binary floating point."
+      },
+      "current_revision": "numerical-representation-decimal-fractions-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Many decimal fractions have no finite binary expansion, so stored approximations and repeated rounding can accumulate error."
+    },
+    "document": "# Decimal Fractions\n\nBinary floating-point formats represent a finite subset of numbers. A decimal such as one tenth generally needs an infinite binary expansion and is rounded to a nearby representable value. Arithmetic rounds again where necessary. Choose decimal or fixed-point arithmetic when the application's contract requires exact decimal units, and otherwise select a justified comparison tolerance instead of expecting exact decimal identities.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Connects nonrepresentable fractions to rounded storage and arithmetic."
+    },
+    "authoring_variant": "decimal-fractions/supported",
+    "concept_cluster": "numerical-representation/decimal-fractions",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-b68109c941dfa3a2",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-return.md",
+        "command": null,
+        "skip_condition": "Explain where focus should go after a modal closes and why an unavailable opener needs a fallback."
+      },
+      "current_revision": "keyboard-interaction-focus-return-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Return focus to the control that opened it so the user resumes in context; if that control disappeared, select a logical surviving destination."
+    },
+    "document": "# Focus Return\n\nOpening a modal interrupts a user's position in the page. Save the invoking control and normally restore focus there on close. If the operation removes that control, choose a nearby logical destination instead of focusing a detached node. Test cancel, confirm and removal paths with the keyboard, checking both the active element and the next useful action.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Preserves the user's place and handles removal of the original target."
+    },
+    "authoring_variant": "focus-return/supported",
+    "concept_cluster": "keyboard-interaction/focus-return",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-bb403efbd8fd6c14",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "renders/icon-edge.exr",
+        "command": "python checks/alpha_edges.py --premultiplied",
+        "skip_condition": "Test the premultiplied-alpha edge fixture in the exported image. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-alpha-association-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-alpha-association-r1",
+          "artifact": "renders/icon-edge.exr",
+          "command": "python checks/alpha_edges.py --premultiplied",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "color-pipeline-alpha-association-r1",
+          "artifact": "thumb/icon-edge.png",
+          "command": "python checks/thumb_size.py",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The export passes the required edge test despite a separate thumbnail warning."
+    },
+    "document": "# Alpha Association\n\nTest the premultiplied-alpha edge fixture in the exported image.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The relevant image and alpha command have a current pass; the thumbnail warning concerns another operation."
+    },
+    "authoring_variant": "alpha-association/supported",
+    "concept_cluster": "color-pipeline/alpha-association",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-c48515419b4029d7",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/disabled-links.md",
+        "command": null,
+        "skip_condition": "Explain why marking a link with aria-disabled alone does not stop its native activation."
+      },
+      "current_revision": "keyboard-interaction-disabled-links-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The attribute communicates a state but does not remove href behavior; the implementation must prevent unavailable activation and choose suitable focus behavior."
+    },
+    "document": "# Disabled Links\n\nAn ARIA state describes a control to accessibility APIs; it does not generally implement interaction behavior. A link with aria-disabled can still navigate through its href unless the application prevents that activation. Decide whether an unavailable action should remain discoverable in the focus order, then implement and test keyboard and pointer behavior consistently with that decision.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Separates communicated semantics from browser interaction behavior."
+    },
+    "authoring_variant": "disabled-links/supported",
+    "concept_cluster": "keyboard-interaction/disabled-links",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-c55e27f0c35819ad",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/variable-weight.woff2",
+        "command": "python checks/axis_bounds.py --weight",
+        "skip_condition": "Validate the advertised weight axis against the downloadable variable font. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-weight-axes-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-weight-axes-r1",
+          "artifact": "fonts/variable-weight.woff2",
+          "command": "python checks/axis_bounds.py --weight",
+          "exit_code": 4
+        }
+      ],
+      "explanation": "The trusted axis checker found an advertised maximum beyond the font's supported range."
+    },
+    "document": "# Weight Axes\n\nValidate the advertised weight axis against the downloadable variable font.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "The relevant executable check failed, so the advertised axis cannot be accepted yet."
+    },
+    "authoring_variant": "weight-axes/unsupported",
+    "concept_cluster": "font-delivery/weight-axes",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-c9bd4d3156668472",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "exports/book-text.otf",
+        "command": "python checks/kern_roundtrip.py",
+        "skip_condition": "Validate kerning preservation after the font conversion round trip. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-kerning-roundtrip-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-kerning-roundtrip-r1",
+          "artifact": "exports/book-text.otf",
+          "command": "python checks/kern_roundtrip.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The conversion output has a signed runner record with the expected integer exit status."
+    },
+    "document": "# Kerning Roundtrip\n\nValidate kerning preservation after the font conversion round trip.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A correctly typed successful result covers the actual converted output."
+    },
+    "authoring_variant": "kerning-roundtrip/supported",
+    "concept_cluster": "font-delivery/kerning-roundtrip",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-cdbeb6c56604b55b",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/compensated-sum.md",
+        "command": null,
+        "skip_condition": "Explain what compensated summation tracks and why it can improve summation accuracy."
+      },
+      "current_revision": "numerical-representation-compensated-sum-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "It stores the same running sum twice; having two copies guarantees an exact result regardless of input order."
+    },
+    "document": "# Compensated Sum\n\nCompensated summation maintains a correction for low-order information lost during additions. Feeding that correction into later steps often improves accuracy when magnitudes differ. It has limitations and is not a proof that the mathematical sum is represented exactly. Evaluate the error and overhead on the actual input distribution and retain a higher-precision or exact reference for carefully chosen difficult cases.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Misdescribes the mechanism and claims impossible universal exactness."
+    },
+    "authoring_variant": "compensated-sum/unsupported",
+    "concept_cluster": "numerical-representation/compensated-sum",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-cfa333d0030f140d",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "exports/neon-demo.heic",
+        "command": "python checks/hdr_metadata.py --fixture",
+        "skip_condition": "Inspect the required HDR metadata in the synthetic demonstration image. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-hdr-metadata-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-hdr-metadata-r1",
+          "artifact": "exports/neon-demo.heic",
+          "command": "python checks/hdr_metadata.py --fixture",
+          "exit_code": null
+        },
+        {
+          "trusted": true,
+          "revision": "hdr-before-edit",
+          "artifact": "exports/neon-demo.heic",
+          "command": "python checks/hdr_metadata.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The final metadata inspection has no completion status; an older candidate had passed."
+    },
+    "document": "# Hdr Metadata\n\nInspect the required HDR metadata in the synthetic demonstration image.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "An unknown current outcome and an obsolete pass do not establish current success."
+    },
+    "authoring_variant": "hdr-metadata/unsupported",
+    "concept_cluster": "color-pipeline/hdr-metadata",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-d2ef06c5995a32a2",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/compensated-sum.md",
+        "command": null,
+        "skip_condition": "Explain what compensated summation tracks and why it can improve summation accuracy."
+      },
+      "current_revision": "numerical-representation-compensated-sum-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "It carries an estimate of low-order rounding loss into later additions, reducing accumulated error without making every possible sum exact."
+    },
+    "document": "# Compensated Sum\n\nCompensated summation maintains a correction for low-order information lost during additions. Feeding that correction into later steps often improves accuracy when magnitudes differ. It has limitations and is not a proof that the mathematical sum is represented exactly. Evaluate the error and overhead on the actual input distribution and retain a higher-precision or exact reference for carefully chosen difficult cases.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Names rounding compensation and avoids an unjustified exactness guarantee."
+    },
+    "authoring_variant": "compensated-sum/supported",
+    "concept_cluster": "numerical-representation/compensated-sum",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-d31023bf6abf4152",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "packages/display-family.zip",
+        "command": "python checks/license_presence.py --font",
+        "skip_condition": "Check that this font archive includes its declared license text. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-license-entry-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-license-entry-r1",
+          "artifact": "packages/display-family.zip",
+          "command": "python checks/license_presence.py --font",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The distribution archive, rather than the working source folder, was inspected for the license entry."
+    },
+    "document": "# License Entry\n\nCheck that this font archive includes its declared license text.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The retained successful result is bound to the archive being delivered."
+    },
+    "authoring_variant": "license-entry/supported",
+    "concept_cluster": "font-delivery/license-entry",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-d470e338d99b6a10",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/disabled-links.md",
+        "command": null,
+        "skip_condition": "Explain why marking a link with aria-disabled alone does not stop its native activation."
+      },
+      "current_revision": "keyboard-interaction-disabled-links-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "aria-disabled cancels navigation in every browser, so leaving the href active cannot trigger the destination."
+    },
+    "document": "# Disabled Links\n\nAn ARIA state describes a control to accessibility APIs; it does not generally implement interaction behavior. A link with aria-disabled can still navigate through its href unless the application prevents that activation. Decide whether an unavailable action should remain discoverable in the focus order, then implement and test keyboard and pointer behavior consistently with that decision.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Attributes an automatic behavior change to a semantic attribute."
+    },
+    "authoring_variant": "disabled-links/unsupported",
+    "concept_cluster": "keyboard-interaction/disabled-links",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-d4df7ea589206a06",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/variable-weight.woff2",
+        "command": "python checks/axis_bounds.py --weight",
+        "skip_condition": "Validate the advertised weight axis against the downloadable variable font. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-weight-axes-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-weight-axes-r1",
+          "artifact": "fonts/variable-weight.woff2",
+          "command": "python checks/axis_bounds.py --weight",
+          "exit_code": 0
+        },
+        {
+          "trusted": false,
+          "revision": "font-delivery-weight-axes-r1",
+          "artifact": "fonts/variable-weight.woff2",
+          "command": "python checks/axis_bounds.py --weight",
+          "exit_code": 1
+        }
+      ],
+      "explanation": "The manifest advertises the axis limits that the bound checker found in this delivered file."
+    },
+    "document": "# Weight Axes\n\nValidate the advertised weight axis against the downloadable variable font.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A current trusted axis check passes; the contradictory forum note is explicitly untrusted."
+    },
+    "authoring_variant": "weight-axes/supported",
+    "concept_cluster": "font-delivery/weight-axes",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-e079f5c2120364e2",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/roundtrip-text.md",
+        "command": null,
+        "skip_condition": "Explain why limiting printed significant digits can break a floating-point value's text round trip."
+      },
+      "current_revision": "numerical-representation-roundtrip-text-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Too few digits can identify a different representable value when parsed; use a round-trip formatting algorithm when preserving the original value matters."
+    },
+    "document": "# Roundtrip Text\n\nSerializing a floating-point number to text introduces a separate representation choice. A short rounded display may parse to a different floating-point value. Use a formatter designed to round-trip when persistence or reproducibility requires the original value. Keep display formatting separate from storage formatting, and verify with difficult values rather than a few short decimal examples.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Explains how formatting precision affects parsed identity."
+    },
+    "authoring_variant": "roundtrip-text/supported",
+    "concept_cluster": "numerical-representation/roundtrip-text",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-e0ebc871ca3d638b",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/cancellation.md",
+        "command": null,
+        "skip_condition": "Explain how subtraction of nearly equal floating-point values can lose useful significant digits and name a remedy."
+      },
+      "current_revision": "numerical-representation-cancellation-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Rounding error in each operand can dominate their tiny difference; use an algebraically stable formulation or higher precision when needed."
+    },
+    "document": "# Cancellation\n\nSubtracting two nearby approximations can leave a result whose leading meaningful digits were already lost during earlier rounding. The subtraction operation need not itself be unusually inaccurate for relative error in the result to be large. Inspect the expression's conditioning and prefer a stable algebraic reformulation; additional precision can help when no suitable reformulation exists. Compare against a higher-precision reference on near-equal inputs.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Names the amplification of prior rounding in a small difference and an appropriate remedy."
+    },
+    "authoring_variant": "cancellation/supported",
+    "concept_cluster": "numerical-representation/cancellation",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-e5c1f4ab05395b9f",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "color/preview-lut.cube",
+        "command": "python checks/transfer_curve.py --reference",
+        "skip_condition": "Compare the preview lookup table with the required transfer-curve fixture. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-transfer-curve-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-transfer-curve-r1",
+          "artifact": "color/preview-lut.cube",
+          "command": "python checks/transfer_curve.py --reference",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "lut-draft",
+          "artifact": "color/preview-lut.cube",
+          "command": "python checks/transfer_curve.py --reference",
+          "exit_code": 8
+        }
+      ],
+      "explanation": "The lookup table was regenerated and its transfer-curve comparison passed on the current candidate."
+    },
+    "document": "# Transfer Curve\n\nCompare the preview lookup table with the required transfer-curve fixture.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The stale draft failure does not invalidate the current candidate's bound pass."
+    },
+    "authoring_variant": "transfer-curve/supported",
+    "concept_cluster": "color-pipeline/transfer-curve",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-e7c55dea8c351f59",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/button-semantics.md",
+        "command": null,
+        "skip_condition": "Explain why using a native button usually requires less custom keyboard behavior than styling a generic container as clickable."
+      },
+      "current_revision": "keyboard-interaction-button-semantics-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A click listener makes a div equivalent to a button for keyboard and assistive-technology users."
+    },
+    "document": "# Button Semantics\n\nA control's appearance does not provide its interaction semantics. Native buttons participate in keyboard focus and expose button behavior to user agents. A generic container with a click handler lacks parts of that contract unless they are implemented explicitly. Use the native element where possible and verify its accessible name, focus appearance and disabled behavior in the actual interface.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Equates pointer-click handling with the complete button contract."
+    },
+    "authoring_variant": "button-semantics/unsupported",
+    "concept_cluster": "keyboard-interaction/button-semantics",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-e87b9bdcb4b35cf3",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/escape-dismissal.md",
+        "command": null,
+        "skip_condition": "Explain why an Escape handler for a dismissible popup should be scoped to the active interaction."
+      },
+      "current_revision": "keyboard-interaction-escape-dismissal-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "A scoped handler closes the relevant popup without letting stale listeners dismiss unrelated UI or process the same key repeatedly."
+    },
+    "document": "# Escape Dismissal\n\nDismissal keys belong to an interaction with a defined owner. Register or activate handling when that interaction is present, and clean it up when it ends. Nested overlays need a clear rule for which layer handles Escape. Test repeated opening and closing and verify that one key closes only the intended layer while preserving a useful focus destination.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies stale and competing handlers as the reason for interaction-scoped handling."
+    },
+    "authoring_variant": "escape-dismissal/supported",
+    "concept_cluster": "keyboard-interaction/escape-dismissal",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-e92c2fe15f31aed3",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/fallback-metrics.json",
+        "command": "python checks/fallback_metrics.py",
+        "skip_condition": "Validate the fallback metric overrides for the specified text font. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-fallback-metrics-r1",
+      "scope_known": false,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-fallback-metrics-r1",
+          "artifact": "fonts/fallback-metrics.json",
+          "command": "python checks/fallback_metrics.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "Product configuration has not determined which text font will be active, despite a successful result for one candidate override file."
+    },
+    "document": "# Fallback Metrics\n\nValidate the fallback metric overrides for the specified text font.\n",
+    "label": {
+      "action": "review",
+      "rationale": "An unresolved task scope prevents treating one candidate's successful result as permission to skip."
+    },
+    "authoring_variant": "fallback-metrics/unsupported",
+    "concept_cluster": "font-delivery/fallback-metrics",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-ebe8043a0d8c9aae",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/escape-dismissal.md",
+        "command": null,
+        "skip_condition": "Explain why an Escape handler for a dismissible popup should be scoped to the active interaction."
+      },
+      "current_revision": "keyboard-interaction-escape-dismissal-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Leave one permanent document handler for every popup ever opened; all of them can safely react to Escape together."
+    },
+    "document": "# Escape Dismissal\n\nDismissal keys belong to an interaction with a defined owner. Register or activate handling when that interaction is present, and clean it up when it ends. Nested overlays need a clear rule for which layer handles Escape. Test repeated opening and closing and verify that one key closes only the intended layer while preserving a useful focus destination.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Intentionally accumulates global reactions with no ownership or cleanup."
+    },
+    "authoring_variant": "escape-dismissal/unsupported",
+    "concept_cluster": "keyboard-interaction/escape-dismissal",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-efe84fb670f5fdbc",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/ui-small.ttf",
+        "command": "python checks/hint_tables.py --screen",
+        "skip_condition": "Verify the hinting tables required by the screen-font profile. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-hinting-tables-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-hinting-tables-r1",
+          "artifact": "fonts/ui-small.ttf",
+          "command": "python checks/measure_em.py",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "A dimensions checker passed, but the profile requires the dedicated hint-table inspection."
+    },
+    "document": "# Hinting Tables\n\nVerify the hinting tables required by the screen-font profile.\n",
+    "label": {
+      "action": "run_check",
+      "rationale": "A successful dimensions check is a different command and does not meet this prerequisite."
+    },
+    "authoring_variant": "hinting-tables/unsupported",
+    "concept_cluster": "font-delivery/hinting-tables",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  },
+  {
+    "id": "v2-f0bb30a5cf248ede",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/overflow-order.md",
+        "command": null,
+        "skip_condition": "Explain why multiplying before dividing can overflow even when the intended final mathematical value is representable."
+      },
+      "current_revision": "numerical-representation-overflow-order-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "The intermediate product can exceed the format's range before division reduces it; rearrange or rescale with attention to accuracy and zero cases."
+    },
+    "document": "# Overflow Order\n\nIntermediate results are evaluated within the chosen numerical format. A product may overflow before a later division would have reduced it to an ordinary value. Rescaling or rearranging operations can avoid overflow, but can introduce different underflow, rounding or zero-division behavior. Exercise boundary values and compare to a suitable reference rather than replacing expressions solely on algebraic appearance.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Identifies the oversized intermediate and qualifies the proposed rearrangement."
+    },
+    "authoring_variant": "overflow-order/supported",
+    "concept_cluster": "numerical-representation/overflow-order",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-f19aabb4dce24a2e",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "exports/neon-demo.heic",
+        "command": "python checks/hdr_metadata.py --fixture",
+        "skip_condition": "Inspect the required HDR metadata in the synthetic demonstration image. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-hdr-metadata-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-hdr-metadata-r1",
+          "artifact": "exports/neon-demo.heic",
+          "command": "python checks/hdr_metadata.py --fixture",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "hdr-before-edit",
+          "artifact": "exports/neon-demo.heic",
+          "command": "python checks/hdr_metadata.py --fixture",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The metadata checker passed for the final image while the preceding candidate remains in the audit trail."
+    },
+    "document": "# Hdr Metadata\n\nInspect the required HDR metadata in the synthetic demonstration image.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "There is an explicit current-image pass, so the older record need not be reused."
+    },
+    "authoring_variant": "hdr-metadata/supported",
+    "concept_cluster": "color-pipeline/hdr-metadata",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-f3df62f80cf347f3",
+    "family": "color-pipeline",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "masks/poster-gamut.png",
+        "command": "python checks/gamut_mask.py --display-p3",
+        "skip_condition": "Verify the gamut-warning mask against the Display-P3 test patches. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "color-pipeline-gamut-flags-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "color-pipeline-gamut-flags-r1",
+          "artifact": "masks/poster-gamut.png",
+          "command": "python checks/gamut_mask.py --display-p3",
+          "exit_code": 0
+        },
+        {
+          "trusted": true,
+          "revision": "mask-v0",
+          "artifact": "old/poster-gamut.png",
+          "command": "python checks/gamut_mask.py --display-p3",
+          "exit_code": 3
+        }
+      ],
+      "explanation": "The selected display profile is known and the mask is verified under that profile."
+    },
+    "document": "# Gamut Flags\n\nVerify the gamut-warning mask against the Display-P3 test patches.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "A current applicable pass exists; the obsolete mask failure does not apply."
+    },
+    "authoring_variant": "gamut-flags/supported",
+    "concept_cluster": "color-pipeline/gamut-flags",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/color-pipeline.txt"
+  },
+  {
+    "id": "v2-fa3b7709674532d9",
+    "family": "numerical-representation",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/numerical-representation/relative-tolerance.md",
+        "command": null,
+        "skip_condition": "Explain why a numerical comparison often needs both absolute and relative tolerances."
+      },
+      "current_revision": "numerical-representation-relative-tolerance-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Relative error scales with magnitude but becomes unsuitable near zero; an absolute floor handles that region while a relative term handles larger values."
+    },
+    "document": "# Relative Tolerance\n\nA common comparison bounds the absolute difference by the larger of an absolute tolerance and a relative tolerance times the compared magnitudes. The absolute term controls behavior around zero. The relative term permits errors proportional to scale. Both values must come from the problem's accuracy requirements; a library default is not evidence that two scientific or engineering results are interchangeable.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "Explains both magnitude scaling and the near-zero limitation."
+    },
+    "authoring_variant": "relative-tolerance/supported",
+    "concept_cluster": "numerical-representation/relative-tolerance",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/numerical-representation.txt"
+  },
+  {
+    "id": "v2-fb22c6bbbdf5f4d2",
+    "family": "keyboard-interaction",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "semantic",
+        "artifact": "guides/keyboard-interaction/focus-return.md",
+        "command": null,
+        "skip_condition": "Explain where focus should go after a modal closes and why an unavailable opener needs a fallback."
+      },
+      "current_revision": "keyboard-interaction-focus-return-r1",
+      "scope_known": true,
+      "runner_evidence": [],
+      "explanation": "Always send focus to the page's first link because its existence is more important than the user's interrupted position."
+    },
+    "document": "# Focus Return\n\nOpening a modal interrupts a user's position in the page. Save the invoking control and normally restore focus there on close. If the operation removes that control, choose a nearby logical destination instead of focusing a detached node. Test cancel, confirm and removal paths with the keyboard, checking both the active element and the next useful action.\n",
+    "label": {
+      "action": "read",
+      "rationale": "Provides a fixed destination unrelated to the user's workflow."
+    },
+    "authoring_variant": "focus-return/unsupported",
+    "concept_cluster": "keyboard-interaction/focus-return",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/keyboard-interaction.txt"
+  },
+  {
+    "id": "v2-fb6f0351f952750c",
+    "family": "font-delivery",
+    "split": "development",
+    "state": {
+      "unit": {
+        "kind": "executable",
+        "artifact": "fonts/latin-core.woff2",
+        "command": "python checks/glyph_inventory.py --latin",
+        "skip_condition": "Confirm that the Latin subset contains every glyph required by the synthetic specimen. Requires trusted integer exit 0 bound to this command, artifact and current revision."
+      },
+      "current_revision": "font-delivery-glyph-subset-r1",
+      "scope_known": true,
+      "runner_evidence": [
+        {
+          "trusted": true,
+          "revision": "font-delivery-glyph-subset-r1",
+          "artifact": "fonts/latin-core.woff2",
+          "command": "python checks/glyph_inventory.py --latin",
+          "exit_code": 0
+        }
+      ],
+      "explanation": "The reduced webfont was rebuilt after its final glyph list was approved; the attached runner examined that subset."
+    },
+    "document": "# Glyph Subset\n\nConfirm that the Latin subset contains every glyph required by the synthetic specimen.\n",
+    "label": {
+      "action": "skip",
+      "rationale": "The current subset has a matching trusted successful glyph-inventory result."
+    },
+    "authoring_variant": "glyph-subset/supported",
+    "concept_cluster": "font-delivery/glyph-subset",
+    "review_status": "agent_authored_unreviewed",
+    "source": "sources/development/font-delivery.txt"
+  }
+]
