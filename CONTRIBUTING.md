@@ -21,6 +21,12 @@ Use synthetic data in reports and examples. Never include credentials, private
 corpus, machine paths, hardware identifiers or raw agent-session transcripts.
 Review the files and reachable history before publishing a contribution.
 
+This check is required for every public update, including documentation and
+release archives. Follow the [public-content review checklist](https://github.com/rustybladerunner/jev-skills/blob/main/PUBLICATION.md).
+Run available secret/privacy scans, review findings before upload, and record
+the checked artifact identity and limitations. Automated scanning does not detect
+all personal information and does not replace review of examples and metadata.
+
 AI assistance is welcome. State what actually ran, what a reviewer checked,
 and what remains untested. A model's approval is one review, not proof of safety.
 
