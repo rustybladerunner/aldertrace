@@ -12,6 +12,22 @@ synthetic evaluation. The measured input-accounting proxy was still negative:
 routing overhead exceeded the reading avoided. Actual savings on completed
 coding tasks remain unknown.
 
+## Use cases and business context
+
+Use Aldertrace to study prerequisite routing, audit the boundary between a model's
+recommendation and permission to act, and reproduce recovery/accounting failures.
+Its strongest result is added semantic coverage with enforcement on synthetic
+fixtures. It has not established cheaper completed projects or production safety.
+
+The [Jev skills business review](https://github.com/rustybladerunner/jev-skills#business-review--september-2026)
+is the unified overview: suitable use cases, Jev/Laya/Verdict and related tools,
+measured successes, economics and next decisions. It separates this replayable
+study from later maintainer-reported operational observations.
+
+The next research questions are [context robustness, calibrated refusal and
+accepted-task value](https://github.com/rustybladerunner/jev-skills/blob/main/docs/research-review-2026-09.md).
+These do not alter the completed v002 dataset, thresholds or implementation.
+
 ## Start here
 
 You need an existing Python 3.11+ installation. The offline example and core
