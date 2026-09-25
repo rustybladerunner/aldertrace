@@ -63,6 +63,8 @@ or downloaded by these commands. See [how to reproduce the study](experiments/v0
 Open [the comparison](experiments/v002/index.html) in a browser, or read the
 [report](experiments/v002/REPORT.md) and [failure cases](experiments/v002/reports/v002-test-report/report.json).
 
+<a id="what-the-experiment-found"></a>
+
 ## What we found
 
 The held-out set has 80 synthetic cases: 40 eligible skips and 40 prohibited
