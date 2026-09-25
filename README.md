@@ -1,45 +1,42 @@
 # Aldertrace
 
-> **Experimental research software — not validated for production use.**
-> The recorded results apply to limited synthetic fixtures with provisional
-> labels. Zero observed unsafe skips does not establish safety on new inputs,
-> and completed-task cost savings remain unproven. Use supervised, disposable
-> trials; preserve required checks and independently validate any deployment.
-> Interfaces and findings may change.
+> **This is experimental. We haven't validated it for production use.**
+> Our results come from a small synthetic study with provisional labels. Zero
+> prohibited skips in that study doesn't establish safety on new inputs. We
+> haven't shown lower cost for completed tasks. Use supervised, disposable trials
+> and keep required checks in place. Interfaces and findings may change.
 
 Before an agent skips a prerequisite, make it show the evidence.
 
-Aldertrace tests whether a small router can save an agent work without letting
-it skip checks it still needs. It compares reading everything, deterministic
-rules, local scoring, Jev and a conventional chat model. The model recommends an
-action. A separate layer decides whether the available evidence permits it.
+We're testing whether a small routing model can save an agent work without
+letting it skip something it still needs to do. Aldertrace compares reading
+everything, fixed rules, local scoring, Jev, and a conventional chat model.
+The model recommends an action; code checks the evidence before allowing it.
 
-The result so far is useful and mixed. Jev covered more eligible cases in a small
-synthetic evaluation. The measured input-accounting proxy was still negative:
-routing overhead exceeded the reading avoided. Actual savings on completed
-coding tasks remain unknown.
+So far, Jev has found more eligible skips in a small synthetic test. But routing
+cost more input tokens than the assumed reading it avoided. We haven't shown
+that it makes complete coding tasks cheaper.
 
-## Use cases and business context
+## What you can use this for
 
-Use Aldertrace to study prerequisite routing, audit the boundary between a model's
-recommendation and permission to act, and reproduce recovery/accounting failures.
-Its strongest result is added semantic coverage with enforcement on synthetic
-fixtures. It has not established cheaper completed projects or production safety.
+Use Aldertrace to study routing decisions, check that recommendations don't bypass
+required evidence, and reproduce failures in recovery or cost accounting. The
+code and saved results let you inspect what happened. They don't establish
+production safety or lower project costs.
 
 The [Jev skills business review](https://github.com/rustybladerunner/jev-skills#business-review--september-2026)
-is the unified overview: suitable use cases, Jev/Laya/Verdict and related tools,
-measured successes, economics and next decisions. It separates this replayable
-study from later maintainer-reported operational observations.
+brings together use cases, Jev and related models, our results, costs, and next
+decisions. It keeps this replayable study separate from summaries of later
+private trials.
 
-The next research questions are [context robustness, calibrated refusal and
-accepted-task value](https://github.com/rustybladerunner/jev-skills/blob/main/docs/research-review-2026-09.md).
-These do not alter the completed v002 dataset, thresholds or implementation.
+Our [next research questions](https://github.com/rustybladerunner/jev-skills/blob/main/docs/research-review-2026-09.md)
+cover changes to context, when to refuse a decision, and whether the work saves
+time or money overall. The completed v002 data, thresholds, and code stay frozen.
 
 ## Start here
 
-You need an existing Python 3.11+ installation. The offline example and core
-checks use the standard library. No account, key, model download or paid call
-is needed.
+Use an existing Python 3.11+ installation. The offline example and core checks
+use the standard library. They need no account, key, model download, or paid call.
 
 ```sh
 python -B skills/examples/demo.py
@@ -47,10 +44,10 @@ python -B -m unittest discover -s skills/examples -v
 python -B experiments/v002/reproduce.py --hashes-only
 ```
 
-The first command runs real checks on disposable synthetic files, then shows
-five proposed skips: one permitted and four rejected. It also shows a negative
-accounting result. Its recommendations and token values are illustrative;
-it does not measure Jev or another model.
+The example runs real checks on disposable synthetic files. Of five proposed
+skips, it permits one and rejects four. Its assumed token counts also show how
+routing can cost more than it saves. Those values teach the accounting; they
+don't measure a model.
 
 On Windows, replay the recorded experiment:
 
@@ -59,71 +56,79 @@ python -B experiments/v002/reproduce.py
 python -B -m unittest discover -s study-next -v
 ```
 
-Full frozen replay currently requires Windows. Portable hash verification checks
-integrity only. The optional tokenizer is separately pinned and is not bundled
-or downloaded by these commands. See [reproduction details](experiments/v002/REPRODUCE.md).
+Full replay currently requires Windows. The portable hash check only verifies
+file integrity. The optional tokenizer has a pinned version and isn't bundled
+or downloaded by these commands. See [how to reproduce the study](experiments/v002/REPRODUCE.md).
 
 Open [the comparison](experiments/v002/index.html) in a browser, or read the
 [report](experiments/v002/REPORT.md) and [failure cases](experiments/v002/reports/v002-test-report/report.json).
 
-## What the experiment found
+## What we found
 
-The held-out set contains 80 synthetic cases: 40 eligible skips and 40 prohibited
-skips. Labels are agent-authored and provisionally reviewed by a separate agent;
-independent human adjudication is still missing.
+The held-out set has 80 synthetic cases: 40 eligible skips and 40 prohibited
+skips. One agent wrote the labels and another reviewed them provisionally.
+Independent human review is still missing.
 
-| Enforced policy | Correct skips among 40 eligible cases | Unsafe skips among 40 prohibited cases |
+| Policy after evidence checks | Correct skips among 40 eligible cases | Prohibited skips among 40 prohibited cases |
 |---|---:|---:|
 | Read everything | 0 | 0 |
 | Deterministic rules | 20 | 0 |
 | Conventional chat | 20 | 0 |
 | Jev | 34 | 0 |
 
-Zero observed unsafe skips is a result on these fixtures, not a production safety
-guarantee. The Jev input proxy was **-12,240 tokens** and the chat proxy was
-**-24,554**. These count stipulated reading and observable routing input. Hidden
-provider wrappers and downstream task execution were not measured.
+Zero prohibited skips applies to these cases. It isn't a production safety
+guarantee. Estimated input tokens saved were **-12,240 tokens** for Jev and
+**-24,554** for chat. This estimate subtracts observed routing input from assumed
+reading avoided. It doesn't include hidden provider wrappers or downstream work.
 
-The local comparison stopped after resource contention and remains incomplete.
-The [separate memory study](experiments/memory-v1/PROTOCOL.md) is a retrieval
-mechanism experiment; it does not establish task-level memory benefit.
+The local comparison stopped because of resource contention and remains incomplete.
+The [separate memory study](experiments/memory-v1/PROTOCOL.md) tests a retrieval
+mechanism; it doesn't establish better task outcomes from memory.
 
-## What is worth inspecting
+## What to inspect
 
-- **The evidence boundary:** keep a model's recommendation separate from the action the runner allows. A confident explanation cannot replace a current matching check.
-- **Recovery and accounting:** reserve before dispatch, retain uncertain charges, reject conflicting recovery owners, and avoid quietly resending interrupted work.
-- **Reproduction:** reparse saved responses, verify frozen source and dataset identities, and compare computed reports with the recorded results.
-- **Failure reporting:** keep regressions, negative savings, incomplete runs and unknown measurements visible.
+- **Evidence checks:** a model's recommendation stays separate from the action
+  the runner permits. A confident explanation can't replace a current matching check.
+- **Recovery and accounting:** reserve budget before dispatch, keep uncertain
+  charges, reject conflicting recovery owners, and don't quietly resend interrupted work.
+- **Reproduction:** parse saved responses again, verify source and dataset
+  identities, and compare the calculated reports with the recorded results.
+- **Failures:** keep regressions, negative savings, incomplete runs, and unknown
+  measurements visible.
 
-[study-next](study-next/README.md) contains the newer recovery/orchestration
-instrument. Its CLI is simulation-only. Passing its offline tests does not mean
-another live model comparison was run.
+[study-next](study-next/README.md) contains the newer recovery and coordination
+code. Its CLI uses simulations only. Passing those tests doesn't mean we've run
+another live model comparison.
 
 ## Use the workflows
 
-[jev-integrate and jev-hypothesize](skills/README.md) capture the integration and
-experimental practices used here. They include a project-context template and
-the standalone example above. They can be used with another Jev project without
-private Aldertrace notes. They do not grant execution or spending permissions.
+[jev-integrate and jev-hypothesize](skills/README.md) describe how we review
+changes and test claims. They include a project-context template and the example
+above. You can use them in another Jev project without private Aldertrace notes.
+They don't grant permission to execute actions or spend money.
 
-## Evidence, privacy and provenance
+## Evidence, privacy, and source records
 
-This release is a sanitized derivative of the recorded study, not a new
-experiment. Workstation paths and hardware UUIDs were replaced in metadata;
-dependent hashes were rebound. Datasets, prompts, model responses, thresholds,
-source algorithms and measured values were not tuned or replaced. The original
-private evidence is preserved. [PUBLIC-EXPORT.json](PUBLIC-EXPORT.json) records
-source/export hashes and transformations; its hashes establish consistency,
-not independent attestation of when the original experiment happened.
+This public release is a cleaned export of the recorded study. It isn't a new
+experiment. Workstation paths and hardware UUIDs were replaced in metadata, and
+dependent hashes were updated. The datasets, prompts, model responses, thresholds,
+algorithms, and measured values weren't tuned or replaced. The original evidence
+remains private.
 
-The frozen protocol retains its historical wording. Current public use and
-reproduction instructions are here; old operator-specific execution restrictions
-are not a request to start services or run a new experiment.
+[PUBLIC-EXPORT.json](PUBLIC-EXPORT.json) records the original export's source
+hashes and transformations. Those hashes check consistency; they don't independently
+prove when the experiment ran. The frozen protocol keeps its historical wording.
+Use this README for current instructions. Old operator-specific restrictions don't
+ask you to start services or run another experiment.
 
-This project was built with AI coding and review assistance. See
-[CONTRIBUTING.md](CONTRIBUTING.md) for the checks expected of a change.
-Jev and Calyx are third-party projects; no affiliation or endorsement is implied.
-The separately supplied Calyx implementation and tokenizer retain their own licenses.
-No model weights or Calyx implementation are bundled.
+We used AI assistance for coding and review. Follow [CONTRIBUTING.md](CONTRIBUTING.md)
+for changes, the [writing guide](https://github.com/rustybladerunner/jev-skills/blob/main/STYLE.md)
+for prose, and the [publication checklist](https://github.com/rustybladerunner/jev-skills/blob/main/PUBLICATION.md)
+before every public update. Review content and history for secrets and personal
+data. A clean automated scan doesn't replace that review.
+
+Jev and Calyx are third-party projects. We don't claim affiliation or endorsement.
+The separately supplied Calyx code and tokenizer keep their own licenses. No
+model weights or Calyx implementation are bundled here.
 
 MIT licensed. See [LICENSE](LICENSE).

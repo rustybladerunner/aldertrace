@@ -1,35 +1,34 @@
 # Contributing
 
-Start with a reproducible problem and the behavior you expect to change.
-Include the current commit, a small synthetic case, the command you ran and
-the actual result. Keep the scope small enough to review.
+Show us a problem we can reproduce and the behavior you want to change. Include
+the commit, a small synthetic case, the command you ran, and the result. Keep
+the change small enough to review.
 
-For a routing change, show the raw recommendation and the action enforcement
-allowed. For an efficiency claim, include routing, retries and rejected
-recommendations in the cost. Leave measurements unknown when you do not have them.
+For routing changes, show both the model's recommendation and the action that
+passed the evidence checks. For cost claims, count routing, retries, and rejected
+recommendations. If a measurement is missing, say so.
 
-The recorded v002 evaluation is frozen. Do not edit its cases, labels, thresholds
-or source to make a change pass. New behavior belongs in a new version with fresh
-evaluation cases. An offline fixture result is not a live-model result.
+The v002 study is frozen. Don't change its cases, labels, thresholds, or source
+to make a new result pass. Put new behavior in a new version with fresh cases.
+Passing a synthetic test doesn't establish a live-model result.
 
-Run the relevant offline tests. The default commands in the README make no
-provider calls. Do not add automatic model downloads, dependency installs or
-live tests to the basic reproduction path. This repository does not supply a
-spending allowance; any live run needs its own explicit authorization and ledger.
+Run the affected offline tests. The basic README commands make no provider calls.
+Don't add automatic model downloads, package installs, or live tests to that path.
+This repo grants no spending allowance. A live run needs explicit authorization
+and a budget record.
 
-Use synthetic data in reports and examples. Never include credentials, private
-corpus, machine paths, hardware identifiers or raw agent-session transcripts.
-Review the files and reachable history before publishing a contribution.
+Before every public update, follow the [privacy checklist](https://github.com/rustybladerunner/jev-skills/blob/main/PUBLICATION.md).
+Check files, release archives, and reachable history. Run available scans, review
+the findings before upload, and record exactly what was checked and any limits.
+Use synthetic examples. Never include credentials, private source material,
+machine paths, hardware identifiers, or raw agent conversations. A clean scan
+doesn't replace review of the content and metadata.
 
-This check is required for every public update, including documentation and
-release archives. Follow the [public-content review checklist](https://github.com/rustybladerunner/jev-skills/blob/main/PUBLICATION.md).
-Run available secret/privacy scans, review findings before upload, and record
-the checked artifact identity and limitations. Automated scanning does not detect
-all personal information and does not replace review of examples and metadata.
+AI assistance is welcome. Say what ran, what was reviewed, and what remains
+untested. A model's approval is one review, not proof of safety. Use the
+[writing guide](https://github.com/rustybladerunner/jev-skills/blob/main/STYLE.md)
+for clear explanations that keep those distinctions intact.
 
-AI assistance is welcome. State what actually ran, what a reviewer checked,
-and what remains untested. A model's approval is one review, not proof of safety.
-
-Owned project code and documentation use the MIT license. Preserve the license
-and attribution of any third-party material. No third-party model weights,
-tokenizer environment or Calyx implementation are included in this release.
+Our code and documentation use the MIT license. Keep third-party licenses and
+attribution. This release doesn't include third-party model weights, a tokenizer
+environment, or the Calyx implementation.
