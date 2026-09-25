@@ -1,5 +1,12 @@
 # Aldertrace
 
+> **Experimental research software — not validated for production use.**
+> The recorded results apply to limited synthetic fixtures with provisional
+> labels. Zero observed unsafe skips does not establish safety on new inputs,
+> and completed-task cost savings remain unproven. Use supervised, disposable
+> trials; preserve required checks and independently validate any deployment.
+> Interfaces and findings may change.
+
 Before an agent skips a prerequisite, make it show the evidence.
 
 Aldertrace tests whether a small router can save an agent work without letting
